@@ -98,4 +98,20 @@ public class Processor {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Processor{" +
+                "id=" + id +
+                ", brand='" + brand + '\'' +
+                ", series='" + series + '\'' +
+                ", model='" + model + '\'' +
+                ", frequency=" + frequency +
+                ", socketType='" + socketType + '\'' +
+                ", numOfCores=" + numOfCores +
+                ", integratedGPU='" + integratedGPU + '\'' +
+                ", power=" + power +
+                ", price=" + price +
+                '}';
+    }
 }

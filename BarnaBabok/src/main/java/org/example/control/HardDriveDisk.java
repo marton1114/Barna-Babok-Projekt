@@ -71,4 +71,17 @@ public class HardDriveDisk {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "HardDriveDisk{" +
+                "id=" + id +
+                ", brand='" + brand + '\'' +
+                ", series='" + series + '\'' +
+                ", model='" + model + '\'' +
+                ", capacity=" + capacity +
+                ", speed=" + speed +
+                ", price=" + price +
+                '}';
+    }
 }

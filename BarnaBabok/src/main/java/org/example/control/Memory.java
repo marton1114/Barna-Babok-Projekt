@@ -80,4 +80,18 @@ public class Memory {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Memory{" +
+                "id=" + id +
+                ", brand='" + brand + '\'' +
+                ", series='" + series + '\'' +
+                ", model='" + model + '\'' +
+                ", capacity=" + capacity +
+                ", numOfModules=" + numOfModules +
+                ", frequency=" + frequency +
+                ", price=" + price +
+                '}';
+    }
 }

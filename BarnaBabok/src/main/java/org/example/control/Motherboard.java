@@ -80,4 +80,18 @@ public class Motherboard {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Motherboard{" +
+                "id=" + id +
+                ", brand='" + brand + '\'' +
+                ", series='" + series + '\'' +
+                ", model='" + model + '\'' +
+                ", socketType='" + socketType + '\'' +
+                ", FormFactor='" + FormFactor + '\'' +
+                ", numOfRamSockets=" + numOfRamSockets +
+                ", price=" + price +
+                '}';
+    }
 }

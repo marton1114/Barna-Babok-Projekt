@@ -62,4 +62,16 @@ public class PowerSupply {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "PowerSupply{" +
+                "id=" + id +
+                ", brand='" + brand + '\'' +
+                ", series='" + series + '\'' +
+                ", model='" + model + '\'' +
+                ", energyEfficiency='" + energyEfficiency + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }
