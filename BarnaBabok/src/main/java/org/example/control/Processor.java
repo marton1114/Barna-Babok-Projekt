@@ -17,7 +17,7 @@ public class Processor {
     private int numOfCores;
     private String integratedGPU;
     private int power;  // ez lesz kapcsolatban a táppal
-    private int price;
+    private double price;
 
     public Integer getId() {
         return id;
@@ -91,11 +91,11 @@ public class Processor {
         this.power = power;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 }
