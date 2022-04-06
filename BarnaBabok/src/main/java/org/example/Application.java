@@ -8,6 +8,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import org.example.Search.Search;
+import org.example.control.Componens;
 import org.example.control.Processor;
 import org.h2.tools.Server;
 
@@ -69,7 +70,7 @@ public class Application {
         /** TEST DATA END **/
 
         /** Keresés érdekében listába teszem ezen komponenseket **/
-        List<Processor> CompList = new ArrayList();
+        List<Componens> CompList = new ArrayList();
         CompList.add(processor);
         CompList.add(proc_test_1);
         CompList.add(proc_test_2);
@@ -77,7 +78,15 @@ public class Application {
 
         /** Keresés része **/
         List ResList = new ArrayList();
-        ResList = Search.search(CompList);
+
+        /** Brand keresés **/
+        ResList = Search.searchBrand(CompList);
+        for (int i = 0; i < ResList.size(); i++)
+            System.out.println(ResList.get(i));
+
+        /** Price keresés **/
+        //ResList = Search.searchPrice(CompList, true);
+        ResList = Search.searchPrice(CompList, false);
         for (int i = 0; i < ResList.size(); i++)
             System.out.println(ResList.get(i));
 
