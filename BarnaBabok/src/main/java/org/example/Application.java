@@ -42,7 +42,7 @@ public class Application {
         proc_test_1.setSocketType("LGA 800");
         proc_test_1.setNumOfCores(8);
         proc_test_1.setPower(100);
-        proc_test_1.setPrice(500.14);
+        proc_test_1.setPrice(500.13);
 
         /** Component 03 - TEST ONLY **/
         Processor proc_test_2 = new Processor();
