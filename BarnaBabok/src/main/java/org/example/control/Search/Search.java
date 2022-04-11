@@ -1,10 +1,10 @@
-package org.example.Search;
-
-import org.example.control.Componens;
+package org.example.control.Search;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import org.example.model.*;
 
 public class Search {
 
