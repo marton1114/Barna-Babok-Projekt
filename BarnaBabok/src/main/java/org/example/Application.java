@@ -29,7 +29,7 @@ public class Application {
         processor.setSocketType("LGA 1200");
         processor.setNumOfCores(16);
         processor.setPower(125);
-        processor.setPrice(610.99);
+        processor.setPrice(611.99);
 
         /** TEST DATA BEGIN **/
         /** Component 02 - TEST ONLY **/
