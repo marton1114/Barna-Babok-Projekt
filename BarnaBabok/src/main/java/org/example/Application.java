@@ -3,13 +3,9 @@ package org.example;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
+import org.example.model.*;
 import org.example.Search.Search;
-import org.example.control.Componens;
-import org.example.control.Processor;
 import org.h2.tools.Server;
 
 public class Application {
@@ -17,23 +13,57 @@ public class Application {
     public static void main(String[] args) throws SQLException {
         startDatabase();
 
-//        final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
-//        final EntityManager entityManager = entityManagerFactory.createEntityManager();
+        try (ProcessorDAO pDAO = new JpaProcessorDAO();) {
+            /** Az adatbázis kezelése (elkülönítve) **/
+            handleData(pDAO);
 
-        Processor processor = new Processor();
-        processor.setBrand("Intel");
-        processor.setSeries("Core i9-12900K");
-        processor.setModel("Core i9-12900K");
-        processor.setFrequency(3.2);
-        processor.setIntegratedGPU("Intel UHD Graphics 770");
-        processor.setSocketType("LGA 1200");
-        processor.setNumOfCores(16);
-        processor.setPower(125);
-        processor.setPrice(610.99);
+            /** Keresés érdekében listába teszem ezen komponenseket **/
+            List<Componens> CompList = pDAO.getProcessors();
 
+            /** Keresés része **/
+
+            List ResList = new ArrayList();
+
+            /** Brand keresés **/
+            ResList = Search.searchBrand(CompList);
+            for (int i = 0; i < ResList.size(); i++)
+                System.out.println(ResList.get(i));
+
+            /** Price keresés **/
+            //ResList = Search.searchPrice(CompList, true);
+            ResList = Search.searchPrice(CompList, false);
+            for (int i = 0; i < ResList.size(); i++)
+                System.out.println(ResList.get(i));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        System.out.println("Open your browser and navigate to http://localhost:8082/");
+        System.out.println("jdbc:h2:file:~/BarnaBabok");
+        System.out.println("User Name: babok");
+        System.out.println("Password: ");
+
+    }
+
+    public static void handleData(ProcessorDAO pDAO){
         /** TEST DATA BEGIN **/
-        /** Component 02 - TEST ONLY **/
+        /** Component 01 - TEST ONLY **/
         Processor proc_test_1 = new Processor();
+        proc_test_1.setBrand("Intel");
+        proc_test_1.setSeries("Core i9-12900K");
+        proc_test_1.setModel("Core i9-12900K");
+        proc_test_1.setFrequency(3.2);
+        proc_test_1.setIntegratedGPU("Intel UHD Graphics 770");
+        proc_test_1.setSocketType("LGA 1200");
+        proc_test_1.setNumOfCores(16);
+        proc_test_1.setPower(125);
+        proc_test_1.setPrice(610.99);
+        pDAO.saveProcessor(proc_test_1);
+
+        /** Component 02 - TEST ONLY **/
+        Processor proc_test_2 = new Processor();
         proc_test_1.setBrand("Intel");
         proc_test_1.setSeries("Core i5-750TI");
         proc_test_1.setModel("Core i5-750TI");
@@ -43,9 +73,10 @@ public class Application {
         proc_test_1.setNumOfCores(8);
         proc_test_1.setPower(100);
         proc_test_1.setPrice(500.14);
+        pDAO.saveProcessor(proc_test_1);
 
         /** Component 03 - TEST ONLY **/
-        Processor proc_test_2 = new Processor();
+        Processor proc_test_3 = new Processor();
         proc_test_2.setBrand("AMD");
         proc_test_2.setSeries("Core TEST_01");
         proc_test_2.setModel("Core 01");
@@ -55,9 +86,10 @@ public class Application {
         proc_test_2.setNumOfCores(12);
         proc_test_2.setPower(200);
         proc_test_2.setPrice(1000);
+        pDAO.saveProcessor(proc_test_2);
 
         /** Component 04 - TEST ONLY **/
-        Processor proc_test_3 = new Processor();
+        Processor proc_test_4 = new Processor();
         proc_test_3.setBrand("Intel");
         proc_test_3.setSeries("Core i12-52900K");
         proc_test_3.setModel("Core i12-52900K");
@@ -67,39 +99,8 @@ public class Application {
         proc_test_3.setNumOfCores(32);
         proc_test_3.setPower(250);
         proc_test_3.setPrice(5000);
+        pDAO.saveProcessor(proc_test_3);
         /** TEST DATA END **/
-
-        /** Keresés érdekében listába teszem ezen komponenseket **/
-        List<Componens> CompList = new ArrayList();
-        CompList.add(processor);
-        CompList.add(proc_test_1);
-        CompList.add(proc_test_2);
-        CompList.add(proc_test_3);
-
-        /** Keresés része **/
-        List ResList = new ArrayList();
-
-        /** Brand keresés **/
-        ResList = Search.searchBrand(CompList);
-        for (int i = 0; i < ResList.size(); i++)
-            System.out.println(ResList.get(i));
-
-        /** Price keresés **/
-        //ResList = Search.searchPrice(CompList, true);
-        ResList = Search.searchPrice(CompList, false);
-        for (int i = 0; i < ResList.size(); i++)
-            System.out.println(ResList.get(i));
-
-
-//        entityManager.getTransaction().begin();
-//        entityManager.persist(processor);
-//        entityManager.getTransaction().commit();
-
-        System.out.println("Open your browser and navigate to http://localhost:8082/");
-        System.out.println("jdbc:h2:file:~/BarnaBabok");
-        System.out.println("User Name: babok");
-        System.out.println("Password: ");
-
     }
 
     private static void startDatabase() throws SQLException {

@@ -1,4 +1,4 @@
-package org.example.control;
+package org.example.model;
 
 import javax.persistence.Entity;
 
