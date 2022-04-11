@@ -1,0 +1,109 @@
+package org.example;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.example.model.*;
+import org.example.control.Search.Search;
+import org.h2.tools.Server;
+
+public class Application {
+
+    public static void main(String[] args) throws SQLException {
+        startDatabase();
+
+        try (ProcessorDAO pDAO = new JpaProcessorDAO();) {
+            /** Az adatbázis kezelése (elkülönítve) **/
+            handleData(pDAO);
+
+            /** Keresés érdekében listába teszem ezen komponenseket **/
+            List<Componens> CompList = pDAO.getProcessors();
+
+            /** Keresés része **/
+
+            List ResList = new ArrayList();
+
+            /** Brand keresés **/
+            ResList = Search.searchBrand(CompList);
+            for (int i = 0; i < ResList.size(); i++)
+                System.out.println(ResList.get(i));
+
+            /** Price keresés **/
+            //ResList = Search.searchPrice(CompList, true);
+            ResList = Search.searchPrice(CompList, false);
+            for (int i = 0; i < ResList.size(); i++)
+                System.out.println(ResList.get(i));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        System.out.println("Open your browser and navigate to http://localhost:8082/");
+        System.out.println("jdbc:h2:file:~/BarnaBabok");
+        System.out.println("User Name: babok");
+        System.out.println("Password: ");
+
+    }
+
+    public static void handleData(ProcessorDAO pDAO){
+        /** TEST DATA BEGIN **/
+        /** Component 01 - TEST ONLY **/
+        Processor proc_test_1 = new Processor();
+        proc_test_1.setBrand("Intel");
+        proc_test_1.setSeries("Core i9-12900K");
+        proc_test_1.setModel("Core i9-12900K");
+        proc_test_1.setFrequency(3.2);
+        proc_test_1.setIntegratedGPU("Intel UHD Graphics 770");
+        proc_test_1.setSocketType("LGA 1200");
+        proc_test_1.setNumOfCores(16);
+        proc_test_1.setPower(125);
+        proc_test_1.setPrice(610.99);
+        pDAO.saveProcessor(proc_test_1);
+
+        /** Component 02 - TEST ONLY **/
+        Processor proc_test_2 = new Processor();
+        proc_test_1.setBrand("Intel");
+        proc_test_1.setSeries("Core i5-750TI");
+        proc_test_1.setModel("Core i5-750TI");
+        proc_test_1.setFrequency(2.6);
+        proc_test_1.setIntegratedGPU("Intel UHD Graphics 750TI");
+        proc_test_1.setSocketType("LGA 800");
+        proc_test_1.setNumOfCores(8);
+        proc_test_1.setPower(100);
+        proc_test_1.setPrice(500.14);
+        pDAO.saveProcessor(proc_test_1);
+
+        /** Component 03 - TEST ONLY **/
+        Processor proc_test_3 = new Processor();
+        proc_test_2.setBrand("AMD");
+        proc_test_2.setSeries("Core TEST_01");
+        proc_test_2.setModel("Core 01");
+        proc_test_2.setFrequency(4.5);
+        proc_test_2.setIntegratedGPU("AMD CORE Graphics 01");
+        proc_test_2.setSocketType("LGA 2000");
+        proc_test_2.setNumOfCores(12);
+        proc_test_2.setPower(200);
+        proc_test_2.setPrice(1000);
+        pDAO.saveProcessor(proc_test_2);
+
+        /** Component 04 - TEST ONLY **/
+        Processor proc_test_4 = new Processor();
+        proc_test_3.setBrand("Intel");
+        proc_test_3.setSeries("Core i12-52900K");
+        proc_test_3.setModel("Core i12-52900K");
+        proc_test_3.setFrequency(5.2);
+        proc_test_3.setIntegratedGPU("Intel UHD Graphics 1280");
+        proc_test_3.setSocketType("LGA 2400");
+        proc_test_3.setNumOfCores(32);
+        proc_test_3.setPower(250);
+        proc_test_3.setPrice(5000);
+        pDAO.saveProcessor(proc_test_3);
+        /** TEST DATA END **/
+    }
+
+    private static void startDatabase() throws SQLException {
+        new Server().runTool("-tcp", "-web", "-ifNotExists");
+    }
+}
