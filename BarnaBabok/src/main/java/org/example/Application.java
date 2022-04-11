@@ -17,8 +17,8 @@ public class Application {
     public static void main(String[] args) throws SQLException {
         startDatabase();
 
-        final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
-        final EntityManager entityManager = entityManagerFactory.createEntityManager();
+//        final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("br.com.fredericci.pu");
+//        final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         Processor processor = new Processor();
         processor.setBrand("Intel");
@@ -91,9 +91,9 @@ public class Application {
             System.out.println(ResList.get(i));
 
 
-        entityManager.getTransaction().begin();
-        entityManager.persist(processor);
-        entityManager.getTransaction().commit();
+//        entityManager.getTransaction().begin();
+//        entityManager.persist(processor);
+//        entityManager.getTransaction().commit();
 
         System.out.println("Open your browser and navigate to http://localhost:8082/");
         System.out.println("jdbc:h2:file:~/BarnaBabok");
