@@ -1,7 +1,18 @@
-C:\Users\Marci\Documents\Orak\4_felev\Szoftverfejleszés mérnököknek\BarnaBabok\src\main\java\org\example\control\PowerSupply.java
-C:\Users\Marci\Documents\Orak\4_felev\Szoftverfejleszés mérnököknek\BarnaBabok\src\main\java\org\example\control\Customer.java
-C:\Users\Marci\Documents\Orak\4_felev\Szoftverfejleszés mérnököknek\BarnaBabok\src\main\java\org\example\control\HardDriveDisk.java
-C:\Users\Marci\Documents\Orak\4_felev\Szoftverfejleszés mérnököknek\BarnaBabok\src\main\java\org\example\Application.java
-C:\Users\Marci\Documents\Orak\4_felev\Szoftverfejleszés mérnököknek\BarnaBabok\src\main\java\org\example\control\Motherboard.java
-C:\Users\Marci\Documents\Orak\4_felev\Szoftverfejleszés mérnököknek\BarnaBabok\src\main\java\org\example\control\Memory.java
-C:\Users\Marci\Documents\Orak\4_felev\Szoftverfejleszés mérnököknek\BarnaBabok\src\main\java\org\example\control\Processor.java
+C:\Users\Marci\Documents\Orak\4_felev\SFM\Projekt\Barna-Babok-Projekt\BarnaBabok\src\main\java\org\example\model\Processor.java
+C:\Users\Marci\Documents\Orak\4_felev\SFM\Projekt\Barna-Babok-Projekt\BarnaBabok\src\main\java\org\example\model\JpaMotherboardDAO.java
+C:\Users\Marci\Documents\Orak\4_felev\SFM\Projekt\Barna-Babok-Projekt\BarnaBabok\src\main\java\org\example\model\Componens.java
+C:\Users\Marci\Documents\Orak\4_felev\SFM\Projekt\Barna-Babok-Projekt\BarnaBabok\src\main\java\org\example\model\Memory.java
+C:\Users\Marci\Documents\Orak\4_felev\SFM\Projekt\Barna-Babok-Projekt\BarnaBabok\src\main\java\org\example\model\JpaMemoryDAO.java
+C:\Users\Marci\Documents\Orak\4_felev\SFM\Projekt\Barna-Babok-Projekt\BarnaBabok\src\main\java\org\example\model\ProcessorDAO.java
+C:\Users\Marci\Documents\Orak\4_felev\SFM\Projekt\Barna-Babok-Projekt\BarnaBabok\src\main\java\org\example\model\HardDriveDisk.java
+C:\Users\Marci\Documents\Orak\4_felev\SFM\Projekt\Barna-Babok-Projekt\BarnaBabok\src\main\java\org\example\Application.java
+C:\Users\Marci\Documents\Orak\4_felev\SFM\Projekt\Barna-Babok-Projekt\BarnaBabok\src\main\java\org\example\model\HardDriveDiskDAO.java
+C:\Users\Marci\Documents\Orak\4_felev\SFM\Projekt\Barna-Babok-Projekt\BarnaBabok\src\main\java\org\example\model\Motherboard.java
+C:\Users\Marci\Documents\Orak\4_felev\SFM\Projekt\Barna-Babok-Projekt\BarnaBabok\src\main\java\org\example\model\PowerSupplyDAO.java
+C:\Users\Marci\Documents\Orak\4_felev\SFM\Projekt\Barna-Babok-Projekt\BarnaBabok\src\main\java\org\example\model\JpaHardDriveDiskDAO.java
+C:\Users\Marci\Documents\Orak\4_felev\SFM\Projekt\Barna-Babok-Projekt\BarnaBabok\src\main\java\org\example\model\PowerSupply.java
+C:\Users\Marci\Documents\Orak\4_felev\SFM\Projekt\Barna-Babok-Projekt\BarnaBabok\src\main\java\org\example\model\JpaPowerSupplyDAO.java
+C:\Users\Marci\Documents\Orak\4_felev\SFM\Projekt\Barna-Babok-Projekt\BarnaBabok\src\main\java\org\example\model\MemoryDAO.java
+C:\Users\Marci\Documents\Orak\4_felev\SFM\Projekt\Barna-Babok-Projekt\BarnaBabok\src\main\java\org\example\control\Search\Search.java
+C:\Users\Marci\Documents\Orak\4_felev\SFM\Projekt\Barna-Babok-Projekt\BarnaBabok\src\main\java\org\example\model\JpaProcessorDAO.java
+C:\Users\Marci\Documents\Orak\4_felev\SFM\Projekt\Barna-Babok-Projekt\BarnaBabok\src\main\java\org\example\model\MotherboardDAO.java

@@ -1,0 +1,17 @@
+org\example\model\JpaProcessorDAO.class
+org\example\model\Componens.class
+org\example\model\ProcessorDAO.class
+org\example\model\JpaPowerSupplyDAO.class
+org\example\model\PowerSupply.class
+org\example\model\HardDriveDiskDAO.class
+org\example\model\MotherboardDAO.class
+org\example\model\MemoryDAO.class
+org\example\model\HardDriveDisk.class
+org\example\control\Search\Search.class
+org\example\model\JpaHardDriveDiskDAO.class
+org\example\model\JpaMotherboardDAO.class
+org\example\model\Memory.class
+org\example\model\PowerSupplyDAO.class
+org\example\model\JpaMemoryDAO.class
+org\example\model\Motherboard.class
+org\example\model\Processor.class

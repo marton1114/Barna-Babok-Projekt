@@ -6,14 +6,17 @@
 
     <persistence-unit name="br.com.fredericci.pu">
         <description>Hibernate EntityManager Demo</description>
-        <class>org.example.control.Customer</class>
-        <class>org.example.control.Processor</class>
+<!--        <class>org.example.model.Customer</class>-->
+        <class>org.example.model.Processor</class>
+        <class>org.example.model.Memory</class>
+        <class>org.example.model.Motherboard</class>
+        <class>org.example.model.PowerSupply</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
-            <property name="hibernate.hbm2ddl.auto" value="validate"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/> <!--validate-->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:~/BarnaBabok"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:~/BarnaBabokDatabase"/>
             <property name="javax.persistence.jdbc.user" value="babok"/>
             <property name="javax.persistence.jdbc.password" value=""/>
         </properties>
