@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.example.model.*;
-import org.example.Search.Search;
+import org.example.control.Search.Search;
 import org.h2.tools.Server;
 
 public class Application {

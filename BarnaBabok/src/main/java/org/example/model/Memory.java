@@ -8,7 +8,6 @@ public class Memory extends Componens {
     private int capacity;   // GB
     private int numOfModules;   // => ha capacity == 16 és numOfModules == 2, akkor 2x8GB
     private double frequency;   // MHz
-    private int price;  // $
 
     public int getCapacity() {
         return capacity;
