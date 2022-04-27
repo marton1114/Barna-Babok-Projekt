@@ -31,15 +31,15 @@ public class JpaProcessorDAO implements ProcessorDAO{
     }
 
     @Override
-    public List<Componens> getProcessors() {
+    public List<Processor> getProcessors() {
         TypedQuery<Processor> query = entityManager.createQuery(
                 "SELECT a FROM Processor a", Processor.class);
 
         List<Processor> processors = query.getResultList();
 
-        List<Componens> componensList = new ArrayList<>(processors);
+        // List<Componens> componensList = new ArrayList<>(processors);
 
-        return componensList;
+        return processors;
     }
 
     @Override

@@ -6,7 +6,7 @@ public interface ProcessorDAO extends AutoCloseable {
     
 	/** CRUD metódusok **/
     public void saveProcessor(Processor p);        // C
-    public List<Componens> getProcessors();        // R
+    public List<Processor> getProcessors();        // R
     public void updateProcessor(Processor p);      // U
     public void deleteProcessor(Processor p);      // D
 }

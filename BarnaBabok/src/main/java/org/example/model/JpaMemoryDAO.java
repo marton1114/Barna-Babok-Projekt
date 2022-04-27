@@ -31,15 +31,15 @@ public class JpaMemoryDAO implements MemoryDAO{
     }
 
     @Override
-    public List<Componens> getMemories() {
+    public List<Memory> getMemories() {
         TypedQuery<Memory> query = entityManager.createQuery(
                 "SELECT a FROM Memory a", Memory.class);
 
-        List<Memory> Memories = query.getResultList();
+        List<Memory> memories = query.getResultList();
 
-        List<Componens> componensList = new ArrayList<>(Memories);
+        // List<Componens> componensList = new ArrayList<>(memories);
 
-        return componensList;
+        return memories;
     }
 
     @Override

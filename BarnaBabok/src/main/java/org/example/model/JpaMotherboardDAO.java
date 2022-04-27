@@ -31,15 +31,15 @@ public class JpaMotherboardDAO implements MotherboardDAO{
     }
 
     @Override
-    public List<Componens> getMotherboards() {
+    public List<Motherboard> getMotherboards() {
         TypedQuery<Motherboard> query = entityManager.createQuery(
                 "SELECT a FROM Motherboard a", Motherboard.class);
 
         List<Motherboard> Motherboards = query.getResultList();
 
-        List<Componens> componensList = new ArrayList<>(Motherboards);
+        // List<Componens> componensList = new ArrayList<>(Motherboards);
 
-        return componensList;
+        return Motherboards;
     }
 
     @Override
