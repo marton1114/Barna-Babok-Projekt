@@ -21,7 +21,6 @@ public class Application {
             List<Componens> CompList = pDAO.getProcessors();
 
             /** Keresés része **/
-
             List ResList = new ArrayList();
 
             /** Brand keresés **/
