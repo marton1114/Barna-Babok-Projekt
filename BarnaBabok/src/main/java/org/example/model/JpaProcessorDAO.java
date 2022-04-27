@@ -31,9 +31,9 @@ public class JpaProcessorDAO implements ProcessorDAO{
     }
 
     @Override
-    public List<Processor> getProcessors() {
+    public List<Processor> getProcessors(String conditions) {
         TypedQuery<Processor> query = entityManager.createQuery(
-                "SELECT a FROM Processor a", Processor.class);
+                "SELECT a FROM Processor a" + conditions, Processor.class);
 
         List<Processor> processors = query.getResultList();
 
