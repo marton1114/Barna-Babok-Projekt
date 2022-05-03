@@ -21,7 +21,13 @@ public class Application {
             List<Processor> CompList = pDAO.getProcessors();
 			
 
+<<<<<<< HEAD
 			// ez a rész még a Componens listás lekérdezésnél működött, mikor még minden 1 táblában volt:
+=======
+            /** Keresés része **/
+
+            List ResList = new ArrayList();
+>>>>>>> dev_martin
 
 			// /** Keresés érdekében listába teszem ezen komponenseket **/
             // List<Componens> CompList = pDAO.getProcessors();
