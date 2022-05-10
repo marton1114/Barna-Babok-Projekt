@@ -6,6 +6,7 @@
 
     <persistence-unit name="br.com.fredericci.pu">
         <description>Hibernate EntityManager Demo</description>
+<<<<<<< HEAD
         <class>hu.unideb.inf.model.components.Processor</class>
         <class>hu.unideb.inf.model.components.Memory</class>
         <class>hu.unideb.inf.model.components.Motherboard</class>
@@ -18,6 +19,20 @@
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:~/test"/>
             <property name="javax.persistence.jdbc.user" value="test"/>
+=======
+        <class>org.example.model.components.Processor</class>
+        <class>org.example.model.components.Memory</class>
+        <class>org.example.model.components.Motherboard</class>
+        <class>org.example.model.components.PowerSupply</class>
+        <class>org.example.model.components.HardDriveDisk</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="create"/> <!--validate-->
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:~/bbd"/>
+            <property name="javax.persistence.jdbc.user" value="user"/>
+>>>>>>> c8f865d964484e97083b3607f4faa8077bb9ceea
             <property name="javax.persistence.jdbc.password" value=""/>
         </properties>
     </persistence-unit>

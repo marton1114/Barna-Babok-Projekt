@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8fdd3bca-c912-4780-838a-d92724bcfec3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/BarnaBabok/BarnaBabok.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/BarnaBabok.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BarnaBabok/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/Application.java" beforeDir="false" />
@@ -37,6 +38,27 @@
       <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/PowerSupplyDAO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/Processor.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/ProcessorDAO.class" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/control/Search/Search.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/control/Search/Search.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/Componens.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/HardDriveDisk.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/HardDriveDisk.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/HardDriveDiskDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/HardDriveDiskDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaHardDriveDiskDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaHardDriveDiskDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaMemoryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaMemoryDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaMotherboardDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaMotherboardDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaPowerSupplyDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaPowerSupplyDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaProcessorDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaProcessorDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/Memory.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/Memory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/MemoryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/MemoryDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/Motherboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/Motherboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/MotherboardDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/MotherboardDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/PowerSupply.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/PowerSupply.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/PowerSupplyDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/PowerSupplyDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/Processor.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/Processor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/ProcessorDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/ProcessorDAO.class" afterDir="false" />
+>>>>>>> c8f865d964484e97083b3607f4faa8077bb9ceea
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

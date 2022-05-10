@@ -1,8 +1,17 @@
 package hu.unideb.inf;
 
+<<<<<<< HEAD:BarnaBabok/src/main/java/hu/unideb/inf/Main.java
 import hu.unideb.inf.model.components.JpaProcessorDAO;
 import hu.unideb.inf.model.components.Processor;
 import hu.unideb.inf.model.components.ProcessorDAO;
+=======
+import java.sql.SQLException;
+import java.util.List;
+
+import org.example.model.components.JpaProcessorDAO;
+import org.example.model.components.Processor;
+import org.example.model.components.ProcessorDAO;
+>>>>>>> c8f865d964484e97083b3607f4faa8077bb9ceea:BarnaBabok/src/main/java/org/example/Application.java
 import org.h2.tools.Server;
 
 import java.sql.SQLException;
@@ -16,7 +25,11 @@ public class Main {
             /** Az adatbázis kezelése (elkülönítve) **/
             handleData(pDAO);
 
+<<<<<<< HEAD:BarnaBabok/src/main/java/hu/unideb/inf/Main.java
             /** Keresés érdekében listába teszem ezen komponenseket **/
+=======
+			/** Keresés érdekében listába teszem ezen komponenseket **/
+>>>>>>> c8f865d964484e97083b3607f4faa8077bb9ceea:BarnaBabok/src/main/java/org/example/Application.java
             List<Processor> CompList = pDAO.getProcessors("");
 
 
@@ -26,8 +39,13 @@ public class Main {
 
 
         System.out.println("Open your browser and navigate to http://localhost:8082/");
+<<<<<<< HEAD:BarnaBabok/src/main/java/hu/unideb/inf/Main.java
         System.out.println("jdbc:h2:file:~/BBDatabase");
         System.out.println("User Name: babok");
+=======
+        System.out.println("jdbc:h2:file:~/bbd");
+        System.out.println("User Name: user");
+>>>>>>> c8f865d964484e97083b3607f4faa8077bb9ceea:BarnaBabok/src/main/java/org/example/Application.java
         System.out.println("Password: ");
 
         MainApp.main(args);
