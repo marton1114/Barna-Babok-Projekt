@@ -6,7 +6,37 @@
   <component name="ChangeListManager">
     <list default="true" id="8fdd3bca-c912-4780-838a-d92724bcfec3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/BarnaBabok.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/BarnaBabok.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/model/HardDriveDiskDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/model/JpaHardDriveDiskDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/model/JpaMemoryDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/model/JpaMotherboardDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/model/JpaPowerSupplyDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/model/JpaProcessorDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/model/MemoryDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/model/MotherboardDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/model/PowerSupplyDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/model/ProcessorDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/control/Search/Search.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/Componens.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/HardDriveDisk.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/HardDriveDiskDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaHardDriveDiskDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaMemoryDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaMotherboardDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaPowerSupplyDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaProcessorDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/Memory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/MemoryDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/Motherboard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/MotherboardDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/PowerSupply.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/PowerSupplyDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/Processor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/ProcessorDAO.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +46,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -56,13 +87,26 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Application" />
       <module name="BarnaBabok" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="false" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hu.unideb.inf.Main" />
+      <module name="BarnaBabok" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hu.unideb.inf.control.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -72,6 +116,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Application" />
       </list>
     </recent_temporary>
