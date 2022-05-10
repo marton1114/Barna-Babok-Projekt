@@ -16,7 +16,11 @@ public class Main {
             /** Az adatbázis kezelése (elkülönítve) **/
             handleData(pDAO);
 
+<<<<<<< HEAD:BarnaBabok/src/main/java/hu/unideb/inf/Main.java
             /** Keresés érdekében listába teszem ezen komponenseket **/
+=======
+			/** Keresés érdekében listába teszem ezen komponenseket **/
+>>>>>>> a5b41e64c99d4ff3ab895d02defb49d386242c6b:BarnaBabok/src/main/java/org/example/Application.java
             List<Processor> CompList = pDAO.getProcessors("");
 
 
