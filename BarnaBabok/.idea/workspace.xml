@@ -4,7 +4,87 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50c7f91d-26ed-4d31-8a32-a008841098be" name="Changes" comment="" />
+    <list default="true" id="50c7f91d-26ed-4d31-8a32-a008841098be" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/jpa-buddy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_classmate_1_3_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_classmate_1_3_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__com_h2database_h2_1_4_199.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_h2database_h2_1_4_199.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_15.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_15.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_11.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_dom4j_dom4j_2_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_dom4j_dom4j_2_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_0_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_0_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_4_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_4_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_hibernate_hibernate_entitymanager_5_4_4_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_hibernate_hibernate_entitymanager_5_4_4_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_javassist_javassist_3_24_0_GA.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_javassist_javassist_3_24_0_GA.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_jboss_jandex_2_0_5_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_jboss_jandex_2_0_5_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_1_1_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_1_1_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/control/FXMLUISceneController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/model/Componens.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/model/HardDriveDisk.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/model/HardDriveDiskDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/model/JpaHardDriveDiskDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/model/JpaMemoryDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/model/JpaMotherboardDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/model/JpaPowerSupplyDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/model/JpaProcessorDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/model/Memory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/model/MemoryDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/model/Model.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/model/Motherboard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/model/MotherboardDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/model/PowerSupply.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/model/PowerSupplyDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/model/Processor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/model/ProcessorDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/model/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/view/FXMLMainMenuScene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/unideb/inf/view/FXMLSearchPageScene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/FMLUIScene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/FXMLMainMenuScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/FXMLMainMenuScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/FXMLSearchPageScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/FXMLSearchPageScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/FMLUIScene.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/FXMLMainMenuScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/FXMLMainMenuScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fxml/FXMLSearchPageScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/FXMLSearchPageScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hu/unideb/inf/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hu/unideb/inf/MainApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/control/FXMLUISceneController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/model/Componens.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/model/HardDriveDisk.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/model/HardDriveDiskDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/model/JpaHardDriveDiskDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/model/JpaMemoryDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/model/JpaMotherboardDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/model/JpaPowerSupplyDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/model/JpaProcessorDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/model/Memory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/model/MemoryDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/model/Model.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/model/Motherboard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/model/MotherboardDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/model/PowerSupply.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/model/PowerSupplyDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/model/Processor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/model/ProcessorDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hu/unideb/inf/model/Student.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
