@@ -40,7 +40,29 @@
       <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/ProcessorDAO.class" beforeDir="false" />
 =======
       <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/Application.java" afterDir="false" />
+<<<<<<< HEAD
 >>>>>>> a5b41e64c99d4ff3ab895d02defb49d386242c6b
+=======
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/control/Search/Search.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/control/Search/Search.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/Componens.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/HardDriveDisk.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/HardDriveDisk.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/HardDriveDiskDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/HardDriveDiskDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaHardDriveDiskDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaHardDriveDiskDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaMemoryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaMemoryDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaMotherboardDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaMotherboardDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaPowerSupplyDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaPowerSupplyDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaProcessorDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/JpaProcessorDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/Memory.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/Memory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/MemoryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/MemoryDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/Motherboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/Motherboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/MotherboardDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/MotherboardDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/PowerSupply.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/PowerSupply.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/PowerSupplyDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/PowerSupplyDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/Processor.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/Processor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/ProcessorDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/org/example/model/ProcessorDAO.class" afterDir="false" />
+>>>>>>> c8f865d964484e97083b3607f4faa8077bb9ceea
+>>>>>>> dev_marci
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +111,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/BarnaBabok/src/main/java/hu/unideb/inf/control/FXMLMainMenuSceneController.java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/BarnaBabok/src/main/java/hu/unideb/inf/control/FXMLMainMenuSceneController.java" />
   </component>
   <component name="RecentsManager">

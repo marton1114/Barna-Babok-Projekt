@@ -1,10 +1,13 @@
-package hu.unideb.inf.model;
+<<<<<<<< HEAD:BarnaBabok/src/main/java/hu/unideb/inf/model/components/JpaPowerSupplyDAO.java
+package hu.unideb.inf.model.components;
+========
+package org.example.model.components;
+>>>>>>>> c8f865d964484e97083b3607f4faa8077bb9ceea:BarnaBabok/src/main/java/org/example/model/components/JpaPowerSupplyDAO.java
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
-import java.util.ArrayList;
 import java.util.List;
 
 public class JpaPowerSupplyDAO implements PowerSupplyDAO{

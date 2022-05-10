@@ -1,21 +1,16 @@
-package hu.unideb.inf.model;
+package org.example.model.components;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
-public class Componens {
+public class PowerSupply {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected Integer id;
-    protected String brand;
-    protected String series;
-    protected String model;
-    protected double price;
 
     public Integer getId() {
         return id;
@@ -24,6 +19,12 @@ public class Componens {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    private String energyEfficiency;
+    protected String brand;
+    protected String series;
+    protected String model;
+    protected double price;
 
     public String getBrand() {
         return brand;
@@ -57,13 +58,22 @@ public class Componens {
         this.price = price;
     }
 
+    public String getEnergyEfficiency() {
+        return energyEfficiency;
+    }
+
+    public void setEnergyEfficiency(String energyEfficiency) {
+        this.energyEfficiency = energyEfficiency;
+    }
+
     @Override
     public String toString() {
-        return "Processor{" +
+        return "PowerSupply{" +
                 "id=" + id +
                 ", brand='" + brand + '\'' +
                 ", series='" + series + '\'' +
                 ", model='" + model + '\'' +
+                ", energyEfficiency='" + energyEfficiency + '\'' +
                 ", price=" + price +
                 '}';
     }
