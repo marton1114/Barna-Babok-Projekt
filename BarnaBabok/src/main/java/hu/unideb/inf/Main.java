@@ -1,8 +1,8 @@
 package hu.unideb.inf;
 
-import hu.unideb.inf.model.JpaProcessorDAO;
-import hu.unideb.inf.model.Processor;
-import hu.unideb.inf.model.ProcessorDAO;
+import hu.unideb.inf.model.components.JpaProcessorDAO;
+import hu.unideb.inf.model.components.Processor;
+import hu.unideb.inf.model.components.ProcessorDAO;
 import org.h2.tools.Server;
 
 import java.sql.SQLException;

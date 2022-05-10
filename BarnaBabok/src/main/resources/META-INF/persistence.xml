@@ -6,18 +6,18 @@
 
     <persistence-unit name="br.com.fredericci.pu">
         <description>Hibernate EntityManager Demo</description>
-        <class>org.example.model.Processor</class>
-        <class>org.example.model.Memory</class>
-        <class>org.example.model.Motherboard</class>
-        <class>org.example.model.PowerSupply</class>
-        <class>org.example.model.HardDriveDisk</class>
+        <class>hu.unideb.inf.model.components.Processor</class>
+        <class>hu.unideb.inf.model.components.Memory</class>
+        <class>hu.unideb.inf.model.components.Motherboard</class>
+        <class>hu.unideb.inf.model.components.PowerSupply</class>
+        <class>hu.unideb.inf.model.components.HardDriveDisk</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
             <property name="hibernate.hbm2ddl.auto" value="validate"/> <!--create-->
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:~/BBDatabase"/>
-            <property name="javax.persistence.jdbc.user" value="babok"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:file:~/test"/>
+            <property name="javax.persistence.jdbc.user" value="test"/>
             <property name="javax.persistence.jdbc.password" value=""/>
         </properties>
     </persistence-unit>
