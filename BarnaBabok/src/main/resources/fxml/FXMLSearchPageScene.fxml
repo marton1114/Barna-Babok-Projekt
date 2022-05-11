@@ -24,7 +24,7 @@
                <children>
                   <Label text="Search by Name">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font size="14.0" />
                      </font>
                      <VBox.margin>
                         <Insets top="40.0" />
@@ -92,28 +92,84 @@
               <tabs>
                 <Tab text="Összeállítás">
                      <content>
-                        <TableView fx:id="productTableView" prefHeight="600.0" prefWidth="750.0">
-                          <columns>
-                            <TableColumn fx:id="brandTableColumn" prefWidth="75.0" text="Brand" />
-                              <TableColumn fx:id="seriesTableColumn" prefWidth="75.0" text="Series" />
-                              <TableColumn fx:id="modelTableColumn" prefWidth="75.0" text="Model" />
-                              <TableColumn fx:id="priceTableColumn" prefWidth="75.0" text="Price" />
-                              <TableColumn fx:id="frequencyTableColumn" prefWidth="75.0" text="Frequency" />
-                              <TableColumn fx:id="numOfCoresTableColumn" prefWidth="75.0" text="Num. of cores" />
-                              <TableColumn fx:id="powerTableColumn" prefWidth="75.0" text="Power" />
-                              <TableColumn fx:id="capacityTableColumn" prefWidth="75.0" text="Capacity" />
-                              <TableColumn fx:id="energyEfficiencyTableColumn" prefWidth="75.0" text="Energy efficiency" />
-                              <TableColumn fx:id="socketTypeTableColumn" prefWidth="75.0" text="Socket type" />
-                              <TableColumn fx:id="integratedGPUTableColumn" prefWidth="75.0" text="Integrated GPU" />
-                              <TableColumn fx:id="speedTableColumn" prefWidth="75.0" text="Speed" />
-                              <TableColumn fx:id="formFactorTableColumn" prefWidth="75.0" text="FormFactor" />
-                              <TableColumn fx:id="numOfRAMSocketsTableColumn" prefWidth="75.0" text="Num. of RAM sockets" />
-                              <TableColumn fx:id="numOfModulesTableColumn" prefWidth="75.0" text="Num. of Modules" />
-                          </columns>
-                        </TableView>
+                        <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <TableView fx:id="productTableView" prefHeight="500.0" prefWidth="750.0">
+                                <columns>
+                                  <TableColumn fx:id="brandTableColumn" prefWidth="75.0" text="Brand" />
+                                    <TableColumn fx:id="seriesTableColumn" prefWidth="75.0" text="Series" />
+                                    <TableColumn fx:id="modelTableColumn" prefWidth="75.0" text="Model" />
+                                    <TableColumn fx:id="priceTableColumn" prefWidth="75.0" text="Price" />
+                                    <TableColumn fx:id="frequencyTableColumn" prefWidth="75.0" text="Frequency" />
+                                    <TableColumn fx:id="numOfCoresTableColumn" prefWidth="75.0" text="Num. of cores" />
+                                    <TableColumn fx:id="powerTableColumn" prefWidth="75.0" text="Power" />
+                                    <TableColumn fx:id="capacityTableColumn" prefWidth="75.0" text="Capacity" />
+                                    <TableColumn fx:id="energyEfficiencyTableColumn" prefWidth="75.0" text="Energy efficiency" />
+                                    <TableColumn fx:id="socketTypeTableColumn" prefWidth="75.0" text="Socket type" />
+                                    <TableColumn fx:id="integratedGPUTableColumn" prefWidth="75.0" text="Integrated GPU" />
+                                    <TableColumn fx:id="speedTableColumn" prefWidth="75.0" text="Speed" />
+                                    <TableColumn fx:id="formFactorTableColumn" prefWidth="75.0" text="FormFactor" />
+                                    <TableColumn fx:id="numOfRAMSocketsTableColumn" prefWidth="75.0" text="Num. of RAM sockets" />
+                                    <TableColumn fx:id="numOfModulesTableColumn" prefWidth="75.0" text="Num. of Modules" />
+                                </columns>
+                              </TableView>
+                              <Button mnemonicParsing="false" text="Komponens hozzáadása">
+                                 <VBox.margin>
+                                    <Insets right="20.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
                      </content>
                   </Tab>
-                <Tab text="Lementett konfigok" />
+                  <Tab text="Aktuális konfiguráció">
+                     <content>
+                        <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <TableView nodeOrientation="LEFT_TO_RIGHT" prefHeight="500.0" prefWidth="750.0">
+                                 <columns>
+                                    <TableColumn prefWidth="123.20001068115243" text="Konfiguráció neve" />
+                                    <TableColumn prefWidth="122.4001235961914" text="Processzor" />
+                                    <TableColumn prefWidth="110.39990234375" text="Alaplap" />
+                                    <TableColumn prefWidth="125.066650390625" text="Tápegység" />
+                                    <TableColumn prefWidth="96.00003051757812" text="Memória" />
+                                    <TableColumn prefWidth="109.59991455078125" text="HDD" />
+                                    <TableColumn prefWidth="65.066650390625" text="Ár" />
+                                 </columns>
+                              </TableView>
+                              <Button mnemonicParsing="false" text="Komponens törlése">
+                                 <VBox.margin>
+                                    <Insets right="20.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                <Tab text="Lementett konfigurációk">
+                     <content>
+                        <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <TableView nodeOrientation="LEFT_TO_RIGHT" prefHeight="500.0" prefWidth="750.0">
+                                 <columns>
+                                    <TableColumn prefWidth="123.20001068115243" text="Konfiguráció neve" />
+                                    <TableColumn prefWidth="122.4001235961914" text="Processzor" />
+                                    <TableColumn prefWidth="110.39990234375" text="Alaplap" />
+                                    <TableColumn prefWidth="125.066650390625" text="Tápegység" />
+                                    <TableColumn prefWidth="96.00003051757812" text="Memória" />
+                                    <TableColumn prefWidth="109.59991455078125" text="HDD" />
+                                    <TableColumn prefWidth="65.066650390625" text="Ár" />
+                                 </columns>
+                              </TableView>
+                              <Button mnemonicParsing="false" text="Konfiguráció törlése">
+                                 <VBox.margin>
+                                    <Insets right="20.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
               </tabs>
                <HBox.margin>
                   <Insets />
