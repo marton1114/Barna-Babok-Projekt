@@ -50,7 +50,7 @@
                   </ChoiceBox>
                   <Line endX="140.0" startX="-140.0">
                      <VBox.margin>
-                        <Insets bottom="365.0" top="10.0" />
+                        <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
                   </Line>
                   <Label text="Maximum ár">
