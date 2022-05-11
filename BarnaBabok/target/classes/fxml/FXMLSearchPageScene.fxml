@@ -22,7 +22,7 @@
          <children>
             <VBox prefHeight="600.0" prefWidth="330.0">
                <children>
-                  <Label text="Search by Name">
+                  <Label text="Keresés név alapján">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -50,7 +50,7 @@
                   </ChoiceBox>
                   <Line endX="140.0" startX="-140.0">
                      <VBox.margin>
-                        <Insets bottom="10.0" top="10.0" />
+                        <Insets bottom="365.0" top="10.0" />
                      </VBox.margin>
                   </Line>
                   <Label text="Maximum ár">
@@ -94,7 +94,7 @@
                      <content>
                         <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <TableView fx:id="productTableView" prefHeight="500.0" prefWidth="750.0">
+                              <TableView fx:id="productTableView" prefHeight="515.0" prefWidth="750.0">
                                 <columns>
                                   <TableColumn fx:id="brandTableColumn" prefWidth="75.0" text="Brand" />
                                     <TableColumn fx:id="seriesTableColumn" prefWidth="75.0" text="Series" />
@@ -126,7 +126,7 @@
                      <content>
                         <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <TableView nodeOrientation="LEFT_TO_RIGHT" prefHeight="500.0" prefWidth="750.0">
+                              <TableView nodeOrientation="LEFT_TO_RIGHT" prefHeight="515.0" prefWidth="750.0">
                                  <columns>
                                     <TableColumn prefWidth="123.20001068115243" text="Konfiguráció neve" />
                                     <TableColumn prefWidth="122.4001235961914" text="Processzor" />
@@ -150,7 +150,7 @@
                      <content>
                         <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <TableView nodeOrientation="LEFT_TO_RIGHT" prefHeight="500.0" prefWidth="750.0">
+                              <TableView nodeOrientation="LEFT_TO_RIGHT" prefHeight="515.0" prefWidth="750.0">
                                  <columns>
                                     <TableColumn prefWidth="123.20001068115243" text="Konfiguráció neve" />
                                     <TableColumn prefWidth="122.4001235961914" text="Processzor" />
