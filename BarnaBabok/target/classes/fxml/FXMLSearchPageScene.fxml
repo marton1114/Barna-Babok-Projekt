@@ -5,15 +5,17 @@
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1080.0" scaleShape="false" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.control.FXMLSearchPageSceneController">
@@ -29,11 +31,46 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                            <VBox.margin>
-                              <Insets top="5.0" />
+                              <Insets top="50.0" />
                            </VBox.margin>
                         </Label>
-                        <TextField prefHeight="26.0" prefWidth="100.0" promptText="Type a product name" />
-                        <ChoiceBox prefWidth="250.0" />
+                        <TextField fx:id="keywordTextField" prefHeight="26.0" prefWidth="100.0" promptText="Type a product name">
+                           <VBox.margin>
+                              <Insets left="40.0" right="40.0" />
+                           </VBox.margin></TextField>
+                        <Label layoutX="136.0" layoutY="87.0" text="Keresendő komponens">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <ChoiceBox fx:id="ComponentChoiceBox" prefWidth="250.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin></ChoiceBox>
+                        <Line endX="140.0" startX="-140.0">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Line>
+                        <Label text="Maximum ár">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <Slider majorTickUnit="50.0" max="1000.0" minorTickCount="10" prefHeight="14.0" prefWidth="125.0" showTickLabels="true" snapToTicks="true" value="900.0">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets left="40.0" right="40.0" />
+                           </VBox.margin>
+                        </Slider>
                         <ButtonBar prefHeight="40.0" prefWidth="200.0">
                           <buttons>
                             <Button mnemonicParsing="false" text="Refresh">
@@ -42,49 +79,46 @@
                                  </font>
                               </Button>
                           </buttons>
+                           <VBox.margin>
+                              <Insets left="40.0" right="40.0" />
+                           </VBox.margin>
                         </ButtonBar>
                      </children>
                   </VBox>
                   <VBox prefHeight="600.0" prefWidth="750.0">
                      <children>
-                        <MenuBar>
-                          <menus>
-                            <Menu mnemonicParsing="false" text="Lementett profilok">
-                              <items>
-                                <MenuItem mnemonicParsing="false" text="Close" />
-                              </items>
-                            </Menu>
-                            <Menu mnemonicParsing="false" text="Összehasonlítás">
-                              <items>
-                                <MenuItem mnemonicParsing="false" text="Delete" />
-                              </items>
-                            </Menu>
-                            <Menu mnemonicParsing="false" text="Help">
-                              <items>
-                                <MenuItem mnemonicParsing="false" text="About" />
-                              </items>
-                            </Menu>
-                          </menus>
-                        </MenuBar>
-                        <TableView prefHeight="600.0" prefWidth="750.0">
-                          <columns>
-                            <TableColumn prefWidth="75.0" text="Brand" />
-                              <TableColumn prefWidth="75.0" text="Series" />
-                              <TableColumn prefWidth="75.0" text="Model" />
-                              <TableColumn prefWidth="75.0" text="Price" />
-                              <TableColumn prefWidth="75.0" text="Frequency" />
-                              <TableColumn prefWidth="75.0" text="Num. of cores" />
-                              <TableColumn prefWidth="75.0" text="Power" />
-                              <TableColumn prefWidth="75.0" text="Capacity" />
-                              <TableColumn prefWidth="75.0" text="Energy efficiency" />
-                              <TableColumn prefWidth="75.0" text="Socket type" />
-                              <TableColumn prefWidth="75.0" text="Integrated GPU" />
-                              <TableColumn prefWidth="75.0" text="Speed" />
-                              <TableColumn prefWidth="75.0" text="FormFactor" />
-                              <TableColumn prefWidth="75.0" text="Num. of RAM sockets" />
-                              <TableColumn prefWidth="75.0" text="Num. of Modules" />
-                          </columns>
-                        </TableView>
+                        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Untitled Tab 1">
+                                 <content>
+                                    <TableView fx:id="productTableView" prefHeight="169.0" prefWidth="706.0">
+                                      <columns>
+                                        <TableColumn fx:id="brandTableColumn" prefWidth="75.0" text="Brand" />
+                                          <TableColumn fx:id="seriesTableColumn" prefWidth="75.0" text="Series" />
+                                          <TableColumn fx:id="modelTableColumn" prefWidth="75.0" text="Model" />
+                                          <TableColumn fx:id="priceTableColumn" prefWidth="75.0" text="Price" />
+                                          <TableColumn fx:id="frequencyTableColumn" prefWidth="75.0" text="Frequency" />
+                                          <TableColumn fx:id="numOfCoresTableColumn" prefWidth="75.0" text="Num. of cores" />
+                                          <TableColumn fx:id="powerTableColumn" prefWidth="75.0" text="Power" />
+                                          <TableColumn fx:id="capacityTableColumn" prefWidth="75.0" text="Capacity" />
+                                          <TableColumn fx:id="energyEfficiencyTableColumn" prefWidth="75.0" text="Energy efficiency" />
+                                          <TableColumn fx:id="socketTypeTableColumn" prefWidth="75.0" text="Socket type" />
+                                          <TableColumn fx:id="integratedGPUTableColumn" prefWidth="75.0" text="Integrated GPU" />
+                                          <TableColumn fx:id="speedTableColumn" prefWidth="75.0" text="Speed" />
+                                          <TableColumn fx:id="formFactorTableColumn" prefWidth="75.0" text="FormFactor" />
+                                          <TableColumn fx:id="numOfRAMSocketsTableColumn" prefWidth="75.0" text="Num. of RAM sockets" />
+                                          <TableColumn fx:id="numOfModulesTableColumn" prefWidth="75.0" text="Num. of Modules" />
+                                      </columns>
+                                    </TableView>
+                                 </content>
+                            </Tab>
+                            <Tab text="Untitled Tab 2">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
                      </children>
                   </VBox>
                </children>
