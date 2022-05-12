@@ -53,15 +53,24 @@
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
                   </Line>
-                  <Label text="Maximum ár">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </Label>
-                  <Slider majorTickUnit="50.0" max="1000.0" minorTickCount="10" prefHeight="14.0" prefWidth="100.0" showTickLabels="true" snapToTicks="true" value="900.0">
+                  <HBox prefHeight="20.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Maximum ár">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="MaxPriceLabel" layoutX="10.0" layoutY="10.0" text="900$">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="175.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Slider fx:id="MaxPriceSlider" majorTickUnit="50.0" max="1000.0" minorTickCount="10" onMouseMoved="#updateSlider" prefHeight="14.0" prefWidth="100.0" showTickLabels="true" snapToTicks="true" value="900.0">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -96,16 +105,16 @@
                            <children>
                               <TableView fx:id="productTableView" prefHeight="515.0" prefWidth="750.0">
                                 <columns>
-                                  <TableColumn fx:id="brandTableColumn" prefWidth="75.0" text="Brand" />
-                                    <TableColumn fx:id="seriesTableColumn" prefWidth="75.0" text="Series" />
-                                    <TableColumn fx:id="modelTableColumn" prefWidth="75.0" text="Model" />
-                                    <TableColumn fx:id="priceTableColumn" prefWidth="75.0" text="Price" />
-                                    <TableColumn fx:id="frequencyTableColumn" prefWidth="75.0" text="Frequency" />
-                                    <TableColumn fx:id="numOfCoresTableColumn" prefWidth="75.0" text="Num. of cores" />
-                                    <TableColumn fx:id="powerTableColumn" prefWidth="75.0" text="Power" />
-                                    <TableColumn fx:id="capacityTableColumn" prefWidth="75.0" text="Capacity" />
-                                    <TableColumn fx:id="energyEfficiencyTableColumn" prefWidth="75.0" text="Energy efficiency" />
-                                    <TableColumn fx:id="socketTypeTableColumn" prefWidth="75.0" text="Socket type" />
+                                  <TableColumn fx:id="brandTableColumn" prefWidth="145.59992063045502" text="Brand" />
+                                    <TableColumn fx:id="seriesTableColumn" prefWidth="92.26669311523438" text="Series" />
+                                    <TableColumn fx:id="modelTableColumn" prefWidth="77.86663818359375" text="Model" />
+                                    <TableColumn fx:id="priceTableColumn" prefWidth="64.00006103515625" text="Price" />
+                                    <TableColumn fx:id="frequencyTableColumn" prefWidth="35.199951171875" text="Frequency" />
+                                    <TableColumn fx:id="numOfCoresTableColumn" prefWidth="42.4000244140625" text="Num. of cores" />
+                                    <TableColumn fx:id="powerTableColumn" prefWidth="50.39996337890625" text="Power" />
+                                    <TableColumn fx:id="capacityTableColumn" prefWidth="66.13333129882812" text="Capacity" />
+                                    <TableColumn fx:id="energyEfficiencyTableColumn" prefWidth="81.06658935546875" text="Energy efficiency" />
+                                    <TableColumn fx:id="socketTypeTableColumn" prefWidth="111.73345947265625" text="Socket type" />
                                     <TableColumn fx:id="integratedGPUTableColumn" prefWidth="75.0" text="Integrated GPU" />
                                     <TableColumn fx:id="speedTableColumn" prefWidth="75.0" text="Speed" />
                                     <TableColumn fx:id="formFactorTableColumn" prefWidth="75.0" text="FormFactor" />
