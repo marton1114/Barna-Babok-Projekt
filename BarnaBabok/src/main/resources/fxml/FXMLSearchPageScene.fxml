@@ -60,12 +60,12 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="MaxPriceLabel" layoutX="10.0" layoutY="10.0" text="900.00$">
+                        <Label fx:id="MaxPriceLabel" layoutX="10.0" layoutY="10.0" text="900$">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <HBox.margin>
-                              <Insets left="150.0" />
+                              <Insets left="175.0" />
                            </HBox.margin>
                         </Label>
                      </children>
@@ -78,7 +78,7 @@
                         <Insets right="25.0" />
                      </VBox.margin>
                   </Slider>
-                <Button mnemonicParsing="false" onMouseClicked="#handleRefreshButtonClicked" text="Refresh">
+                <Button mnemonicParsing="false" text="Refresh">
                      <font>
                         <Font size="14.0" />
                      </font>

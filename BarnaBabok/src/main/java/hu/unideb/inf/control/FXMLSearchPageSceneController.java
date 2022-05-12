@@ -1,21 +1,17 @@
 package hu.unideb.inf.control;
 
-import hu.unideb.inf.Main;
-import hu.unideb.inf.model.components.JpaProcessorDAO;
 import hu.unideb.inf.model.components.Processor;
-import hu.unideb.inf.model.components.ProcessorDAO;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
+import javafx.scene.control.TableColumn;
 import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class FXMLSearchPageSceneController implements Initializable {
@@ -82,42 +78,6 @@ public class FXMLSearchPageSceneController implements Initializable {
             "Memory",
             "HardDriveDisk"
     };
-
-    @FXML
-    private TableView<Processor> productTableView;
-
-    /* A függvény feltölti elemekkel a kereső táblázatot */
-    @FXML
-    void handleRefreshButtonClicked(MouseEvent event) {
-        ObservableList<Processor> items = FXCollections.observableArrayList();
-
-        try (ProcessorDAO pDAO = new JpaProcessorDAO();) {
-            Main.handleData(pDAO);
-
-            List<Processor> compList = pDAO.getProcessors("");
-
-            for (var elem : compList) {
-                items.add(elem);
-            }
-
-            //productTableView.getItems().clear();
-            productTableView.setItems(items);
-
-            brandTableColumn.setCellValueFactory(new PropertyValueFactory<Processor, String>("brand"));
-            frequencyTableColumn.setCellValueFactory(new PropertyValueFactory<Processor, Double>("frequency"));
-            integratedGPUTableColumn.setCellValueFactory(new PropertyValueFactory<Processor, String>("integratedGPU"));
-            modelTableColumn.setCellValueFactory(new PropertyValueFactory<Processor, String>("model"));
-            numOfCoresTableColumn.setCellValueFactory(new PropertyValueFactory<Processor, Integer>("numOfCores"));
-            powerTableColumn.setCellValueFactory(new PropertyValueFactory<Processor, Integer>("power"));
-            priceTableColumn.setCellValueFactory(new PropertyValueFactory<Processor, Double>("price"));
-            seriesTableColumn.setCellValueFactory(new PropertyValueFactory<Processor, String>("series"));
-            socketTypeTableColumn.setCellValueFactory(new PropertyValueFactory<Processor, String>("socketType"));
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -215,7 +175,5 @@ public class FXMLSearchPageSceneController implements Initializable {
             socketTypeTableColumn.setVisible(false);
             speedTableColumn.setVisible(true);
         }
-
-
     }
 }
