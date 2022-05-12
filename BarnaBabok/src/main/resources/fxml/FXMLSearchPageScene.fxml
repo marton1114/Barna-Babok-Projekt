@@ -78,7 +78,7 @@
                         <Insets right="25.0" />
                      </VBox.margin>
                   </Slider>
-                <Button mnemonicParsing="false" text="Refresh">
+                <Button mnemonicParsing="false" onMouseClicked="#handleRefreshButtonClicked" text="Refresh">
                      <font>
                         <Font size="14.0" />
                      </font>

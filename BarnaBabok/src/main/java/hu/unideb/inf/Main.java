@@ -10,24 +10,24 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        startDatabase();
-
-        try (ProcessorDAO pDAO = new JpaProcessorDAO();) {
-            /** Az adatbázis kezelése (elkülönítve) **/
-            handleData(pDAO);
-
-            /** Keresés érdekében listába teszem ezen komponenseket **/
-            List<Processor> CompList = pDAO.getProcessors("");
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        startDatabase();
+//
+//        try (ProcessorDAO pDAO = new JpaProcessorDAO();) {
+//            /** Az adatbázis kezelése (elkülönítve) **/
+//            handleData(pDAO);
+//
+//            /** Keresés érdekében listába teszem ezen komponenseket **/
+//            List<Processor> CompList = pDAO.getProcessors("");
+//
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
 
         System.out.println("Open your browser and navigate to http://localhost:8082/");
-        System.out.println("jdbc:h2:file:~/BBDatabase");
-        System.out.println("User Name: babok");
+        System.out.println("jdbc:h2:file:~/test");
+        System.out.println("User Name: test");
         System.out.println("Password: ");
 
         MainApp.main(args);
