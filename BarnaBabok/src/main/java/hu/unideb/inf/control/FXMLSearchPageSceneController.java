@@ -86,6 +86,7 @@ public class FXMLSearchPageSceneController implements Initializable {
     @FXML
     private TableView<Processor> productTableView;
 
+    /* A függvény feltölti elemekkel a kereső táblázatot */
     @FXML
     void handleRefreshButtonClicked(MouseEvent event) {
         ObservableList<Processor> items = FXCollections.observableArrayList();
