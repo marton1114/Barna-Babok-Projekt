@@ -11,6 +11,7 @@
         <class>hu.unideb.inf.model.components.Motherboard</class>
         <class>hu.unideb.inf.model.components.PowerSupply</class>
         <class>hu.unideb.inf.model.components.HardDriveDisk</class>
+        <class>hu.unideb.inf.model.configs.Config</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
