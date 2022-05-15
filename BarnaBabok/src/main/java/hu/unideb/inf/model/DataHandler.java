@@ -36,7 +36,7 @@ public class DataHandler {
             pDAO.deleteProcessor(processor);
     }
 
-    public static void addMemoryFromCsv(MemoryDAO mDAO) {
+    public static void addMemoriesFromCsv(MemoryDAO mDAO) {
         List<String> lines = FileUtils.readLines("BarnaBabok/src/main/java/hu/unideb/inf/model/memories.csv");
 
         for (int i = 0; i < lines.size(); i++)
@@ -52,6 +52,7 @@ public class DataHandler {
             mem.setCapacity(Integer.parseInt(spec[3]));
             mem.setNumOfModules(Integer.parseInt(spec[4]));
             mem.setFrequency(Double.parseDouble(spec[5]));
+            mem.setPrice(Double.parseDouble(spec[6]));
 
             mDAO.saveMemory(mem);
         }
@@ -64,7 +65,7 @@ public class DataHandler {
             mDAO.deleteMemory(memory);
     }
 
-    public static void addMotherboardFromCsv(MotherboardDAO mDAO) {
+    public static void addMotherboardsFromCsv(MotherboardDAO mDAO) {
         List<String> lines = FileUtils.readLines("BarnaBabok/src/main/java/hu/unideb/inf/model/motherboards.csv");
 
         for (int i = 0; i < lines.size(); i++)
@@ -92,13 +93,60 @@ public class DataHandler {
         for (var motherboard : motherboards)
             mDAO.deleteMotherboard(motherboard);
     }
-//    public static void handleMotherboardData(MotherboardDAO mbDAO) {
-//
-//    }
-//    public static void handleHardDriveDiskData(HardDriveDiskDAO hddDAO) {
-//
-//    }
-//    public static void handlePowerSupplyData(PowerSupplyDAO psDAO) {
-//
-//    }
+
+    public static void addHardDriveDisksFromCsv(HardDriveDiskDAO hDAO) {
+        List<String> lines = FileUtils.readLines("BarnaBabok/src/main/java/hu/unideb/inf/model/harddrivedisks.csv");
+
+        for (int i = 0; i < lines.size(); i++)
+        {
+            String[] spec = lines.get(i).split(";");
+            System.out.println(lines.get(i));
+
+            HardDriveDisk h = new HardDriveDisk();
+
+            h.setBrand(spec[0]);
+            h.setSeries(spec[1]);
+            h.setModel(spec[2]);
+            h.setCapacity(Integer.parseInt(spec[3]));
+            h.setSpeed(Integer.parseInt(spec[4]));
+            h.setPrice(Double.parseDouble(spec[5]));
+
+            hDAO.saveHardDriveDisk(h);
+        }
+    }
+
+    public static void deleteHardDriveDisks(HardDriveDiskDAO hDAO) {
+        List<HardDriveDisk> hdds = hDAO.getHardDriveDisks("");
+
+        for (var hdd : hdds)
+            hDAO.deleteHardDriveDisk(hdd);
+    }
+
+    public static void addPowerSuppliesFromCsv(PowerSupplyDAO pDAO) {
+        List<String> lines = FileUtils.readLines("BarnaBabok/src/main/java/hu/unideb/inf/model/powersupplies.csv");
+
+        for (int i = 0; i < lines.size(); i++)
+        {
+            String[] spec = lines.get(i).split(";");
+            System.out.println(lines.get(i));
+
+            PowerSupply p = new PowerSupply();
+
+            p.setBrand(spec[0]);
+            p.setSeries(spec[1]);
+            p.setModel(spec[2]);
+            p.setPower(Integer.parseInt(spec[3]));
+            p.setEnergyEfficiency(spec[4]);
+            p.setPrice(Double.parseDouble(spec[5]));
+
+            pDAO.savePowerSupply(p);
+        }
+    }
+
+    public static void deletePowerSupplies(PowerSupplyDAO pDAO) {
+        List<PowerSupply> pss = pDAO.getPowerSupplies("");
+
+        for (var ps : pss)
+            pDAO.deletePowerSupply(ps);
+    }
 }

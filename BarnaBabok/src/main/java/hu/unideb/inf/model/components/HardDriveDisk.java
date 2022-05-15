@@ -20,11 +20,11 @@ public class HardDriveDisk {
         this.id = id;
     }
 
-    private int capacity;   // GB
-    private int speed;  // RPM
     protected String brand;
     protected String series;
     protected String model;
+    private int capacity;   // GB
+    private int speed;  // RPM
     protected double price;
 
     public String getBrand() {

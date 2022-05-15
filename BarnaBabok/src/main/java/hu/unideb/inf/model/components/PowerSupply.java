@@ -20,12 +20,20 @@ public class PowerSupply {
         this.id = id;
     }
 
-    private String energyEfficiency;
     protected String brand;
     protected String series;
     protected String model;
+    private int power;
+    private String energyEfficiency;
     protected double price;
 
+    public int getPower() {
+        return power;
+    }
+
+    public void setPower(int power) {
+        this.power = power;
+    }
     public String getBrand() {
         return brand;
     }
