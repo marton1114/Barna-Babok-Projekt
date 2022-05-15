@@ -180,7 +180,25 @@ public class FXMLSearchPageSceneController implements Initializable {
                 e.printStackTrace();
             }
         } else if (selectedComponent.equals(components[4])) {
+            try (HardDriveDiskDAO pDAO = new JpaHardDriveDiskDAO();) {
+                List<HardDriveDisk> compList = pDAO.getHardDriveDisks("");
 
+                for (var elem : compList) {
+                    items.add(elem);
+                }
+
+                productTableView.setItems(items);
+
+                brandTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("brand"));
+                capacityTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Integer>("capacity"));
+                modelTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("model"));
+                priceTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Double>("price"));
+                seriesTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("series"));
+                speedTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Integer>("speed"));
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
     }
