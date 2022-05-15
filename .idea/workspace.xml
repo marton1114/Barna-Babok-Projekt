@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BarnaBabok/BarnaBabok.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/BarnaBabok.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BarnaBabok/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/hu/unideb/inf/control/FilterTools/FilterConditionStringGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/src/main/java/hu/unideb/inf/control/FilterTools/FilterConditionStringGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/Application.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/model/HardDriveDiskDAO.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/org/example/model/JpaHardDriveDiskDAO.java" beforeDir="false" />
@@ -114,7 +115,7 @@
       <module name="BarnaBabok" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="hu.unideb.inf.control.*" />
+          <option name="PATTERN" value="hu.unideb.inf.control.FilterTools.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
