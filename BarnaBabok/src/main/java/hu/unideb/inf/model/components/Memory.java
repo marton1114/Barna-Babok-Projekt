@@ -25,7 +25,7 @@ public class Memory {
     protected String model;
     private int capacity;   // GB
     private int numOfModules;   // => ha capacity == 16 és numOfModules == 2, akkor 2x8GB
-    private int frequency;   // MHz
+    private double frequency;   // MHz
     protected double price;
 
     public String getBrand() {
@@ -76,7 +76,7 @@ public class Memory {
         this.numOfModules = numOfModules;
     }
 
-    public int getFrequency() {
+    public double getFrequency() {
         return frequency;
     }
 

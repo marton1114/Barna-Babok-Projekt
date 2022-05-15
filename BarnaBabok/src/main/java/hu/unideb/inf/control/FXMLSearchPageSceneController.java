@@ -2,9 +2,7 @@ package hu.unideb.inf.control;
 
 import hu.unideb.inf.Main;
 import hu.unideb.inf.model.DataHandler;
-import hu.unideb.inf.model.components.JpaProcessorDAO;
-import hu.unideb.inf.model.components.Processor;
-import hu.unideb.inf.model.components.ProcessorDAO;
+import hu.unideb.inf.model.components.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -28,49 +26,49 @@ public class FXMLSearchPageSceneController implements Initializable {
     private Label MaxPriceLabel;
 
     @FXML
-    private TableColumn<Processor, String> brandTableColumn;
+    private TableColumn<Object, String> brandTableColumn;
 
     @FXML
-    private TableColumn<Processor, Integer> capacityTableColumn;
+    private TableColumn<Object, Integer> capacityTableColumn;
 
     @FXML
-    private TableColumn<Processor, String> energyEfficiencyTableColumn;
+    private TableColumn<Object, String> energyEfficiencyTableColumn;
 
     @FXML
-    private TableColumn<Processor, String> formFactorTableColumn;
+    private TableColumn<Object, String> formFactorTableColumn;
 
     @FXML
-    private TableColumn<Processor, Double> frequencyTableColumn;
+    private TableColumn<Object, Double> frequencyTableColumn;
 
     @FXML
-    private TableColumn<Processor, String> integratedGPUTableColumn;
+    private TableColumn<Object, String> integratedGPUTableColumn;
 
     @FXML
-    private TableColumn<Processor, String> modelTableColumn;
+    private TableColumn<Object, String> modelTableColumn;
 
     @FXML
-    private TableColumn<Processor, Integer> numOfCoresTableColumn;
+    private TableColumn<Object, Integer> numOfCoresTableColumn;
 
     @FXML
-    private TableColumn<Processor, Integer> numOfModulesTableColumn;
+    private TableColumn<Object, Integer> numOfModulesTableColumn;
 
     @FXML
-    private TableColumn<Processor, Integer> numOfRAMSocketsTableColumn;
+    private TableColumn<Object, Integer> numOfRAMSocketsTableColumn;
 
     @FXML
-    private TableColumn<Processor, Integer> powerTableColumn;
+    private TableColumn<Object, Integer> powerTableColumn;
 
     @FXML
-    private TableColumn<Processor, Double> priceTableColumn;
+    private TableColumn<Object, Double> priceTableColumn;
 
     @FXML
-    private TableColumn<Processor, String> seriesTableColumn;
+    private TableColumn<Object, String> seriesTableColumn;
 
     @FXML
-    private TableColumn<Processor, String> socketTypeTableColumn;
+    private TableColumn<Object, String> socketTypeTableColumn;
 
     @FXML
-    private TableColumn<Processor, Integer> speedTableColumn;
+    private TableColumn<Object, Integer> speedTableColumn;
 
 
     @FXML
@@ -85,34 +83,104 @@ public class FXMLSearchPageSceneController implements Initializable {
     };
 
     @FXML
-    private TableView<Processor> productTableView;
+    private TableView<Object> productTableView;
 
     /* A függvény feltölti elemekkel a kereső táblázatot */
     @FXML
     void handleRefreshButtonClicked(MouseEvent event) {
-        ObservableList<Processor> items = FXCollections.observableArrayList();
+        String selectedComponent = ComponentChoiceBox.getValue();
+        ObservableList<Object> items = FXCollections.observableArrayList();
 
-        try (ProcessorDAO pDAO = new JpaProcessorDAO();) {
-            List<Processor> compList = pDAO.getProcessors("");
+        /*                           Processor     */
+        if (selectedComponent.equals(components[0])) {
+            try (ProcessorDAO pDAO = new JpaProcessorDAO();) {
+                List<Processor> compList = pDAO.getProcessors("");
 
-            for (var elem : compList) {
-                items.add(elem);
+                for (var elem : compList) {
+                    items.add(elem);
+                }
+
+                productTableView.setItems(items);
+
+                brandTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("brand"));
+                frequencyTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Double>("frequency"));
+                integratedGPUTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("integratedGPU"));
+                modelTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("model"));
+                numOfCoresTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Integer>("numOfCores"));
+                powerTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Integer>("power"));
+                priceTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Double>("price"));
+                seriesTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("series"));
+                socketTypeTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("socketType"));
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if (selectedComponent.equals(components[1])) {
+            try (PowerSupplyDAO pDAO = new JpaPowerSupplyDAO();) {
+                List<PowerSupply> compList = pDAO.getPowerSupplies("");
+
+                for (var elem : compList) {
+                    items.add(elem);
+                }
+
+                productTableView.setItems(items);
+
+                brandTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("brand"));
+                energyEfficiencyTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("energyEfficiency"));;
+                modelTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("model"));
+                priceTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Double>("price"));
+                seriesTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("series"));
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if (selectedComponent.equals(components[2])) {
+            try (MotherboardDAO pDAO = new JpaMotherboardDAO();) {
+                List<Motherboard> compList = pDAO.getMotherboards("");
+
+                for (var elem : compList) {
+                    items.add(elem);
+                }
+
+                productTableView.setItems(items);
+
+                brandTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("brand"));
+                seriesTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("series"));
+                modelTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("model"));
+                formFactorTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("FormFactor"));
+                numOfRAMSocketsTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Integer>("numOfRAMSockets"));
+                priceTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Double>("price"));
+                socketTypeTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("socketType"));
+
+            } catch (Exception e) {
+                e.printStackTrace();
             }
 
-            productTableView.setItems(items);
 
-            brandTableColumn.setCellValueFactory(new PropertyValueFactory<Processor, String>("brand"));
-            frequencyTableColumn.setCellValueFactory(new PropertyValueFactory<Processor, Double>("frequency"));
-            integratedGPUTableColumn.setCellValueFactory(new PropertyValueFactory<Processor, String>("integratedGPU"));
-            modelTableColumn.setCellValueFactory(new PropertyValueFactory<Processor, String>("model"));
-            numOfCoresTableColumn.setCellValueFactory(new PropertyValueFactory<Processor, Integer>("numOfCores"));
-            powerTableColumn.setCellValueFactory(new PropertyValueFactory<Processor, Integer>("power"));
-            priceTableColumn.setCellValueFactory(new PropertyValueFactory<Processor, Double>("price"));
-            seriesTableColumn.setCellValueFactory(new PropertyValueFactory<Processor, String>("series"));
-            socketTypeTableColumn.setCellValueFactory(new PropertyValueFactory<Processor, String>("socketType"));
+        } else if (selectedComponent.equals(components[3])) {
+            try (MemoryDAO pDAO = new JpaMemoryDAO();) {
+                List<Memory> compList = pDAO.getMemories("");
 
-        } catch (Exception e) {
-            e.printStackTrace();
+                for (var elem : compList) {
+                    items.add(elem);
+                }
+
+                productTableView.setItems(items);
+
+                brandTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("brand"));
+                capacityTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Integer>("capacity"));
+                frequencyTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Double>("frequency"));
+                modelTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("model"));
+                numOfModulesTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Integer>("numOfModules"));
+                numOfRAMSocketsTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Integer>("numOfModules"));
+                priceTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Double>("price"));
+                seriesTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("series"));
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if (selectedComponent.equals(components[4])) {
+
         }
 
     }
@@ -132,7 +200,9 @@ public class FXMLSearchPageSceneController implements Initializable {
     public void updateColumns(ActionEvent event) {
         String selectedComponent = ComponentChoiceBox.getValue();
 
-        if (selectedComponent.equals("Processor")) {
+        productTableView.getItems().clear();    // más elem kiválasztásakor resetelődjön a tábla
+
+        if (selectedComponent.equals(components[0])) {
             brandTableColumn.setVisible(true);
             capacityTableColumn.setVisible(false);
             energyEfficiencyTableColumn.setVisible(false);
@@ -148,7 +218,7 @@ public class FXMLSearchPageSceneController implements Initializable {
             seriesTableColumn.setVisible(true);
             socketTypeTableColumn.setVisible(true);
             speedTableColumn.setVisible(false);
-        } else if (selectedComponent.equals("PowerSupply")) {
+        } else if (selectedComponent.equals(components[1])) {
             brandTableColumn.setVisible(true);
             capacityTableColumn.setVisible(false);
             energyEfficiencyTableColumn.setVisible(true);
@@ -164,7 +234,7 @@ public class FXMLSearchPageSceneController implements Initializable {
             seriesTableColumn.setVisible(true);
             socketTypeTableColumn.setVisible(false);
             speedTableColumn.setVisible(false);
-        } else if (selectedComponent.equals("Motherboard")) {
+        } else if (selectedComponent.equals(components[2])) {
             brandTableColumn.setVisible(true);
             capacityTableColumn.setVisible(false);
             energyEfficiencyTableColumn.setVisible(false);
@@ -180,7 +250,7 @@ public class FXMLSearchPageSceneController implements Initializable {
             seriesTableColumn.setVisible(true);
             socketTypeTableColumn.setVisible(true);
             speedTableColumn.setVisible(false);
-        } else if (selectedComponent.equals("Memory")) {
+        } else if (selectedComponent.equals(components[3])) {
             brandTableColumn.setVisible(true);
             capacityTableColumn.setVisible(true);
             energyEfficiencyTableColumn.setVisible(false);
@@ -196,7 +266,7 @@ public class FXMLSearchPageSceneController implements Initializable {
             seriesTableColumn.setVisible(true);
             socketTypeTableColumn.setVisible(false);
             speedTableColumn.setVisible(false);
-        } else if (selectedComponent.equals("HardDriveDisk")) {
+        } else if (selectedComponent.equals(components[4])) {
             brandTableColumn.setVisible(true);
             capacityTableColumn.setVisible(true);
             energyEfficiencyTableColumn.setVisible(false);
@@ -213,7 +283,5 @@ public class FXMLSearchPageSceneController implements Initializable {
             socketTypeTableColumn.setVisible(false);
             speedTableColumn.setVisible(true);
         }
-
-
     }
 }
