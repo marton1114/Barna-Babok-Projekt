@@ -30,9 +30,9 @@ public class JpaHardDriveDiskDAO implements HardDriveDiskDAO{
     }
 
     @Override
-    public List<HardDriveDisk> getHardDriveDisks() {
+    public List<HardDriveDisk> getHardDriveDisks(String conditions) {
         TypedQuery<HardDriveDisk> query = entityManager.createQuery(
-                "SELECT a FROM HardDriveDisk a", HardDriveDisk.class);
+                "SELECT a FROM HardDriveDisk a" + conditions, HardDriveDisk.class);
 
         List<HardDriveDisk> hardDriveDisks = query.getResultList();
 

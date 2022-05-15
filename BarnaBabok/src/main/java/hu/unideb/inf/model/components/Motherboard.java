@@ -20,12 +20,12 @@ public class Motherboard {
         this.id = id;
     }
 
-    private String socketType;  // ez lesz kapcsolatban a processzorral
-    private String FormFactor;
-    private int numOfRamSockets;
     protected String brand;
     protected String series;
     protected String model;
+    private String socketType;  // ez lesz kapcsolatban a processzorral
+    private String FormFactor;
+    private int numOfRamSockets;
     protected double price;
 
     public String getBrand() {

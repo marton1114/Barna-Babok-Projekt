@@ -1,6 +1,7 @@
 package hu.unideb.inf.control;
 
 import hu.unideb.inf.Main;
+import hu.unideb.inf.model.DataHandler;
 import hu.unideb.inf.model.components.JpaProcessorDAO;
 import hu.unideb.inf.model.components.Processor;
 import hu.unideb.inf.model.components.ProcessorDAO;
@@ -92,7 +93,8 @@ public class FXMLSearchPageSceneController implements Initializable {
         ObservableList<Processor> items = FXCollections.observableArrayList();
 
         try (ProcessorDAO pDAO = new JpaProcessorDAO();) {
-            Main.handleData(pDAO);
+            DataHandler.deleteProcessors(pDAO);
+            DataHandler.addProcessorsFromCsv(pDAO);
 
             List<Processor> compList = pDAO.getProcessors("");
 
@@ -100,7 +102,6 @@ public class FXMLSearchPageSceneController implements Initializable {
                 items.add(elem);
             }
 
-            //productTableView.getItems().clear();
             productTableView.setItems(items);
 
             brandTableColumn.setCellValueFactory(new PropertyValueFactory<Processor, String>("brand"));

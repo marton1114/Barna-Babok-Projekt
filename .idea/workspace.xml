@@ -90,6 +90,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Marci\Documents\Tanulmanyok\4_felev\SFM sandbox\Barna-Babok-Projekt\BarnaBabok\src\main\java\hu\unideb\inf\model" />
+      <recent name="C:\Users\Marci\Documents\Tanulmanyok\4_felev\SFM sandbox\Barna-Babok-Projekt\BarnaBabok\src" />
       <recent name="C:\Users\Marci\Documents\Tanulmanyok\4_felev\SFM sandbox\Barna-Babok-Projekt\BarnaBabok\src\main\resources\fxml" />
     </key>
   </component>
@@ -148,5 +150,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/BarnaBabok/src/main/java/hu/unideb/inf/model/DataHandler.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

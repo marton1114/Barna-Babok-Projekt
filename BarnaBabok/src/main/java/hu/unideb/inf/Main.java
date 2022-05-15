@@ -10,8 +10,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-//        startDatabase();
-//
+        startDatabase();
+
 //        try (ProcessorDAO pDAO = new JpaProcessorDAO();) {
 //            /** Az adatbázis kezelése (elkülönítve) **/
 //            handleData(pDAO);

@@ -30,9 +30,9 @@ public class JpaPowerSupplyDAO implements PowerSupplyDAO{
     }
 
     @Override
-    public List<PowerSupply> getPowerSupplies() {
+    public List<PowerSupply> getPowerSupplies(String conditions) {
         TypedQuery<PowerSupply> query = entityManager.createQuery(
-                "SELECT a FROM PowerSupply a", PowerSupply.class);
+                "SELECT a FROM PowerSupply a" + conditions, PowerSupply.class);
 
         List<PowerSupply> PowerSupplies = query.getResultList();
 

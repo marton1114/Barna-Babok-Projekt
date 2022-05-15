@@ -30,9 +30,9 @@ public class JpaMemoryDAO implements MemoryDAO{
     }
 
     @Override
-    public List<Memory> getMemories() {
+    public List<Memory> getMemories(String conditions) {
         TypedQuery<Memory> query = entityManager.createQuery(
-                "SELECT a FROM Memory a", Memory.class);
+                "SELECT a FROM Memory a" + conditions, Memory.class);
 
         List<Memory> memories = query.getResultList();
 
