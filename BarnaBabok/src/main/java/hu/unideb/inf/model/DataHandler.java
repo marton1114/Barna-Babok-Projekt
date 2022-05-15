@@ -11,7 +11,7 @@ public class DataHandler {
         for (int i = 0; i < lines.size(); i++)
         {
             String[] spec = lines.get(i).split(";");
-            System.out.println(lines.get(i));
+//            System.out.println(lines.get(i));
 
             Processor proc = new Processor();
 
@@ -42,7 +42,7 @@ public class DataHandler {
         for (int i = 0; i < lines.size(); i++)
         {
             String[] spec = lines.get(i).split(";");
-            System.out.println(lines.get(i));
+            //System.out.println(lines.get(i));
 
             Memory mem = new Memory();
 
@@ -51,7 +51,7 @@ public class DataHandler {
             mem.setModel(spec[2]);
             mem.setCapacity(Integer.parseInt(spec[3]));
             mem.setNumOfModules(Integer.parseInt(spec[4]));
-            mem.setFrequency(Double.parseDouble(spec[5]));
+            mem.setFrequency(Integer.parseInt(spec[5]));
             mem.setPrice(Double.parseDouble(spec[6]));
 
             mDAO.saveMemory(mem);

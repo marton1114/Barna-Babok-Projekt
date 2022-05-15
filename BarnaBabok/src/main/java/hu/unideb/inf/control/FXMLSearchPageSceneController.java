@@ -93,9 +93,6 @@ public class FXMLSearchPageSceneController implements Initializable {
         ObservableList<Processor> items = FXCollections.observableArrayList();
 
         try (ProcessorDAO pDAO = new JpaProcessorDAO();) {
-            DataHandler.deleteProcessors(pDAO);
-            DataHandler.addProcessorsFromCsv(pDAO);
-
             List<Processor> compList = pDAO.getProcessors("");
 
             for (var elem : compList) {

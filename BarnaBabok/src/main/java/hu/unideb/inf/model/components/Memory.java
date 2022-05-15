@@ -20,12 +20,12 @@ public class Memory {
         this.id = id;
     }
 
-    private int capacity;   // GB
-    private int numOfModules;   // => ha capacity == 16 és numOfModules == 2, akkor 2x8GB
-    private double frequency;   // MHz
     protected String brand;
     protected String series;
     protected String model;
+    private int capacity;   // GB
+    private int numOfModules;   // => ha capacity == 16 és numOfModules == 2, akkor 2x8GB
+    private int frequency;   // MHz
     protected double price;
 
     public String getBrand() {
@@ -76,11 +76,11 @@ public class Memory {
         this.numOfModules = numOfModules;
     }
 
-    public double getFrequency() {
+    public int getFrequency() {
         return frequency;
     }
 
-    public void setFrequency(double frequency) {
+    public void setFrequency(int frequency) {
         this.frequency = frequency;
     }
 
