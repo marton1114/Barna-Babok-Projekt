@@ -6,6 +6,10 @@ import hu.unideb.inf.model.components.*;
 import hu.unideb.inf.model.configs.ActualConfig;
 import hu.unideb.inf.model.configs.ActualConfigDAO;
 import hu.unideb.inf.model.configs.JPAActualConfigDAO;
+import javafx.beans.property.*;
+import javafx.beans.value.ObservableListValue;
+import javafx.beans.value.ObservableValue;
+import javafx.beans.value.ObservableValueBase;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,12 +20,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
-import java.security.SecureRandom;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class FXMLSearchPageSceneController implements Initializable {
-    class PCComponentWrapper {
+    static class PCComponentWrapper {
         private Processor processor;
         private PowerSupply powerSupply;
         private Motherboard motherboard;
@@ -48,143 +51,213 @@ public class FXMLSearchPageSceneController implements Initializable {
             this.processor = processor;
         }
 
-        public String getProcessorBrand() {
-            return processor.getBrand();
+        public StringProperty getProcessorBrand() {
+            return new SimpleStringProperty(processor.getBrand());
         }
 
-        public double getProcessorFrequency() {
-            return processor.getFrequency();
+        public ObservableValue<Double> getProcessorFrequency() {
+            return new ObservableValueBase<Double>() {
+                @Override
+                public Double getValue() {
+                    return processor.getFrequency();
+                }
+            };
         }
 
-        public String getProcessorIntegratedGPU() {
-            return processor.getIntegratedGPU();
+        public StringProperty getProcessorIntegratedGPU() {
+            return new SimpleStringProperty(processor.getIntegratedGPU());
         }
 
-        public String getProcessorModel() {
-            return processor.getModel();
+        public StringProperty getProcessorModel() {
+            return new SimpleStringProperty(processor.getModel());
         }
 
-        public int getProcessorNumOfCores() {
-            return processor.getNumOfCores();
+        public ObservableValue<Integer> getProcessorNumOfCores() {
+            return new ObservableValueBase<Integer>() {
+                @Override
+                public Integer getValue() {
+                    return processor.getNumOfCores();
+                }
+            };
         }
 
-        public int getProcessorPower() {
-            return processor.getPower();
+        public ObservableValue<Integer> getProcessorPower() {
+            return new ObservableValueBase<Integer>() {
+                @Override
+                public Integer getValue() {
+                    return processor.getPower();
+                }
+            };
         }
 
-        public double getProcessorPrice() {
-            return processor.getPrice();
+        public ObservableValue<Double> getProcessorPrice() {
+            return new ObservableValueBase<Double>() {
+                @Override
+                public Double getValue() {
+                    return processor.getPrice();
+                }
+            };
         }
 
-        public  String getProcessorSeries() {
-            return processor.getSeries();
+        public StringProperty getProcessorSeries() {
+            return new SimpleStringProperty(processor.getSeries());
         }
 
-        public String getProcessorSocketType() {
-            return processor.getSocketType();
+        public StringProperty getProcessorSocketType() {
+            return new SimpleStringProperty(processor.getSocketType());
         }
 
-        public String getPowerSupplyBrand() {
-            return powerSupply.getBrand();
+        public StringProperty getPowerSupplyBrand() {
+            return new SimpleStringProperty(powerSupply.getBrand());
         }
 
-        public String getPowerSupplyEnergyEfficiency() {
-            return powerSupply.getEnergyEfficiency();
+        public StringProperty getPowerSupplyEnergyEfficiency() {
+            return new SimpleStringProperty(powerSupply.getEnergyEfficiency());
         }
 
-        public String getPowerSupplyModel() {
-            return powerSupply.getModel();
+        public StringProperty getPowerSupplyModel() {
+            return new SimpleStringProperty(powerSupply.getModel());
         }
 
-        public double getPowerSupplyPrice() {
-            return powerSupply.getPrice();
+        public ObservableValue<Double> getPowerSupplyPrice() {
+            return new ObservableValueBase<Double>() {
+                @Override
+                public Double getValue() {
+                    return powerSupply.getPrice();
+                }
+            };
         }
 
-        public String getPowerSupplySeries() {
-            return powerSupply.getSeries();
+        public StringProperty getPowerSupplySeries() {
+            return new SimpleStringProperty(powerSupply.getSeries());
         }
 
-        public String getMotherboardBrand() {
-            return motherboard.getBrand();
+        public StringProperty getMotherboardBrand() {
+            return new SimpleStringProperty(motherboard.getBrand());
         }
 
-        public String getMotherboardSeries() {
-            return motherboard.getSeries();
+        public StringProperty getMotherboardSeries() {
+            return new SimpleStringProperty(motherboard.getSeries());
         }
 
-        public String getMotherboardModel() {
-            return motherboard.getModel();
+        public StringProperty getMotherboardModel() {
+            return new SimpleStringProperty(motherboard.getModel());
         }
 
-        public String getMotherboardFormFactor() {
-            return motherboard.getFormFactor();
+        public StringProperty getMotherboardFormFactor() {
+            return new SimpleStringProperty(motherboard.getFormFactor());
         }
 
-        public int getMotherboardNumOfRAMSockets() {
-            return motherboard.getNumOfRamSockets();
+        public ObservableValue<Integer> getMotherboardNumOfRAMSockets() {
+            return new ObservableValueBase<Integer>() {
+                @Override
+                public Integer getValue() {
+                    return motherboard.getNumOfRamSockets();
+                }
+            };
         }
 
-        public double getMotherboardPrice() {
-            return motherboard.getPrice();
+        public ObservableValue<Double> getMotherboardPrice() {
+            return new ObservableValueBase<Double>() {
+                @Override
+                public Double getValue() {
+                    return motherboard.getPrice();
+                }
+            };
         }
 
-        public String getMotherboardSocketType() {
-            return motherboard.getSocketType();
+        public StringProperty getMotherboardSocketType() {
+            return new SimpleStringProperty(motherboard.getSocketType());
         }
 
-        public String getMemoryBrand() {
-            return memory.getBrand();
+        public StringProperty getMemoryBrand() {
+            return new SimpleStringProperty(memory.getBrand());
         }
 
-        public int getMemoryCapacity() {
-            return memory.getCapacity();
+        public ObservableValue<Integer> getMemoryCapacity() {
+            return new ObservableValueBase<Integer>() {
+                @Override
+                public Integer getValue() {
+                    return memory.getCapacity();
+                }
+            };
         }
 
-        public double getMemoryFrequency() {
-            return memory.getFrequency();
+        public ObservableValue<Double> getMemoryFrequency() {
+            return new ObservableValueBase<Double>() {
+                @Override
+                public Double getValue() {
+                    return memory.getFrequency();
+                }
+            };
         }
 
-        public String getMemoryModel() {
-            return memory.getModel();
+        public StringProperty getMemoryModel() {
+            return new SimpleStringProperty(memory.getModel());
         }
 
-        public int getMemoryNumOfModules() {
-            return memory.getNumOfModules();
+        public ObservableValue<Integer> getMemoryNumOfModules() {
+            return new ObservableValueBase<Integer>() {
+                @Override
+                public Integer getValue() {
+                    return memory.getNumOfModules();
+                }
+            };
         }
 
-        public double getMemoryPrice() {
-            return memory.getPrice();
+        public ObservableValue<Double> getMemoryPrice() {
+            return new ObservableValueBase<Double>() {
+                @Override
+                public Double getValue() {
+                    return memory.getPrice();
+                }
+            };
         }
 
-        public String getMemorySeries() {
-            return memory.getSeries();
+        public StringProperty getMemorySeries() {
+            return new SimpleStringProperty(memory.getSeries());
         }
 
-        public String getHardDriveDiskBrand() {
-            return hardDriveDisk.getBrand();
+        public StringProperty getHardDriveDiskBrand() {
+            return new SimpleStringProperty(hardDriveDisk.getBrand());
         }
 
-        public int getHardDriveDiskCapacity() {
-            return hardDriveDisk.getCapacity();
+        public ObservableValue<Integer> getHardDriveDiskCapacity() {
+            return new ObservableValueBase<Integer>() {
+                @Override
+                public Integer getValue() {
+                    return hardDriveDisk.getCapacity();
+                }
+            };
         }
 
-        public String getHardDriveDiskModel() {
-            return hardDriveDisk.getModel();
+        public StringProperty getHardDriveDiskModel() {
+            return new SimpleStringProperty(hardDriveDisk.getModel());
         }
 
-        public double getHardDriveDiskPrice() {
-            return hardDriveDisk.getPrice();
+        public ObservableValue<Double> getHardDriveDiskPrice() {
+            return new ObservableValueBase<Double>() {
+                @Override
+                public Double getValue() {
+                    return hardDriveDisk.getPrice();
+                }
+            };
         }
 
-        public String getHardDriveDiskSeries() {
-            return  hardDriveDisk.getSeries();
+        public StringProperty getHardDriveDiskSeries() {
+            return new SimpleStringProperty(hardDriveDisk.getSeries());
         }
 
-        public int getHardDriveDiskSpeed() {
-            return  hardDriveDisk.getSpeed();
+        public ObservableValue<Integer> getHardDriveDiskSpeed() {
+            return new ObservableValueBase<Integer>() {
+                @Override
+                public Integer getValue() {
+                    return hardDriveDisk.getSpeed();
+                }
+            };
         }
     }
-    
+
     /****************Actual Config Table******************************/
     @FXML
     private TableColumn<ActualConfig, String> ActualConfigHardDriveDiskTableColumn;
@@ -220,55 +293,55 @@ public class FXMLSearchPageSceneController implements Initializable {
     private Label MaxPriceLabel;
 
     @FXML
-    private TableColumn<Object, String> brandTableColumn;
+    private TableColumn<PCComponentWrapper, String> brandTableColumn;
 
     @FXML
-    private TableColumn<Object, Integer> capacityTableColumn;
+    private TableColumn<PCComponentWrapper, Integer> capacityTableColumn;
 
     @FXML
-    private TableColumn<Object, String> energyEfficiencyTableColumn;
+    private TableColumn<PCComponentWrapper, String> energyEfficiencyTableColumn;
 
     @FXML
-    private TableColumn<Object, String> formFactorTableColumn;
+    private TableColumn<PCComponentWrapper, String> formFactorTableColumn;
 
     @FXML
-    private TableColumn<Object, Double> frequencyTableColumn;
+    private TableColumn<PCComponentWrapper, Double> frequencyTableColumn;
 
     @FXML
-    private TableColumn<Object, String> integratedGPUTableColumn;
+    private TableColumn<PCComponentWrapper, String> integratedGPUTableColumn;
 
     @FXML
-    private TableColumn<Object, String> modelTableColumn;
+    private TableColumn<PCComponentWrapper, String> modelTableColumn;
 
     @FXML
-    private TableColumn<Object, Integer> numOfCoresTableColumn;
+    private TableColumn<PCComponentWrapper, Integer> numOfCoresTableColumn;
 
     @FXML
-    private TableColumn<Object, Integer> numOfModulesTableColumn;
+    private TableColumn<PCComponentWrapper, Integer> numOfModulesTableColumn;
 
     @FXML
-    private TableColumn<Object, Integer> numOfRAMSocketsTableColumn;
+    private TableColumn<PCComponentWrapper, Integer> numOfRAMSocketsTableColumn;
 
     @FXML
-    private TableColumn<Object, Integer> powerTableColumn;
+    private TableColumn<PCComponentWrapper, Integer> powerTableColumn;
 
     @FXML
-    private TableColumn<Object, Double> priceTableColumn;
+    private TableColumn<PCComponentWrapper, Double> priceTableColumn;
 
     @FXML
-    private TableColumn<Object, String> seriesTableColumn;
+    private TableColumn<PCComponentWrapper, String> seriesTableColumn;
 
     @FXML
-    private TableColumn<Object, String> socketTypeTableColumn;
+    private TableColumn<PCComponentWrapper, String> socketTypeTableColumn;
 
     @FXML
-    private TableColumn<Object, Integer> speedTableColumn;
+    private TableColumn<PCComponentWrapper, Integer> speedTableColumn;
 
     @FXML
     private ChoiceBox<String> ComponentChoiceBox;
 
     @FXML
-    private TableView<Object> productTableView;
+    private TableView<PCComponentWrapper> productTableView;
 
     private String[] components = {
             "Processor",
@@ -282,7 +355,7 @@ public class FXMLSearchPageSceneController implements Initializable {
     void handleAddButtonClicked(MouseEvent event) {
         String selectedComponent = ComponentChoiceBox.getValue();
 
-        ObservableList<Object> items = FXCollections.observableArrayList();
+        ObservableList<PCComponentWrapper> items = FXCollections.observableArrayList();
 
         if (selectedComponent.equals(components[0])) {
             try (ActualConfigDAO acDAO = new JPAActualConfigDAO()) {
@@ -304,31 +377,30 @@ public class FXMLSearchPageSceneController implements Initializable {
     void handleRefreshButtonClicked(MouseEvent event) {
         String selectedComponent = ComponentChoiceBox.getValue();
 
-        ObservableList<Object> items = FXCollections.observableArrayList();
+        ObservableList<PCComponentWrapper> items = FXCollections.observableArrayList();
 
         if (selectedComponent.equals(components[0])) {
             try (ProcessorDAO pDAO = new JpaProcessorDAO();) {
-
                 String conditions = FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
                 List<Processor> compList = pDAO.getProcessors(conditions);
 
                 for (var elem : compList) {
                     String bsm = elem.getBrand() + elem.getSeries() + elem.getModel();
                     if (Search.contains(bsm, keywordTextField.getText()))
-                        items.add(elem);
+                        items.add(new PCComponentWrapper(elem));
                 }
 
                 productTableView.setItems(items);
 
-                brandTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("brand"));
-                frequencyTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Double>("frequency"));
-                integratedGPUTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("integratedGPU"));
-                modelTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("model"));
-                numOfCoresTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Integer>("numOfCores"));
-                powerTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Integer>("power"));
-                priceTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Double>("price"));
-                seriesTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("series"));
-                socketTypeTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("socketType"));
+                brandTableColumn.setCellValueFactory(e -> e.getValue().getProcessorBrand());
+                frequencyTableColumn.setCellValueFactory(e -> e.getValue().getProcessorFrequency());
+                integratedGPUTableColumn.setCellValueFactory(e -> e.getValue().getProcessorIntegratedGPU());
+                modelTableColumn.setCellValueFactory(e -> e.getValue().getProcessorModel());
+                numOfCoresTableColumn.setCellValueFactory(e -> e.getValue().getProcessorNumOfCores());
+                powerTableColumn.setCellValueFactory(e -> e.getValue().getProcessorPower());
+                priceTableColumn.setCellValueFactory(e -> e.getValue().getProcessorPrice());
+                seriesTableColumn.setCellValueFactory(e -> e.getValue().getProcessorSeries());
+                socketTypeTableColumn.setCellValueFactory(e -> e.getValue().getProcessorSocketType());
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -341,16 +413,16 @@ public class FXMLSearchPageSceneController implements Initializable {
                 for (var elem : compList) {
                     String bsm = elem.getBrand() + elem.getSeries() + elem.getModel();
                     if (Search.contains(bsm, keywordTextField.getText()))
-                        items.add(elem);
+                        items.add(new PCComponentWrapper(elem));
                 }
 
                 productTableView.setItems(items);
 
-                brandTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("brand"));
-                energyEfficiencyTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("energyEfficiency"));;
-                modelTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("model"));
-                priceTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Double>("price"));
-                seriesTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("series"));
+                brandTableColumn.setCellValueFactory(e -> e.getValue().getPowerSupplyBrand());
+                energyEfficiencyTableColumn.setCellValueFactory(e -> e.getValue().getPowerSupplyEnergyEfficiency());
+                modelTableColumn.setCellValueFactory(e -> e.getValue().getPowerSupplyModel());
+                priceTableColumn.setCellValueFactory(e -> e.getValue().getPowerSupplyPrice());
+                seriesTableColumn.setCellValueFactory(e -> e.getValue().getPowerSupplySeries());
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -363,18 +435,18 @@ public class FXMLSearchPageSceneController implements Initializable {
                 for (var elem : compList) {
                     String bsm = elem.getBrand() + elem.getSeries() + elem.getModel();
                     if (Search.contains(bsm, keywordTextField.getText()))
-                        items.add(elem);
+                        items.add(new PCComponentWrapper(elem));
                 }
 
                 productTableView.setItems(items);
 
-                brandTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("brand"));
-                seriesTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("series"));
-                modelTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("model"));
-                formFactorTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("FormFactor"));
-                numOfRAMSocketsTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Integer>("numOfRAMSockets"));
-                priceTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Double>("price"));
-                socketTypeTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("socketType"));
+                brandTableColumn.setCellValueFactory(e -> e.getValue().getMotherboardBrand());
+                seriesTableColumn.setCellValueFactory(e -> e.getValue().getMotherboardSeries());
+                modelTableColumn.setCellValueFactory(e -> e.getValue().getMotherboardModel());
+                formFactorTableColumn.setCellValueFactory(e -> e.getValue().getMotherboardFormFactor());
+                numOfRAMSocketsTableColumn.setCellValueFactory(e -> e.getValue().getMotherboardNumOfRAMSockets());
+                priceTableColumn.setCellValueFactory(e -> e.getValue().getMotherboardPrice());
+                socketTypeTableColumn.setCellValueFactory(e -> e.getValue().getMotherboardSocketType());
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -389,19 +461,18 @@ public class FXMLSearchPageSceneController implements Initializable {
                 for (var elem : compList) {
                     String bsm = elem.getBrand() + elem.getSeries() + elem.getModel();
                     if (Search.contains(bsm, keywordTextField.getText()))
-                        items.add(elem);
+                        items.add(new PCComponentWrapper(elem));
                 }
 
                 productTableView.setItems(items);
 
-                brandTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("brand"));
-                capacityTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Integer>("capacity"));
-                frequencyTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Double>("frequency"));
-                modelTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("model"));
-                numOfModulesTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Integer>("numOfModules"));
-                //numOfRAMSocketsTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Integer>("numOfModules"));
-                priceTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Double>("price"));
-                seriesTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("series"));
+                brandTableColumn.setCellValueFactory(e -> e.getValue().getMemoryBrand());
+                capacityTableColumn.setCellValueFactory(e -> e.getValue().getMemoryCapacity());
+                frequencyTableColumn.setCellValueFactory(e -> e.getValue().getMemoryFrequency());
+                modelTableColumn.setCellValueFactory(e -> e.getValue().getMemoryModel());
+                numOfModulesTableColumn.setCellValueFactory(e -> e.getValue().getMemoryNumOfModules());
+                priceTableColumn.setCellValueFactory(e -> e.getValue().getMemoryPrice());
+                seriesTableColumn.setCellValueFactory(e -> e.getValue().getMemorySeries());
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -414,17 +485,17 @@ public class FXMLSearchPageSceneController implements Initializable {
                 for (var elem : compList) {
                     String bsm = elem.getBrand() + elem.getSeries() + elem.getModel();
                     if (Search.contains(bsm, keywordTextField.getText()))
-                        items.add(elem);
+                        items.add(new PCComponentWrapper(elem));
                 }
 
                 productTableView.setItems(items);
 
-                brandTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("brand"));
-                capacityTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Integer>("capacity"));
-                modelTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("model"));
-                priceTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Double>("price"));
-                seriesTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("series"));
-                speedTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Integer>("speed"));
+                brandTableColumn.setCellValueFactory(e -> e.getValue().getHardDriveDiskBrand());
+                capacityTableColumn.setCellValueFactory(e -> e.getValue().getHardDriveDiskCapacity());
+                modelTableColumn.setCellValueFactory(e -> e.getValue().getHardDriveDiskModel());
+                priceTableColumn.setCellValueFactory(e -> e.getValue().getHardDriveDiskPrice());
+                seriesTableColumn.setCellValueFactory(e -> e.getValue().getHardDriveDiskSeries());
+                speedTableColumn.setCellValueFactory(e -> e.getValue().getHardDriveDiskSpeed());
 
             } catch (Exception e) {
                 e.printStackTrace();
