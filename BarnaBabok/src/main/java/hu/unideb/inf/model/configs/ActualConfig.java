@@ -5,13 +5,12 @@ import hu.unideb.inf.model.components.*;
 import javax.persistence.*;
 
 @Entity
-public class Config {
+public class ActualConfig {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected Integer id;
 
     private double price;
-    private String name;
 
     @OneToOne
     @JoinColumn(name = "processor_id")
@@ -88,13 +87,5 @@ public class Config {
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }
