@@ -31,6 +31,46 @@ public class FXMLSearchPageSceneController implements Initializable {
         private Memory memory;
         private HardDriveDisk hardDriveDisk;
 
+        public Processor getProcessor() {
+            return processor;
+        }
+
+        public void setProcessor(Processor processor) {
+            this.processor = processor;
+        }
+
+        public PowerSupply getPowerSupply() {
+            return powerSupply;
+        }
+
+        public void setPowerSupply(PowerSupply powerSupply) {
+            this.powerSupply = powerSupply;
+        }
+
+        public Motherboard getMotherboard() {
+            return motherboard;
+        }
+
+        public void setMotherboard(Motherboard motherboard) {
+            this.motherboard = motherboard;
+        }
+
+        public Memory getMemory() {
+            return memory;
+        }
+
+        public void setMemory(Memory memory) {
+            this.memory = memory;
+        }
+
+        public HardDriveDisk getHardDriveDisk() {
+            return hardDriveDisk;
+        }
+
+        public void setHardDriveDisk(HardDriveDisk hardDriveDisk) {
+            this.hardDriveDisk = hardDriveDisk;
+        }
+
         public PCComponentWrapper(HardDriveDisk hardDriveDisk) {
             this.hardDriveDisk = hardDriveDisk;
         }
@@ -258,39 +298,33 @@ public class FXMLSearchPageSceneController implements Initializable {
         }
     }
 
-    /****************Actual Config Table******************************/
-    @FXML
-    private TableColumn<ActualConfig, String> ActualConfigHardDriveDiskTableColumn;
-
-    @FXML
-    private TableColumn<ActualConfig, String> ActualConfigMemoryTableColumn;
-
-    @FXML
-    private TableColumn<ActualConfig, String> ActualConfigMotherboardTableColumn;
-
-    @FXML
-    private TableColumn<ActualConfig, String> ActualConfigNameTableColumn;
-
-    @FXML
-    private TableColumn<ActualConfig, String> ActualConfigPowerSupplyTableColumn;
-
-    @FXML
-    private TableColumn<ActualConfig, String> ActualConfigProcessorTableColumn;
-
-    @FXML
-    private TableColumn<ActualConfig, Double> ActualConfigPriceTableColumn;
-
-    @FXML
-    private TableView<ActualConfig> ActualConfigTableView;
-    /****************************************************************/
+    // Kereső
     @FXML
     private TextField keywordTextField;
 
+    // Maximális ár slider
     @FXML
     private Slider MaxPriceSlider;
 
+    // Maximális ár sliderjéhez tartózó indikátor cimke
     @FXML
     private Label MaxPriceLabel;
+
+    // Choicebox a keresendő elemhez
+    @FXML
+    private ChoiceBox<String> ComponentChoiceBox;
+
+    private String[] components = {
+            "Processor",
+            "PowerSupply",
+            "Motherboard",
+            "Memory",
+            "HardDriveDisk"
+    };
+
+    // Keresőfelület elemeinek a deklarációi
+    @FXML
+    private TableView<PCComponentWrapper> productTableView;
 
     @FXML
     private TableColumn<PCComponentWrapper, String> brandTableColumn;
@@ -337,39 +371,205 @@ public class FXMLSearchPageSceneController implements Initializable {
     @FXML
     private TableColumn<PCComponentWrapper, Integer> speedTableColumn;
 
+    // Aktuális konfiguráció menüpont elemeinek a deklarációi
     @FXML
-    private ChoiceBox<String> ComponentChoiceBox;
+    private TableView<PCComponentWrapper> actualProcessorTable;
 
     @FXML
-    private TableView<PCComponentWrapper> productTableView;
-
-    private String[] components = {
-            "Processor",
-            "PowerSupply",
-            "Motherboard",
-            "Memory",
-            "HardDriveDisk"
-    };
+    private TableColumn<PCComponentWrapper, String> processorBrandTableColumn;
 
     @FXML
-    void handleAddButtonClicked(MouseEvent event) {
-        String selectedComponent = ComponentChoiceBox.getValue();
+    private TableColumn<PCComponentWrapper, Double> processorFrequencyTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> processorIntegratedGPUTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> processorModelTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, Integer> processorNumOfCoresTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, Integer> processorPowerTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, Double> processorPriceTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> processorSeriesTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> processorSocketTypeTableColumn;
+
+
+    @FXML
+    private TableView<PCComponentWrapper> actualPowerSupplyTable;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> powerSupplyBrandTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> powerSupplyEnergyEfficiencyTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> powerSupplyModelTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, Double> powerSupplyPriceTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> powerSupplySeriesTableColumn;
+
+
+    @FXML
+    private TableView<PCComponentWrapper> actualMotherboardTable;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> motherboardBrandTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> motherboardFormFactorTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> motherboardModelTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, Integer> motherboardNumOfRAMSocketsTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, Double> motherboardPriceTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> motherboardSeriesTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> motherboardSocketTypeTableColumn;
+
+
+    @FXML
+    private TableView<PCComponentWrapper> actualMemoryTable;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> memoryBrandTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, Integer> memoryCapacityTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, Double> memoryFrequencyTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> memoryModelTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, Integer> memoryNumOfModulesTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, Double> memoryPriceTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> memorySeriesTableColumn;
+
+
+    @FXML
+    private TableView<PCComponentWrapper> actualHardDriveDiskTable;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> hardDriveDiskBrandTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, Integer> hardDriveDiskCapacityTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> hardDriveDiskModelTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, Double> hardDriveDiskPriceTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> hardDriveDiskSeriesTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, Integer> hardDriveDiskSpeedTableColumn;
+
+
+    @FXML
+    void handleAddComponentButtonClicked(MouseEvent event) {
+        String selectedComponent = ComponentChoiceBox.getValue();   // checkbox-ban kiválasztott komponenst jelöli
 
         ObservableList<PCComponentWrapper> items = FXCollections.observableArrayList();
 
         if (selectedComponent.equals(components[0])) {
-            try (ActualConfigDAO acDAO = new JPAActualConfigDAO()) {
-                List<ActualConfig> aclist = acDAO.getActualConfigs();
-                if (aclist.size() == 0) {
-                    ActualConfig ac = new ActualConfig();
-                    // ac.setProcessor(); <- kiválasztott processzor
-                    acDAO.saveActualConfig(ac);
-                }
+            items.add(productTableView.getSelectionModel().getSelectedItem());
 
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            actualProcessorTable.setItems(items);
+
+            processorBrandTableColumn.setCellValueFactory(e -> e.getValue().getProcessorBrand());
+            processorFrequencyTableColumn.setCellValueFactory(e -> e.getValue().getProcessorFrequency());
+            processorIntegratedGPUTableColumn.setCellValueFactory(e -> e.getValue().getProcessorIntegratedGPU());
+            processorModelTableColumn.setCellValueFactory(e -> e.getValue().getProcessorModel());
+            processorNumOfCoresTableColumn.setCellValueFactory(e -> e.getValue().getProcessorNumOfCores());
+            processorPowerTableColumn.setCellValueFactory(e -> e.getValue().getProcessorPower());
+            processorPriceTableColumn.setCellValueFactory(e -> e.getValue().getProcessorPrice());
+            processorSeriesTableColumn.setCellValueFactory(e -> e.getValue().getProcessorSeries());
+            processorSocketTypeTableColumn.setCellValueFactory(e -> e.getValue().getProcessorSocketType());
+        } else if (selectedComponent.equals(components[1])) {
+            items.add(productTableView.getSelectionModel().getSelectedItem());
+
+            actualPowerSupplyTable.setItems(items);
+
+            powerSupplyBrandTableColumn.setCellValueFactory(e -> e.getValue().getPowerSupplyBrand());
+            powerSupplyEnergyEfficiencyTableColumn.setCellValueFactory(e -> e.getValue().getPowerSupplyEnergyEfficiency());
+            powerSupplyModelTableColumn.setCellValueFactory(e -> e.getValue().getPowerSupplyModel());
+            powerSupplyPriceTableColumn.setCellValueFactory(e -> e.getValue().getPowerSupplyPrice());
+            powerSupplySeriesTableColumn.setCellValueFactory(e -> e.getValue().getPowerSupplySeries());
+        } else if (selectedComponent.equals(components[2])) {
+            items.add(productTableView.getSelectionModel().getSelectedItem());
+
+            actualMotherboardTable.setItems(items);
+
+            motherboardBrandTableColumn.setCellValueFactory(e -> e.getValue().getMotherboardBrand());
+            motherboardSeriesTableColumn.setCellValueFactory(e -> e.getValue().getMotherboardSeries());
+            motherboardModelTableColumn.setCellValueFactory(e -> e.getValue().getMotherboardModel());
+            motherboardFormFactorTableColumn.setCellValueFactory(e -> e.getValue().getMotherboardFormFactor());
+            motherboardNumOfRAMSocketsTableColumn.setCellValueFactory(e -> e.getValue().getMotherboardNumOfRAMSockets());
+            motherboardPriceTableColumn.setCellValueFactory(e -> e.getValue().getMotherboardPrice());
+            motherboardSocketTypeTableColumn.setCellValueFactory(e -> e.getValue().getMotherboardSocketType());
+
+        } else if (selectedComponent.equals(components[3])) {
+            items.add(productTableView.getSelectionModel().getSelectedItem());
+
+            actualMemoryTable.setItems(items);
+
+
+
+            memoryBrandTableColumn.setCellValueFactory(e -> e.getValue().getMemoryBrand());
+            memoryCapacityTableColumn.setCellValueFactory(e -> e.getValue().getMemoryCapacity());
+            memoryFrequencyTableColumn.setCellValueFactory(e -> e.getValue().getMemoryFrequency());
+            memoryModelTableColumn.setCellValueFactory(e -> e.getValue().getMemoryModel());
+            memoryNumOfModulesTableColumn.setCellValueFactory(e -> e.getValue().getMemoryNumOfModules());
+            memoryPriceTableColumn.setCellValueFactory(e -> e.getValue().getMemoryPrice());
+            memorySeriesTableColumn.setCellValueFactory(e -> e.getValue().getMemorySeries());
+
+        } else if (selectedComponent.equals(components[4])) {
+            items.add(productTableView.getSelectionModel().getSelectedItem());
+
+            actualHardDriveDiskTable.setItems(items);
+
+            hardDriveDiskBrandTableColumn.setCellValueFactory(e -> e.getValue().getHardDriveDiskBrand());
+            hardDriveDiskCapacityTableColumn.setCellValueFactory(e -> e.getValue().getHardDriveDiskCapacity());
+            hardDriveDiskModelTableColumn.setCellValueFactory(e -> e.getValue().getHardDriveDiskModel());
+            hardDriveDiskPriceTableColumn.setCellValueFactory(e -> e.getValue().getHardDriveDiskPrice());
+            hardDriveDiskSeriesTableColumn.setCellValueFactory(e -> e.getValue().getHardDriveDiskSeries());
+            hardDriveDiskSpeedTableColumn.setCellValueFactory(e -> e.getValue().getHardDriveDiskSpeed());
         }
+
+    }
+
+    @FXML
+    void handleDeleteComponentButtonClicked(MouseEvent event) {
+        // komponens törlése az aktuális config tabról
     }
 
     /* A függvény feltölti elemekkel a kereső táblázatot */
