@@ -1,9 +1,7 @@
 package hu.unideb.inf.control;
 
-import hu.unideb.inf.Main;
 import hu.unideb.inf.control.FilterTools.FilterConditionStringGenerator;
 import hu.unideb.inf.control.FilterTools.Search;
-import hu.unideb.inf.model.DataHandler;
 import hu.unideb.inf.model.components.*;
 import hu.unideb.inf.model.configs.ActualConfig;
 import hu.unideb.inf.model.configs.ActualConfigDAO;
@@ -15,14 +13,178 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.InputMethodEvent;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
+import java.security.SecureRandom;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class FXMLSearchPageSceneController implements Initializable {
+    class PCComponentWrapper {
+        private Processor processor;
+        private PowerSupply powerSupply;
+        private Motherboard motherboard;
+        private Memory memory;
+        private HardDriveDisk hardDriveDisk;
+
+        public PCComponentWrapper(HardDriveDisk hardDriveDisk) {
+            this.hardDriveDisk = hardDriveDisk;
+        }
+
+        public PCComponentWrapper(Memory memory) {
+            this.memory = memory;
+        }
+
+        public PCComponentWrapper(Motherboard motherboard) {
+            this.motherboard = motherboard;
+        }
+
+        public PCComponentWrapper(PowerSupply powerSupply) {
+            this.powerSupply = powerSupply;
+        }
+
+        public PCComponentWrapper(Processor processor) {
+            this.processor = processor;
+        }
+
+        public String getProcessorBrand() {
+            return processor.getBrand();
+        }
+
+        public double getProcessorFrequency() {
+            return processor.getFrequency();
+        }
+
+        public String getProcessorIntegratedGPU() {
+            return processor.getIntegratedGPU();
+        }
+
+        public String getProcessorModel() {
+            return processor.getModel();
+        }
+
+        public int getProcessorNumOfCores() {
+            return processor.getNumOfCores();
+        }
+
+        public int getProcessorPower() {
+            return processor.getPower();
+        }
+
+        public double getProcessorPrice() {
+            return processor.getPrice();
+        }
+
+        public  String getProcessorSeries() {
+            return processor.getSeries();
+        }
+
+        public String getProcessorSocketType() {
+            return processor.getSocketType();
+        }
+
+        public String getPowerSupplyBrand() {
+            return powerSupply.getBrand();
+        }
+
+        public String getPowerSupplyEnergyEfficiency() {
+            return powerSupply.getEnergyEfficiency();
+        }
+
+        public String getPowerSupplyModel() {
+            return powerSupply.getModel();
+        }
+
+        public double getPowerSupplyPrice() {
+            return powerSupply.getPrice();
+        }
+
+        public String getPowerSupplySeries() {
+            return powerSupply.getSeries();
+        }
+
+        public String getMotherboardBrand() {
+            return motherboard.getBrand();
+        }
+
+        public String getMotherboardSeries() {
+            return motherboard.getSeries();
+        }
+
+        public String getMotherboardModel() {
+            return motherboard.getModel();
+        }
+
+        public String getMotherboardFormFactor() {
+            return motherboard.getFormFactor();
+        }
+
+        public int getMotherboardNumOfRAMSockets() {
+            return motherboard.getNumOfRamSockets();
+        }
+
+        public double getMotherboardPrice() {
+            return motherboard.getPrice();
+        }
+
+        public String getMotherboardSocketType() {
+            return motherboard.getSocketType();
+        }
+
+        public String getMemoryBrand() {
+            return memory.getBrand();
+        }
+
+        public int getMemoryCapacity() {
+            return memory.getCapacity();
+        }
+
+        public double getMemoryFrequency() {
+            return memory.getFrequency();
+        }
+
+        public String getMemoryModel() {
+            return memory.getModel();
+        }
+
+        public int getMemoryNumOfModules() {
+            return memory.getNumOfModules();
+        }
+
+        public double getMemoryPrice() {
+            return memory.getPrice();
+        }
+
+        public String getMemorySeries() {
+            return memory.getSeries();
+        }
+
+        public String getHardDriveDiskBrand() {
+            return hardDriveDisk.getBrand();
+        }
+
+        public int getHardDriveDiskCapacity() {
+            return hardDriveDisk.getCapacity();
+        }
+
+        public String getHardDriveDiskModel() {
+            return hardDriveDisk.getModel();
+        }
+
+        public double getHardDriveDiskPrice() {
+            return hardDriveDisk.getPrice();
+        }
+
+        public String getHardDriveDiskSeries() {
+            return  hardDriveDisk.getSeries();
+        }
+
+        public int getHardDriveDiskSpeed() {
+            return  hardDriveDisk.getSpeed();
+        }
+    }
+    
     /****************Actual Config Table******************************/
     @FXML
     private TableColumn<ActualConfig, String> ActualConfigHardDriveDiskTableColumn;
@@ -237,7 +399,7 @@ public class FXMLSearchPageSceneController implements Initializable {
                 frequencyTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Double>("frequency"));
                 modelTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("model"));
                 numOfModulesTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Integer>("numOfModules"));
-                numOfRAMSocketsTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Integer>("numOfModules"));
+                //numOfRAMSocketsTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Integer>("numOfModules"));
                 priceTableColumn.setCellValueFactory(new PropertyValueFactory<Object, Double>("price"));
                 seriesTableColumn.setCellValueFactory(new PropertyValueFactory<Object, String>("series"));
 
@@ -346,7 +508,7 @@ public class FXMLSearchPageSceneController implements Initializable {
             modelTableColumn.setVisible(true);
             numOfCoresTableColumn.setVisible(false);
             numOfModulesTableColumn.setVisible(true);
-            numOfRAMSocketsTableColumn.setVisible(true);
+            numOfRAMSocketsTableColumn.setVisible(false);
             powerTableColumn.setVisible(false);
             priceTableColumn.setVisible(true);
             seriesTableColumn.setVisible(true);
