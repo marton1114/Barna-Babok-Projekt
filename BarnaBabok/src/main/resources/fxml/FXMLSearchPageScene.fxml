@@ -78,12 +78,12 @@
                         <Insets right="25.0" />
                      </VBox.margin>
                   </Slider>
-                <Button mnemonicParsing="false" onMouseClicked="#handleRefreshButtonClicked" text="Refresh">
+                <Button mnemonicParsing="false" onMouseClicked="#handleRefreshButtonClicked" text="Keresés">
                      <font>
                         <Font size="14.0" />
                      </font>
                      <VBox.margin>
-                        <Insets left="210.0" />
+                        <Insets left="210.0" top="350.0" />
                      </VBox.margin>
                   </Button>
                </children>
@@ -137,15 +137,15 @@
                            <children>
                               <TableView fx:id="ActualConfigTableView" nodeOrientation="LEFT_TO_RIGHT" prefHeight="515.0" prefWidth="750.0">
                                  <columns>
-                                    <TableColumn fx:id="ActualConfigProcessorTableColumn" prefWidth="122.4001235961914" text="Processzor" />
-                                    <TableColumn fx:id="ActualConfigMotherboardTableColumn" prefWidth="110.39990234375" text="Alaplap" />
-                                    <TableColumn fx:id="ActualConfigPowerSupplyTableColumn" prefWidth="125.066650390625" text="Tápegység" />
-                                    <TableColumn fx:id="ActualConfigMemoryTableColumn" prefWidth="96.00003051757812" text="Memória" />
-                                    <TableColumn fx:id="ActualConfigHardDriveDiskTableColumn" prefWidth="109.59991455078125" text="HDD" />
-                                    <TableColumn fx:id="ActualConfigPriceTableColumn" prefWidth="65.066650390625" text="Ár" />
+                                    <TableColumn fx:id="ActualConfigProcessorTableColumn" prefWidth="155.20001828670502" text="Processzor" />
+                                    <TableColumn fx:id="ActualConfigMotherboardTableColumn" prefWidth="155.99993896484375" text="Alaplap" />
+                                    <TableColumn fx:id="ActualConfigPowerSupplyTableColumn" prefWidth="123.20001220703125" text="Tápegység" />
+                                    <TableColumn fx:id="ActualConfigMemoryTableColumn" prefWidth="129.59982299804688" text="Memória" />
+                                    <TableColumn fx:id="ActualConfigHardDriveDiskTableColumn" prefWidth="93.60009765625" text="HDD" />
+                                    <TableColumn fx:id="ActualConfigPriceTableColumn" minWidth="7.2000732421875" prefWidth="95.20001220703125" text="Ár" />
                                  </columns>
                               </TableView>
-                              <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                              <HBox alignment="TOP_RIGHT" prefHeight="25.0" prefWidth="200.0">
                                  <children>
                                     <Label text="Konfiguráció neve">
                                        <HBox.margin>
@@ -154,16 +154,25 @@
                                     </Label>
                                     <TextField>
                                        <HBox.margin>
-                                          <Insets right="370.0" />
+                                          <Insets />
                                        </HBox.margin>
                                     </TextField>
-                                    <Button mnemonicParsing="false" onMouseClicked="#handleAddButtonClicked" text="Komponens törlése" />
+                                    <Button mnemonicParsing="false" text="Mentés">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onMouseClicked="#handleAddButtonClicked" text="Komponens törlése">
+                                       <HBox.margin>
+                                          <Insets left="275.0" />
+                                       </HBox.margin>
+                                    </Button>
                                  </children>
                                  <VBox.margin>
                                     <Insets />
                                  </VBox.margin>
                                  <padding>
-                                    <Insets top="10.0" />
+                                    <Insets right="20.0" top="10.0" />
                                  </padding>
                               </HBox>
                            </children>
