@@ -31,6 +31,46 @@ public class FXMLSearchPageSceneController implements Initializable {
         private Memory memory;
         private HardDriveDisk hardDriveDisk;
 
+        public Processor getProcessor() {
+            return processor;
+        }
+
+        public void setProcessor(Processor processor) {
+            this.processor = processor;
+        }
+
+        public PowerSupply getPowerSupply() {
+            return powerSupply;
+        }
+
+        public void setPowerSupply(PowerSupply powerSupply) {
+            this.powerSupply = powerSupply;
+        }
+
+        public Motherboard getMotherboard() {
+            return motherboard;
+        }
+
+        public void setMotherboard(Motherboard motherboard) {
+            this.motherboard = motherboard;
+        }
+
+        public Memory getMemory() {
+            return memory;
+        }
+
+        public void setMemory(Memory memory) {
+            this.memory = memory;
+        }
+
+        public HardDriveDisk getHardDriveDisk() {
+            return hardDriveDisk;
+        }
+
+        public void setHardDriveDisk(HardDriveDisk hardDriveDisk) {
+            this.hardDriveDisk = hardDriveDisk;
+        }
+
         public PCComponentWrapper(HardDriveDisk hardDriveDisk) {
             this.hardDriveDisk = hardDriveDisk;
         }
@@ -343,6 +383,36 @@ public class FXMLSearchPageSceneController implements Initializable {
     @FXML
     private TableView<PCComponentWrapper> productTableView;
 
+    @FXML
+    private TableView<PCComponentWrapper> ActualProcessorTable;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> processorBrandTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, Double> processorFrequencyTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> processorIntegratedGPUTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> processorModelTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, Integer> processorNumOfCoresTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, Integer> processorPowerTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, Double> processorPriceTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> processorSeriesTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, String> processorSocketTypeTableColumn;
+
     private String[] components = {
             "Processor",
             "PowerSupply",
@@ -352,24 +422,30 @@ public class FXMLSearchPageSceneController implements Initializable {
     };
 
     @FXML
-    void handleAddButtonClicked(MouseEvent event) {
-        String selectedComponent = ComponentChoiceBox.getValue();
+    void handleAddComponentButtonClicked(MouseEvent event) {
+        String selectedComponent = ComponentChoiceBox.getValue();   // checkbox-ban kiválasztott komponenst jelöli
 
         ObservableList<PCComponentWrapper> items = FXCollections.observableArrayList();
 
         if (selectedComponent.equals(components[0])) {
-            try (ActualConfigDAO acDAO = new JPAActualConfigDAO()) {
-                List<ActualConfig> aclist = acDAO.getActualConfigs();
-                if (aclist.size() == 0) {
-                    ActualConfig ac = new ActualConfig();
-                    // ac.setProcessor(); <- kiválasztott processzor
-                    acDAO.saveActualConfig(ac);
-                }
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            items.add(productTableView.getSelectionModel().getSelectedItem());
         }
+        ActualProcessorTable.setItems(items);
+
+        processorBrandTableColumn.setCellValueFactory(e -> e.getValue().getProcessorBrand());
+        processorFrequencyTableColumn.setCellValueFactory(e -> e.getValue().getProcessorFrequency());
+        processorIntegratedGPUTableColumn.setCellValueFactory(e -> e.getValue().getProcessorIntegratedGPU());
+        processorModelTableColumn.setCellValueFactory(e -> e.getValue().getProcessorModel());
+        processorNumOfCoresTableColumn.setCellValueFactory(e -> e.getValue().getProcessorNumOfCores());
+        processorPowerTableColumn.setCellValueFactory(e -> e.getValue().getProcessorPower());
+        processorPriceTableColumn.setCellValueFactory(e -> e.getValue().getProcessorPrice());
+        processorSeriesTableColumn.setCellValueFactory(e -> e.getValue().getProcessorSeries());
+        processorSocketTypeTableColumn.setCellValueFactory(e -> e.getValue().getProcessorSocketType());
+    }
+
+    @FXML
+    void handleDeleteComponentButtonClicked(MouseEvent event) {
+        // komponens törlése az aktuális config tabról
     }
 
     /* A függvény feltölti elemekkel a kereső táblázatot */
