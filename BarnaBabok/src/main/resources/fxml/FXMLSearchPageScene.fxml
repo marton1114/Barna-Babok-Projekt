@@ -143,7 +143,7 @@
                                     <Insets top="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <TableView fx:id="ActualProcessorTable" prefHeight="70.0" prefWidth="640.0">
+                              <TableView fx:id="actualProcessorTable" prefHeight="70.0" prefWidth="640.0">
                                  <columns>
                                     <TableColumn fx:id="processorBrandTableColumn" prefWidth="84.79998624324799" text="Brand" />
                                     <TableColumn fx:id="processorSeriesTableColumn" prefWidth="91.20001983642578" text="Series" />
@@ -164,13 +164,13 @@
                                     <Insets top="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <TableView prefHeight="70.0" prefWidth="640.0">
+                              <TableView fx:id="actualPowerSupplyTable" prefHeight="70.0" prefWidth="640.0">
                                  <columns>
-                                    <TableColumn fx:id="brandTableColumn11" prefWidth="175.20001828670502" text="Brand" />
-                                    <TableColumn fx:id="seriesTableColumn11" prefWidth="184.79998779296875" text="Series" />
-                                    <TableColumn fx:id="modelTableColumn11" prefWidth="161.60000610351562" text="Model" />
-                                    <TableColumn fx:id="priceTableColumn11" prefWidth="105.5999755859375" text="Price" />
-                                    <TableColumn fx:id="energyEfficiencyTableColumn11" prefWidth="123.99993896484375" text="Energy efficiency" />
+                                    <TableColumn fx:id="powerSupplyBrandTableColumn" prefWidth="175.20001828670502" text="Brand" />
+                                    <TableColumn fx:id="powerSupplySeriesTableColumn" prefWidth="184.79998779296875" text="Series" />
+                                    <TableColumn fx:id="powerSupplyModelTableColumn" prefWidth="161.60000610351562" text="Model" />
+                                    <TableColumn fx:id="powerSupplyPriceTableColumn" prefWidth="105.5999755859375" text="Price" />
+                                    <TableColumn fx:id="powerSupplyEnergyEfficiencyTableColumn" prefWidth="123.99993896484375" text="Energy efficiency" />
                                  </columns>
                               </TableView>
                               <Label text="Alaplap">
@@ -181,15 +181,15 @@
                                     <Insets top="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <TableView prefHeight="70.0" prefWidth="640.0">
+                              <TableView fx:id="actualMotherboardTable" prefHeight="70.0" prefWidth="640.0">
                                  <columns>
-                                    <TableColumn fx:id="brandTableColumn12" prefWidth="132.79999387264252" text="Brand" />
-                                    <TableColumn fx:id="seriesTableColumn12" prefWidth="105.60003662109375" text="Series" />
-                                    <TableColumn fx:id="modelTableColumn12" prefWidth="135.99993896484375" text="Model" />
-                                    <TableColumn fx:id="priceTableColumn12" prefWidth="99.20001220703125" text="Price" />
-                                    <TableColumn fx:id="socketTypeTableColumn12" prefWidth="119.99996948242188" text="Socket type" />
-                                    <TableColumn fx:id="formFactorTableColumn12" prefWidth="86.6666259765625" text="FormFactor" />
-                                    <TableColumn fx:id="numOfRAMSocketsTableColumn12" prefWidth="70.13336181640625" text="Num. of RAM sockets" />
+                                    <TableColumn fx:id="motherboardBrandTableColumn" prefWidth="132.79999387264252" text="Brand" />
+                                    <TableColumn fx:id="motherboardSeriesTableColumn" prefWidth="105.60003662109375" text="Series" />
+                                    <TableColumn fx:id="motherboardModelTableColumn" prefWidth="135.99993896484375" text="Model" />
+                                    <TableColumn fx:id="motherboardPriceTableColumn" prefWidth="99.20001220703125" text="Price" />
+                                    <TableColumn fx:id="motherboardSocketTypeTableColumn" prefWidth="119.99996948242188" text="Socket type" />
+                                    <TableColumn fx:id="motherboardFormFactorTableColumn" prefWidth="86.6666259765625" text="FormFactor" />
+                                    <TableColumn fx:id="motherboardNumOfRAMSocketsTableColumn" prefWidth="70.13336181640625" text="Num. of RAM sockets" />
                                  </columns>
                               </TableView>
                               <Label text="Memória">
@@ -200,15 +200,15 @@
                                     <Insets top="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <TableView prefHeight="70.0" prefWidth="640.0">
+                              <TableView fx:id="actualMemoryTable" prefHeight="70.0" prefWidth="640.0">
                                  <columns>
-                                    <TableColumn fx:id="brandTableColumn14" prefWidth="145.59992063045502" text="Brand" />
-                                    <TableColumn fx:id="seriesTableColumn14" prefWidth="92.26669311523438" text="Series" />
-                                    <TableColumn fx:id="modelTableColumn14" prefWidth="107.199951171875" text="Model" />
-                                    <TableColumn fx:id="priceTableColumn14" prefWidth="137.33331298828125" text="Price" />
-                                    <TableColumn fx:id="frequencyTableColumn14" prefWidth="145.06674194335938" text="Frequency" />
-                                    <TableColumn fx:id="capacityTableColumn14" prefWidth="71.199951171875" text="Capacity" />
-                                    <TableColumn fx:id="numOfModulesTableColumn14" prefWidth="51.99993896484375" text="Num. of Modules" />
+                                    <TableColumn fx:id="memoryBrandTableColumn" prefWidth="145.59992063045502" text="Brand" />
+                                    <TableColumn fx:id="memorySeriesTableColumn" prefWidth="92.26669311523438" text="Series" />
+                                    <TableColumn fx:id="memoryModelTableColumn" prefWidth="107.199951171875" text="Model" />
+                                    <TableColumn fx:id="memoryPriceTableColumn" prefWidth="137.33331298828125" text="Price" />
+                                    <TableColumn fx:id="memoryFrequencyTableColumn" prefWidth="145.06674194335938" text="Frequency" />
+                                    <TableColumn fx:id="memoryCapacityTableColumn" prefWidth="71.199951171875" text="Capacity" />
+                                    <TableColumn fx:id="memoryNumOfModulesTableColumn" prefWidth="51.99993896484375" text="Num. of Modules" />
                                  </columns>
                               </TableView>
                               <Label text="Merevlemez">
@@ -222,14 +222,14 @@
                                     <Insets top="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <TableView prefHeight="70.0" prefWidth="640.0">
+                              <TableView fx:id="actualHardDriveDiskTable" prefHeight="70.0" prefWidth="640.0">
                                  <columns>
-                                    <TableColumn fx:id="brandTableColumn13" prefWidth="159.99994504451752" text="Brand" />
-                                    <TableColumn fx:id="seriesTableColumn13" prefWidth="128.00006103515625" text="Series" />
-                                    <TableColumn fx:id="modelTableColumn13" prefWidth="178.39996337890625" text="Model" />
-                                    <TableColumn fx:id="priceTableColumn13" prefWidth="93.59994506835938" text="Price" />
-                                    <TableColumn fx:id="capacityTableColumn13" prefWidth="121.5999755859375" text="Capacity" />
-                                    <TableColumn fx:id="speedTableColumn13" prefWidth="69.59991455078125" text="Speed" />
+                                    <TableColumn fx:id="hardDriveDiskBrandTableColumn" prefWidth="159.99994504451752" text="Brand" />
+                                    <TableColumn fx:id="hardDriveDiskSeriesTableColumn" prefWidth="128.00006103515625" text="Series" />
+                                    <TableColumn fx:id="hardDriveDiskModelTableColumn" prefWidth="178.39996337890625" text="Model" />
+                                    <TableColumn fx:id="hardDriveDiskPriceTableColumn" prefWidth="93.59994506835938" text="Price" />
+                                    <TableColumn fx:id="hardDriveDiskCapacityTableColumn" prefWidth="121.5999755859375" text="Capacity" />
+                                    <TableColumn fx:id="hardDriveDiskSpeedTableColumn" prefWidth="69.59991455078125" text="Speed" />
                                  </columns>
                               </TableView>
                               <HBox alignment="TOP_RIGHT" prefHeight="25.0" prefWidth="200.0">
