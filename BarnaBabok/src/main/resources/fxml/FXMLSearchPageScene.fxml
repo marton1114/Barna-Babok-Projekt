@@ -137,13 +137,13 @@
                            <children>
                               <TableView nodeOrientation="LEFT_TO_RIGHT" prefHeight="515.0" prefWidth="750.0">
                                  <columns>
-                                    <TableColumn prefWidth="123.20001068115243" text="Konfiguráció neve" />
-                                    <TableColumn prefWidth="122.4001235961914" text="Processzor" />
-                                    <TableColumn prefWidth="110.39990234375" text="Alaplap" />
-                                    <TableColumn prefWidth="125.066650390625" text="Tápegység" />
-                                    <TableColumn prefWidth="96.00003051757812" text="Memória" />
-                                    <TableColumn prefWidth="109.59991455078125" text="HDD" />
-                                    <TableColumn prefWidth="65.066650390625" text="Ár" />
+                                    <TableColumn fx:id="ActualConfigNameTableColumn" prefWidth="123.20001068115243" text="Konfiguráció neve" />
+                                    <TableColumn fx:id="ActualConfigProcessorTableColumn" prefWidth="122.4001235961914" text="Processzor" />
+                                    <TableColumn fx:id="ActualConfigMotherboardTableColumn" prefWidth="110.39990234375" text="Alaplap" />
+                                    <TableColumn fx:id="ActualConfigPowerSupplyTableColumn" prefWidth="125.066650390625" text="Tápegység" />
+                                    <TableColumn fx:id="ActualConfigMemoryTableColumn" prefWidth="96.00003051757812" text="Memória" />
+                                    <TableColumn fx:id="ActualConfigHardDriveDiskTableColumn" prefWidth="109.59991455078125" text="HDD" />
+                                    <TableColumn fx:id="ActualConfigPriceTableColumn" prefWidth="65.066650390625" text="Ár" />
                                  </columns>
                               </TableView>
                               <Button mnemonicParsing="false" text="Komponens törlése">

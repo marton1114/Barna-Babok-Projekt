@@ -5,6 +5,7 @@ import hu.unideb.inf.control.FilterTools.FilterConditionStringGenerator;
 import hu.unideb.inf.control.FilterTools.Search;
 import hu.unideb.inf.model.DataHandler;
 import hu.unideb.inf.model.components.*;
+import hu.unideb.inf.model.configs.ActualConfig;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,6 +21,31 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class FXMLSearchPageSceneController implements Initializable {
+    /****************Actual Config Table******************************/
+    @FXML
+    private TableColumn<ActualConfig, String> ActualConfigHardDriveDiskTableColumn;
+
+    @FXML
+    private TableColumn<ActualConfig, String> ActualConfigMemoryTableColumn;
+
+    @FXML
+    private TableColumn<ActualConfig, String> ActualConfigMotherboardTableColumn;
+
+    @FXML
+    private TableColumn<ActualConfig, String> ActualConfigNameTableColumn;
+
+    @FXML
+    private TableColumn<ActualConfig, String> ActualConfigPowerSupplyTableColumn;
+
+    @FXML
+    private TableColumn<ActualConfig, String> ActualConfigProcessorTableColumn;
+
+    @FXML
+    private TableColumn<ActualConfig, Double> ActualConfigPriceTableColumn;
+
+    @FXML
+    private TableView<ActualConfig> ActualConfigTableView;
+    /****************************************************************/
     @FXML
     private TextField keywordTextField;
 

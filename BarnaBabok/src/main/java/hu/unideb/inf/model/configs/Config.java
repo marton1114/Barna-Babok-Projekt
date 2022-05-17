@@ -10,6 +10,9 @@ public class Config {
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected Integer id;
 
+    private double price;
+    private String name;
+
     @OneToOne
     @JoinColumn(name = "processor_id")
     private Processor processor;
@@ -77,5 +80,21 @@ public class Config {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
