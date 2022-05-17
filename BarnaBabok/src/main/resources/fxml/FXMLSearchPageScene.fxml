@@ -130,6 +130,7 @@
                            </children>
                         </VBox>
                      </content>
+					 
                   </Tab>
                   <Tab text="Aktuális konfiguráció">
                      <content>
