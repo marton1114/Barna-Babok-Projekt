@@ -277,7 +277,7 @@ public class FXMLSearchPageSceneController implements Initializable {
         ComponentChoiceBox.setOnAction(this::updateColumns);
     }
 
-    
+
     @FXML
     void updateSlider(MouseEvent event) {
         MaxPriceLabel.setText(String.format("%.2f", MaxPriceSlider.getValue()) + "$");
