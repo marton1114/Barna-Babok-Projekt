@@ -11,28 +11,28 @@ public class JPAActualConfigDAO implements ActualConfigDAO {
     final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
     @Override
-    public void saveActualConfig(Config c) {
+    public void saveActualConfig(ActualConfig c) {
         entityManager.getTransaction().begin();
         entityManager.persist(c);
         entityManager.getTransaction().commit();
     }
 
     @Override
-    public void deleteActualConfig(Config c) {
+    public void deleteActualConfig(ActualConfig c) {
         entityManager.getTransaction().begin();
         entityManager.remove(c);
         entityManager.getTransaction().commit();
     }
 
     @Override
-    public void updateActualConfig(Config c) {
+    public void updateActualConfig(ActualConfig c) {
         saveActualConfig(c);
     }
 
     @Override
-    public List<Config> getActualConfigs() {
-        TypedQuery<Config> query = entityManager.createQuery(
-                "SELECT a FROM ActualConfig a", Config.class);
+    public List<ActualConfig> getActualConfigs() {
+        TypedQuery<ActualConfig> query = entityManager.createQuery(
+                "SELECT a FROM ActualConfig a", ActualConfig.class);
 
         return query.getResultList();
     }

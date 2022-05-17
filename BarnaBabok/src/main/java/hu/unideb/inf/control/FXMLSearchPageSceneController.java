@@ -6,6 +6,8 @@ import hu.unideb.inf.control.FilterTools.Search;
 import hu.unideb.inf.model.DataHandler;
 import hu.unideb.inf.model.components.*;
 import hu.unideb.inf.model.configs.ActualConfig;
+import hu.unideb.inf.model.configs.ActualConfigDAO;
+import hu.unideb.inf.model.configs.JPAActualConfigDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -100,9 +102,11 @@ public class FXMLSearchPageSceneController implements Initializable {
     @FXML
     private TableColumn<Object, Integer> speedTableColumn;
 
-
     @FXML
     private ChoiceBox<String> ComponentChoiceBox;
+
+    @FXML
+    private TableView<Object> productTableView;
 
     private String[] components = {
             "Processor",
@@ -113,15 +117,33 @@ public class FXMLSearchPageSceneController implements Initializable {
     };
 
     @FXML
-    private TableView<Object> productTableView;
+    void handleAddButtonClicked(MouseEvent event) {
+        String selectedComponent = ComponentChoiceBox.getValue();
+
+        ObservableList<Object> items = FXCollections.observableArrayList();
+
+        if (selectedComponent.equals(components[0])) {
+            try (ActualConfigDAO acDAO = new JPAActualConfigDAO()) {
+                List<ActualConfig> aclist = acDAO.getActualConfigs();
+                if (aclist.size() == 0) {
+                    ActualConfig ac = new ActualConfig();
+                    // ac.setProcessor(); <- kiválasztott processzor
+                    acDAO.saveActualConfig(ac);
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     /* A függvény feltölti elemekkel a kereső táblázatot */
     @FXML
     void handleRefreshButtonClicked(MouseEvent event) {
         String selectedComponent = ComponentChoiceBox.getValue();
+
         ObservableList<Object> items = FXCollections.observableArrayList();
 
-        /*                           Processor     */
         if (selectedComponent.equals(components[0])) {
             try (ProcessorDAO pDAO = new JpaProcessorDAO();) {
 
