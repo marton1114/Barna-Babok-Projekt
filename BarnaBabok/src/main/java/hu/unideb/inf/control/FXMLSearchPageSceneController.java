@@ -1,6 +1,8 @@
 package hu.unideb.inf.control;
 
 import hu.unideb.inf.Main;
+import hu.unideb.inf.control.FilterTools.FilterConditionStringGenerator;
+import hu.unideb.inf.control.FilterTools.Search;
 import hu.unideb.inf.model.DataHandler;
 import hu.unideb.inf.model.components.*;
 import javafx.collections.FXCollections;
@@ -18,6 +20,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class FXMLSearchPageSceneController implements Initializable {
+    @FXML
+    private TextField keywordTextField;
 
     @FXML
     private Slider MaxPriceSlider;
@@ -94,10 +98,14 @@ public class FXMLSearchPageSceneController implements Initializable {
         /*                           Processor     */
         if (selectedComponent.equals(components[0])) {
             try (ProcessorDAO pDAO = new JpaProcessorDAO();) {
-                List<Processor> compList = pDAO.getProcessors("");
+
+                String conditions = FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
+                List<Processor> compList = pDAO.getProcessors(conditions);
 
                 for (var elem : compList) {
-                    items.add(elem);
+                    String bsm = elem.getBrand() + elem.getSeries() + elem.getModel();
+                    if (Search.contains(bsm, keywordTextField.getText()))
+                        items.add(elem);
                 }
 
                 productTableView.setItems(items);
@@ -117,10 +125,13 @@ public class FXMLSearchPageSceneController implements Initializable {
             }
         } else if (selectedComponent.equals(components[1])) {
             try (PowerSupplyDAO pDAO = new JpaPowerSupplyDAO();) {
-                List<PowerSupply> compList = pDAO.getPowerSupplies("");
+                String conditions = FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
+                List<PowerSupply> compList = pDAO.getPowerSupplies(conditions);
 
                 for (var elem : compList) {
-                    items.add(elem);
+                    String bsm = elem.getBrand() + elem.getSeries() + elem.getModel();
+                    if (Search.contains(bsm, keywordTextField.getText()))
+                        items.add(elem);
                 }
 
                 productTableView.setItems(items);
@@ -136,10 +147,13 @@ public class FXMLSearchPageSceneController implements Initializable {
             }
         } else if (selectedComponent.equals(components[2])) {
             try (MotherboardDAO pDAO = new JpaMotherboardDAO();) {
-                List<Motherboard> compList = pDAO.getMotherboards("");
+                String conditions = FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
+                List<Motherboard> compList = pDAO.getMotherboards(conditions);
 
                 for (var elem : compList) {
-                    items.add(elem);
+                    String bsm = elem.getBrand() + elem.getSeries() + elem.getModel();
+                    if (Search.contains(bsm, keywordTextField.getText()))
+                        items.add(elem);
                 }
 
                 productTableView.setItems(items);
@@ -159,10 +173,13 @@ public class FXMLSearchPageSceneController implements Initializable {
 
         } else if (selectedComponent.equals(components[3])) {
             try (MemoryDAO pDAO = new JpaMemoryDAO();) {
-                List<Memory> compList = pDAO.getMemories("");
+                String conditions = FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
+                List<Memory> compList = pDAO.getMemories(conditions);
 
                 for (var elem : compList) {
-                    items.add(elem);
+                    String bsm = elem.getBrand() + elem.getSeries() + elem.getModel();
+                    if (Search.contains(bsm, keywordTextField.getText()))
+                        items.add(elem);
                 }
 
                 productTableView.setItems(items);
@@ -181,10 +198,13 @@ public class FXMLSearchPageSceneController implements Initializable {
             }
         } else if (selectedComponent.equals(components[4])) {
             try (HardDriveDiskDAO pDAO = new JpaHardDriveDiskDAO();) {
-                List<HardDriveDisk> compList = pDAO.getHardDriveDisks("");
+                String conditions = FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
+                List<HardDriveDisk> compList = pDAO.getHardDriveDisks(conditions);
 
                 for (var elem : compList) {
-                    items.add(elem);
+                    String bsm = elem.getBrand() + elem.getSeries() + elem.getModel();
+                    if (Search.contains(bsm, keywordTextField.getText()))
+                        items.add(elem);
                 }
 
                 productTableView.setItems(items);
