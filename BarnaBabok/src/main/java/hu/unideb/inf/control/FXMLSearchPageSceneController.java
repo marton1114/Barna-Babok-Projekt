@@ -581,12 +581,12 @@ public class FXMLSearchPageSceneController implements Initializable {
 
         if (selectedComponent.equals(components[0])) {
             try (ProcessorDAO pDAO = new JpaProcessorDAO();) {
-                String conditions;
+                String conditions = " where ";
 
-                if (actualMotherboardTable.getItems().isEmpty()) {
-                    conditions = FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
-                } else {
-                    conditions = FilterConditionStringGenerator.generateConditions(MaxPriceSlider, actualMotherboardTable.getItems().get(0).getMotherboardSocketType().get());
+                conditions += FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
+                if (! actualMotherboardTable.getItems().isEmpty()) {
+                    conditions += " and ";
+                    conditions += FilterConditionStringGenerator.generateConditions(actualMotherboardTable.getItems().get(0).getMotherboardSocketType().get());
                 }
 
                 List<Processor> compList = pDAO.getProcessors(conditions);
@@ -616,7 +616,9 @@ public class FXMLSearchPageSceneController implements Initializable {
             }
         } else if (selectedComponent.equals(components[1])) {
             try (PowerSupplyDAO pDAO = new JpaPowerSupplyDAO();) {
-                String conditions = FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
+                String conditions = " where ";
+                conditions += FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
+
                 List<PowerSupply> compList = pDAO.getPowerSupplies(conditions);
 
                 for (var elem : compList) {
@@ -638,7 +640,18 @@ public class FXMLSearchPageSceneController implements Initializable {
             }
         } else if (selectedComponent.equals(components[2])) {
             try (MotherboardDAO pDAO = new JpaMotherboardDAO();) {
-                String conditions = FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
+                String conditions = " where ";
+
+                conditions += FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
+                if (! actualMotherboardTable.getItems().isEmpty()) {
+                    conditions += " and ";
+                    conditions += FilterConditionStringGenerator.generateConditions(actualMotherboardTable.getItems().get(0).getMotherboardSocketType().get());
+                }
+                if (! actualMemoryTable.getItems().isEmpty()) {
+                    conditions += " and ";
+                    conditions += FilterConditionStringGenerator.generateConditions(actualMemoryTable.getItems().get(0).getMemoryNumOfModules().getValue());
+                }
+
                 List<Motherboard> compList = pDAO.getMotherboards(conditions);
 
                 for (var elem : compList) {
@@ -662,7 +675,9 @@ public class FXMLSearchPageSceneController implements Initializable {
             }
         } else if (selectedComponent.equals(components[3])) {
             try (MemoryDAO pDAO = new JpaMemoryDAO();) {
-                String conditions = FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
+                String conditions = " where ";
+                conditions += FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
+
                 List<Memory> compList = pDAO.getMemories(conditions);
 
                 for (var elem : compList) {
@@ -686,7 +701,9 @@ public class FXMLSearchPageSceneController implements Initializable {
             }
         } else if (selectedComponent.equals(components[4])) {
             try (HardDriveDiskDAO pDAO = new JpaHardDriveDiskDAO();) {
-                String conditions = FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
+                String conditions = " where ";
+                conditions += FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
+
                 List<HardDriveDisk> compList = pDAO.getHardDriveDisks(conditions);
 
                 for (var elem : compList) {
@@ -708,7 +725,6 @@ public class FXMLSearchPageSceneController implements Initializable {
                 e.printStackTrace();
             }
         }
-
     }
 
     @Override
