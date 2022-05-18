@@ -135,108 +135,231 @@
                      <content>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Label text="Processzor">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
+                              <HBox>
                                  <VBox.margin>
-                                    <Insets top="10.0" />
+                                    <Insets left="10.0" top="25.0" />
                                  </VBox.margin>
-                              </Label>
-                              <TableView fx:id="actualProcessorTable" prefHeight="70.0" prefWidth="640.0">
-                                 <columns>
-                                    <TableColumn fx:id="processorBrandTableColumn" prefWidth="84.79998624324799" text="Brand" />
-                                    <TableColumn fx:id="processorSeriesTableColumn" prefWidth="91.20001983642578" text="Series" />
-                                    <TableColumn fx:id="processorModelTableColumn" prefWidth="116.79998779296875" text="Model" />
-                                    <TableColumn fx:id="processorPriceTableColumn" prefWidth="118.4000244140625" text="Price" />
-                                    <TableColumn fx:id="processorFrequencyTableColumn" prefWidth="65.5999755859375" text="Frequency" />
-                                    <TableColumn fx:id="processorNumOfCoresTableColumn" prefWidth="45.600006103515625" text="Num. of cores" />
-                                    <TableColumn fx:id="processorPowerTableColumn" prefWidth="59.199951171875" text="Power" />
-                                    <TableColumn fx:id="processorSocketTypeTableColumn" prefWidth="67.199951171875" text="Socket type" />
-                                    <TableColumn fx:id="processorIntegratedGPUTableColumn" prefWidth="106.39984130859375" text="Integrated GPU" />
-                                 </columns>
-                              </TableView>
-                              <Label text="Tápegység">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets top="10.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <TableView fx:id="actualPowerSupplyTable" prefHeight="70.0" prefWidth="640.0">
-                                 <columns>
-                                    <TableColumn fx:id="powerSupplyBrandTableColumn" prefWidth="175.20001828670502" text="Brand" />
-                                    <TableColumn fx:id="powerSupplySeriesTableColumn" prefWidth="184.79998779296875" text="Series" />
-                                    <TableColumn fx:id="powerSupplyModelTableColumn" prefWidth="161.60000610351562" text="Model" />
-                                    <TableColumn fx:id="powerSupplyPriceTableColumn" prefWidth="105.5999755859375" text="Price" />
-                                    <TableColumn fx:id="powerSupplyEnergyEfficiencyTableColumn" prefWidth="123.99993896484375" text="Energy efficiency" />
-                                 </columns>
-                              </TableView>
-                              <Label text="Alaplap">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets top="10.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <TableView fx:id="actualMotherboardTable" prefHeight="70.0" prefWidth="640.0">
-                                 <columns>
-                                    <TableColumn fx:id="motherboardBrandTableColumn" prefWidth="132.79999387264252" text="Brand" />
-                                    <TableColumn fx:id="motherboardSeriesTableColumn" prefWidth="105.60003662109375" text="Series" />
-                                    <TableColumn fx:id="motherboardModelTableColumn" prefWidth="135.99993896484375" text="Model" />
-                                    <TableColumn fx:id="motherboardPriceTableColumn" prefWidth="99.20001220703125" text="Price" />
-                                    <TableColumn fx:id="motherboardSocketTypeTableColumn" prefWidth="119.99996948242188" text="Socket type" />
-                                    <TableColumn fx:id="motherboardFormFactorTableColumn" prefWidth="86.6666259765625" text="FormFactor" />
-                                    <TableColumn fx:id="motherboardNumOfRAMSocketsTableColumn" prefWidth="70.13336181640625" text="Num. of RAM sockets" />
-                                 </columns>
-                              </TableView>
-                              <Label text="Memória">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets top="10.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <TableView fx:id="actualMemoryTable" prefHeight="70.0" prefWidth="640.0">
-                                 <columns>
-                                    <TableColumn fx:id="memoryBrandTableColumn" prefWidth="145.59992063045502" text="Brand" />
-                                    <TableColumn fx:id="memorySeriesTableColumn" prefWidth="92.26669311523438" text="Series" />
-                                    <TableColumn fx:id="memoryModelTableColumn" prefWidth="107.199951171875" text="Model" />
-                                    <TableColumn fx:id="memoryPriceTableColumn" prefWidth="137.33331298828125" text="Price" />
-                                    <TableColumn fx:id="memoryFrequencyTableColumn" prefWidth="145.06674194335938" text="Frequency" />
-                                    <TableColumn fx:id="memoryCapacityTableColumn" prefWidth="71.199951171875" text="Capacity" />
-                                    <TableColumn fx:id="memoryNumOfModulesTableColumn" prefWidth="51.99993896484375" text="Num. of Modules" />
-                                 </columns>
-                              </TableView>
-                              <Label text="Merevlemez">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets top="10.0" />
-                                 </padding>
-                                 <VBox.margin>
-                                    <Insets top="10.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <TableView fx:id="actualHardDriveDiskTable" prefHeight="70.0" prefWidth="640.0">
-                                 <columns>
-                                    <TableColumn fx:id="hardDriveDiskBrandTableColumn" prefWidth="159.99994504451752" text="Brand" />
-                                    <TableColumn fx:id="hardDriveDiskSeriesTableColumn" prefWidth="128.00006103515625" text="Series" />
-                                    <TableColumn fx:id="hardDriveDiskModelTableColumn" prefWidth="178.39996337890625" text="Model" />
-                                    <TableColumn fx:id="hardDriveDiskPriceTableColumn" prefWidth="93.59994506835938" text="Price" />
-                                    <TableColumn fx:id="hardDriveDiskCapacityTableColumn" prefWidth="121.5999755859375" text="Capacity" />
-                                    <TableColumn fx:id="hardDriveDiskSpeedTableColumn" prefWidth="69.59991455078125" text="Speed" />
-                                 </columns>
-                              </TableView>
-                              <HBox alignment="TOP_RIGHT" prefHeight="25.0" prefWidth="200.0">
                                  <children>
-                                    <Label text="Konfiguráció neve">
+                                    <Label text="Processzor">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="actualProcessorWarningLabel" text="A konfiguráció még nem tartalmaz processzort!" textFill="RED" translateX="-66.0" translateY="40.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
                                        <HBox.margin>
-                                          <Insets right="10.0" />
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="35.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="actualProcessorTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
+                                       <columns>
+                                          <TableColumn fx:id="processorBrandTableColumn" prefWidth="60.266661047935486" text="Brand" />
+                                          <TableColumn fx:id="processorSeriesTableColumn" prefWidth="73.0666275024414" text="Series" />
+                                          <TableColumn fx:id="processorModelTableColumn" prefWidth="62.9332275390625" text="Model" />
+                                          <TableColumn fx:id="processorFrequencyTableColumn" prefWidth="47.20001220703125" text="Frequency" />
+                                          <TableColumn fx:id="processorNumOfCoresTableColumn" prefWidth="50.66668701171875" text="Num. of cores" />
+                                          <TableColumn fx:id="processorPowerTableColumn" prefWidth="71.20001220703125" text="Power" />
+                                          <TableColumn fx:id="processorSocketTypeTableColumn" prefWidth="85.5999755859375" text="Socket type" />
+                                          <TableColumn fx:id="processorIntegratedGPUTableColumn" prefWidth="115.19989013671875" text="Integrated GPU" />
+                                          <TableColumn fx:id="processorPriceTableColumn" prefWidth="48.0" text="Price" />
+                                       </columns>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </TableView>
+                                    <Button fx:id="deleteActualProcessorButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualProcessorButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE" visible="false">
+                                       <HBox.margin>
+                                          <Insets left="25.0" top="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="25.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label text="Tápegység">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="actualPowerSupplyWarningLabel" text="A konfiguráció még nem tartalmaz tápegységet!" textFill="RED" translateX="-68.0" translateY="40.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="35.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="actualPowerSupplyTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
+                                       <columns>
+                                          <TableColumn fx:id="powerSupplyBrandTableColumn" prefWidth="157.33334958553314" text="Brand" />
+                                          <TableColumn fx:id="powerSupplySeriesTableColumn" prefWidth="123.46661376953125" text="Series" />
+                                          <TableColumn fx:id="powerSupplyModelTableColumn" prefWidth="118.4000244140625" text="Model" />
+                                          <TableColumn fx:id="powerSupplyEnergyEfficiencyTableColumn" prefWidth="169.33328247070312" text="Energy efficiency" />
+                                          <TableColumn fx:id="powerSupplyPriceTableColumn" prefWidth="48.0" text="Price" />
+                                       </columns>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </TableView>
+                                    <Button fx:id="deleteActualPowerSupplyButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualPowerSupplyButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE" visible="false">
+                                       <HBox.margin>
+                                          <Insets left="25.0" top="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="25.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label text="Alaplap">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="actualMotherboardWarningLabel" text="A konfiguráció még nem tartalmaz alaplapot!" textFill="RED" translateX="-47.0" translateY="40.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="132.0" prefHeight="35.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="actualMotherboardTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
+                                       <columns>
+                                          <TableColumn fx:id="motherboardBrandTableColumn" prefWidth="132.79999387264252" text="Brand" />
+                                          <TableColumn fx:id="motherboardSeriesTableColumn" prefWidth="105.60003662109375" text="Series" />
+                                          <TableColumn fx:id="motherboardModelTableColumn" prefWidth="80.53338623046875" text="Model" />
+                                          <TableColumn fx:id="motherboardSocketTypeTableColumn" prefWidth="82.1334228515625" text="Socket type" />
+                                          <TableColumn fx:id="motherboardFormFactorTableColumn" prefWidth="91.99993896484375" text="FormFactor" />
+                                          <TableColumn fx:id="motherboardNumOfRAMSocketsTableColumn" prefWidth="74.93331909179688" text="Num. of RAM sockets" />
+                                          <TableColumn fx:id="motherboardPriceTableColumn" prefWidth="48.0" text="Price" />
+                                       </columns>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </TableView>
+                                    <Button fx:id="deleteActualMotherboardButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualMotherboardButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE" visible="false">
+                                       <HBox.margin>
+                                          <Insets left="25.0" top="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="25.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label text="Memória">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="actualMemoryWarningLabel" text="A konfiguráció még nem tartalmaz memóriát!" textFill="RED" translateX="-55.0" translateY="40.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="192.0" prefHeight="35.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="actualMemoryTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
+                                       <columns>
+                                          <TableColumn fx:id="memoryBrandTableColumn" prefWidth="145.59992063045502" text="Brand" />
+                                          <TableColumn fx:id="memorySeriesTableColumn" prefWidth="92.26669311523438" text="Series" />
+                                          <TableColumn fx:id="memoryModelTableColumn" prefWidth="107.199951171875" text="Model" />
+                                          <TableColumn fx:id="memoryFrequencyTableColumn" prefWidth="70.13323974609375" text="Frequency" />
+                                          <TableColumn fx:id="memoryCapacityTableColumn" prefWidth="55.733367919921875" text="Capacity" />
+                                          <TableColumn fx:id="memoryNumOfModulesTableColumn" prefWidth="96.80001831054688" text="Num. of Modules" />
+                                          <TableColumn fx:id="memoryPriceTableColumn" prefWidth="48.0" text="Price" />
+                                       </columns>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </TableView>
+                                    <Button fx:id="deleteActualMemoryButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualMemoryButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE" visible="false">
+                                       <HBox.margin>
+                                          <Insets left="25.0" top="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="25.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label text="Merevlemez">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label fx:id="actualHardDriveDiskWarningLabel" text="A konfiguráció még nem tartalmaz merevlemezt!" textFill="RED" translateX="-75.0" translateY="50.4">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="175.0" prefHeight="35.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="actualHardDriveDiskTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
+                                       <columns>
+                                          <TableColumn fx:id="hardDriveDiskBrandTableColumn" prefWidth="127.46671140193939" text="Brand" />
+                                          <TableColumn fx:id="hardDriveDiskSeriesTableColumn" prefWidth="104.53326416015625" text="Series" />
+                                          <TableColumn fx:id="hardDriveDiskModelTableColumn" prefWidth="137.8665771484375" text="Model" />
+                                          <TableColumn fx:id="hardDriveDiskCapacityTableColumn" prefWidth="113.066650390625" text="Capacity" />
+                                          <TableColumn fx:id="hardDriveDiskSpeedTableColumn" prefWidth="83.9998779296875" text="Speed" />
+                                          <TableColumn fx:id="hardDriveDiskPriceTableColumn" prefWidth="48.0" text="Price" />
+                                       </columns>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </TableView>
+                                    <Button fx:id="deleteActualHardDriveDiskButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualHardDriveDiskButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE" visible="false">
+                                       <HBox.margin>
+                                          <Insets left="25.0" top="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="55.6" prefWidth="200.0">
+                                 <children>
+                                    <Label prefHeight="18.0" prefWidth="110.0" text="Konfiguráció neve">
+                                       <HBox.margin>
+                                          <Insets />
                                        </HBox.margin>
                                     </Label>
                                     <TextField>
@@ -246,20 +369,15 @@
                                     </TextField>
                                     <Button mnemonicParsing="false" text="Mentés">
                                        <HBox.margin>
-                                          <Insets left="20.0" />
-                                       </HBox.margin>
-                                    </Button>
-                                    <Button mnemonicParsing="false" onMouseClicked="#handleDeleteComponentButtonClicked" text="Komponens törlése">
-                                       <HBox.margin>
-                                          <Insets left="275.0" />
+                                          <Insets left="410.0" />
                                        </HBox.margin>
                                     </Button>
                                  </children>
                                  <VBox.margin>
-                                    <Insets />
+                                    <Insets top="58.0" />
                                  </VBox.margin>
                                  <padding>
-                                    <Insets right="20.0" top="10.0" />
+                                    <Insets right="20.0" />
                                  </padding>
                               </HBox>
                            </children>
