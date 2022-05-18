@@ -568,8 +568,28 @@ public class FXMLSearchPageSceneController implements Initializable {
     }
 
     @FXML
-    void handleDeleteComponentButtonClicked(MouseEvent event) {
-        // komponens törlése az aktuális config tabról
+    void handleDeleteActualHardDriveDiskButtonClicked(MouseEvent event) {
+
+    }
+
+    @FXML
+    void handleDeleteActualMemoryButtonClicked(MouseEvent event) {
+
+    }
+
+    @FXML
+    void handleDeleteActualMotherboardButtonClicked(MouseEvent event) {
+
+    }
+
+    @FXML
+    void handleDeleteActualPowerSupplyButtonClicked(MouseEvent event) {
+
+    }
+
+    @FXML
+    void handleDeleteActualProcessorButtonClicked(MouseEvent event) {
+
     }
 
     /* A függvény feltölti elemekkel a kereső táblázatot */
