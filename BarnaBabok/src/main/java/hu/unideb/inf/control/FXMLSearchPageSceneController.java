@@ -3,11 +3,7 @@ package hu.unideb.inf.control;
 import hu.unideb.inf.control.FilterTools.FilterConditionStringGenerator;
 import hu.unideb.inf.control.FilterTools.Search;
 import hu.unideb.inf.model.components.*;
-import hu.unideb.inf.model.configs.ActualConfig;
-import hu.unideb.inf.model.configs.ActualConfigDAO;
-import hu.unideb.inf.model.configs.JPAActualConfigDAO;
 import javafx.beans.property.*;
-import javafx.beans.value.ObservableListValue;
 import javafx.beans.value.ObservableValue;
 import javafx.beans.value.ObservableValueBase;
 import javafx.collections.FXCollections;
@@ -16,7 +12,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
@@ -525,6 +520,41 @@ public class FXMLSearchPageSceneController implements Initializable {
     @FXML
     private Label actualHardDriveDiskWarningLabel;
 
+    // Aktuális konfiguráció elnevezéséhez szükséges TextField
+    @FXML
+    private TextField configNameTextField;
+
+
+    @FXML
+    void handleSaveActualConfigButtonClicked(MouseEvent event) {
+        final String message1 = "Kérlek adj hozzá a konfigurációhoz minden alkatrészből egyet!\n";
+        final String message2 = "Adj nevet a konfigurációnak!";
+
+        boolean isThereAnEmptyTable = actualProcessorTable.getItems().isEmpty() &&
+                actualPowerSupplyTable.getItems().isEmpty() &&
+                actualMotherboardTable.getItems().isEmpty() &&
+                actualMemoryTable.getItems().isEmpty() &&
+                actualHardDriveDiskTable.getItems().isEmpty();
+
+        if (configNameTextField.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(message2);
+            alert.setTitle("Hiba!");
+            alert.setHeaderText(null);
+
+            alert.showAndWait();
+        } else if (isThereAnEmptyTable) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(message1);
+            alert.setTitle("Hiba!");
+            alert.setHeaderText(null);
+
+            alert.showAndWait();
+        } else {
+            // to do
+        }
+
+    }
 
     @FXML
     void handleAddComponentButtonClicked(MouseEvent event) {

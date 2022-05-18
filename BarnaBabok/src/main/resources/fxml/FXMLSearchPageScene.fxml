@@ -362,12 +362,12 @@
                                           <Insets />
                                        </HBox.margin>
                                     </Label>
-                                    <TextField>
+                                    <TextField fx:id="configNameTextField">
                                        <HBox.margin>
                                           <Insets />
                                        </HBox.margin>
                                     </TextField>
-                                    <Button mnemonicParsing="false" text="Mentés">
+                                    <Button mnemonicParsing="false" onMouseClicked="#handleSaveActualConfigButtonClicked" text="Mentés">
                                        <HBox.margin>
                                           <Insets left="410.0" />
                                        </HBox.margin>
