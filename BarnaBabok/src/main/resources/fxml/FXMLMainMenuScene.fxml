@@ -1,18 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
-   <center>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+<Pane fx:id="mainMenuScenePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1080.0" stylesheets="@../styles/mainMenuStyles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.control.FXMLMainMenuSceneController">
+   <children>
+      <HBox prefHeight="600.0" prefWidth="1080.0">
          <children>
-            <Button mnemonicParsing="false" text="Search" />
-            <Button mnemonicParsing="false" text="Configurations" />
-            <Button mnemonicParsing="false" text="Credits" />
+            <VBox alignment="CENTER" prefHeight="600.0" prefWidth="480.0">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#handleMakeAConfigButtonClicked" prefHeight="77.0" prefWidth="237.0" styleClass="mainMenuButton" text="Gép összeállítása" textOverrun="CLIP">
+                     <padding>
+                        <Insets bottom="25.0" left="50.0" right="50.0" top="25.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="132.0" layoutY="202.0" mnemonicParsing="false" onMouseClicked="#handleConfigsButtonClicked" prefHeight="77.0" prefWidth="237.0" text="Konfigurációk" textOverrun="CLIP">
+                     <padding>
+                        <Insets bottom="25.0" left="50.0" right="50.0" top="25.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button layoutX="432.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#handleCreditsButtonClicked" prefHeight="58.0" prefWidth="237.0" text="Credits" textOverrun="CLIP">
+                     <padding>
+                        <Insets bottom="15.0" left="90.0" right="90.0" top="15.0" />
+                     </padding>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button layoutX="524.0" layoutY="310.0" mnemonicParsing="false" onMouseClicked="#handleExitButtonClicked" prefHeight="58.0" prefWidth="237.0" text="Kilépés" textOverrun="CLIP">
+                     <padding>
+                        <Insets bottom="15.0" left="90.0" right="90.0" top="15.0" />
+                     </padding>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox prefHeight="600.0" prefWidth="600.0">
+               <children>
+                  <ImageView fitHeight="293.0" fitWidth="481.0" pickOnBounds="true" preserveRatio="true" x="295.0">
+                     <VBox.margin>
+                        <Insets top="80.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@assets/logo2.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="462.0" text="Göter" textFill="#f1b149" textOverrun="CLIP">
+                     <font>
+                        <Font size="86.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
          </children>
-      </VBox>
-   </center>
-</BorderPane>
+      </HBox>
+      <Pane fx:id="creditsPane" layoutX="50.0" layoutY="90.0" prefHeight="410.0" prefWidth="380.0" visible="false">
+         <children>
+            <VBox alignment="BOTTOM_LEFT" prefHeight="410.0" prefWidth="380.0" styleClass="creditsClass">
+               <children>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="466.0" text="Credits">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="to do" wrappingWidth="276.3236389160156">
+                     <VBox.margin>
+                        <Insets bottom="250.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Button mnemonicParsing="false" onMouseClicked="#handleCreditsBackButtonPressed" text="Vissza">
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="300.0" right="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</Pane>

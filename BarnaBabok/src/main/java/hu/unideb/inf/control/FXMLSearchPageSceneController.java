@@ -3,11 +3,7 @@ package hu.unideb.inf.control;
 import hu.unideb.inf.control.FilterTools.FilterConditionStringGenerator;
 import hu.unideb.inf.control.FilterTools.Search;
 import hu.unideb.inf.model.components.*;
-import hu.unideb.inf.model.configs.ActualConfig;
-import hu.unideb.inf.model.configs.ActualConfigDAO;
-import hu.unideb.inf.model.configs.JPAActualConfigDAO;
 import javafx.beans.property.*;
-import javafx.beans.value.ObservableListValue;
 import javafx.beans.value.ObservableValue;
 import javafx.beans.value.ObservableValueBase;
 import javafx.collections.FXCollections;
@@ -16,7 +12,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
@@ -525,6 +520,13 @@ public class FXMLSearchPageSceneController implements Initializable {
     @FXML
     private Label actualHardDriveDiskWarningLabel;
 
+    // tab
+    @FXML
+    private TabPane tabPane;
+
+    public void setSelectedTabPaneTab(int i) {
+        tabPane.getSelectionModel().select(i);
+    }
 
     @FXML
     void handleAddComponentButtonClicked(MouseEvent event) {
