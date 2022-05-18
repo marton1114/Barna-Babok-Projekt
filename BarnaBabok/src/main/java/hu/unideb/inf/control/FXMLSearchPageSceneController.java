@@ -568,28 +568,28 @@ public class FXMLSearchPageSceneController implements Initializable {
     }
 
     @FXML
-    void handleDeleteActualHardDriveDiskButtonClicked(MouseEvent event) {
-
-    }
-
-    @FXML
-    void handleDeleteActualMemoryButtonClicked(MouseEvent event) {
-
-    }
-
-    @FXML
-    void handleDeleteActualMotherboardButtonClicked(MouseEvent event) {
-
+    void handleDeleteActualProcessorButtonClicked(MouseEvent event) {
+        actualProcessorTable.getItems().remove(actualProcessorTable.getItems().get(0));
     }
 
     @FXML
     void handleDeleteActualPowerSupplyButtonClicked(MouseEvent event) {
-
+        actualPowerSupplyTable.getItems().remove(actualPowerSupplyTable.getItems().get(0));
     }
 
     @FXML
-    void handleDeleteActualProcessorButtonClicked(MouseEvent event) {
+    void handleDeleteActualMotherboardButtonClicked(MouseEvent event) {
+        actualMotherboardTable.getItems().remove(actualMotherboardTable.getItems().get(0));
+    }
 
+    @FXML
+    void handleDeleteActualMemoryButtonClicked(MouseEvent event) {
+        actualMemoryTable.getItems().remove(actualMemoryTable.getItems().get(0));
+    }
+
+    @FXML
+    void handleDeleteActualHardDriveDiskButtonClicked(MouseEvent event) {
+        actualHardDriveDiskTable.getItems().remove(actualHardDriveDiskTable.getItems().get(0));
     }
 
     /* A függvény feltölti elemekkel a kereső táblázatot */
