@@ -11,7 +11,6 @@ public class DataHandler {
         for (int i = 0; i < lines.size(); i++)
         {
             String[] spec = lines.get(i).split(";");
-//            System.out.println(lines.get(i));
 
             Processor proc = new Processor();
 
@@ -42,7 +41,6 @@ public class DataHandler {
         for (int i = 0; i < lines.size(); i++)
         {
             String[] spec = lines.get(i).split(";");
-            //System.out.println(lines.get(i));
 
             Memory mem = new Memory();
 
@@ -71,7 +69,6 @@ public class DataHandler {
         for (int i = 0; i < lines.size(); i++)
         {
             String[] spec = lines.get(i).split(";");
-            System.out.println(lines.get(i));
 
             Motherboard mb = new Motherboard();
 
@@ -100,7 +97,6 @@ public class DataHandler {
         for (int i = 0; i < lines.size(); i++)
         {
             String[] spec = lines.get(i).split(";");
-            System.out.println(lines.get(i));
 
             HardDriveDisk h = new HardDriveDisk();
 
@@ -128,7 +124,6 @@ public class DataHandler {
         for (int i = 0; i < lines.size(); i++)
         {
             String[] spec = lines.get(i).split(";");
-            System.out.println(lines.get(i));
 
             PowerSupply p = new PowerSupply();
 

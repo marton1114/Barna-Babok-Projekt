@@ -690,10 +690,8 @@ public class FXMLSearchPageSceneController implements Initializable {
 
                 for (var elem : compList) {
                     String bsm = elem.getBrand() + elem.getSeries() + elem.getModel();
-
-                    if (Search.contains(bsm, keywordTextField.getText())) {
+                    if (Search.contains(bsm, keywordTextField.getText()))
                         items.add(new PCComponentWrapper(elem));
-                    }
                 }
 
                 productTableView.setItems(items);
@@ -742,7 +740,7 @@ public class FXMLSearchPageSceneController implements Initializable {
                 conditions += FilterConditionStringGenerator.generateConditionsMaxSlider(MaxPriceSlider);
                 if (! actualProcessorTable.getItems().isEmpty()) {
                     conditions += " and ";
-                    conditions += FilterConditionStringGenerator.generateConditionsSocketType(actualMotherboardTable.getItems().get(0).getMotherboardSocketType().get());
+                    conditions += FilterConditionStringGenerator.generateConditionsSocketType(actualProcessorTable.getItems().get(0).getProcessorSocketType().get());
                 }
                 if (! actualMemoryTable.getItems().isEmpty()) {
                     conditions += " and ";
@@ -770,6 +768,8 @@ public class FXMLSearchPageSceneController implements Initializable {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
+
         } else if (selectedComponent.equals(components[3])) {
             try (MemoryDAO pDAO = new JpaMemoryDAO();) {
                 String conditions = " where ";
@@ -826,6 +826,7 @@ public class FXMLSearchPageSceneController implements Initializable {
                 e.printStackTrace();
             }
         }
+
     }
 
     @Override
