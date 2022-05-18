@@ -509,6 +509,23 @@ public class FXMLSearchPageSceneController implements Initializable {
     @FXML
     private Button deleteActualProcessorButton;
 
+    // Aktuális konfig alkatrészeinek a figyelmeztető üzenetei
+    @FXML
+    private Label actualProcessorWarningLabel;
+
+    @FXML
+    private Label actualPowerSupplyWarningLabel;
+
+    @FXML
+    private Label actualMotherboardWarningLabel;
+
+    @FXML
+    private Label actualMemoryWarningLabel;
+
+    @FXML
+    private Label actualHardDriveDiskWarningLabel;
+
+
     @FXML
     void handleAddComponentButtonClicked(MouseEvent event) {
         String selectedComponent = ComponentChoiceBox.getValue();   // checkbox-ban kiválasztott komponenst jelöli
@@ -519,6 +536,7 @@ public class FXMLSearchPageSceneController implements Initializable {
             actualProcessorTable.setVisible(true);
             deleteActualProcessorButton.setDisable(false);
             deleteActualProcessorButton.setVisible(true);
+            actualProcessorWarningLabel.setVisible(false);
 
             items.add(productTableView.getSelectionModel().getSelectedItem());
 
@@ -537,6 +555,7 @@ public class FXMLSearchPageSceneController implements Initializable {
             actualPowerSupplyTable.setVisible(true);
             deleteActualPowerSupplyButton.setDisable(false);
             deleteActualPowerSupplyButton.setVisible(true);
+            actualPowerSupplyWarningLabel.setVisible(false);
 
             items.add(productTableView.getSelectionModel().getSelectedItem());
 
@@ -551,6 +570,7 @@ public class FXMLSearchPageSceneController implements Initializable {
             actualMotherboardTable.setVisible(true);
             deleteActualMotherboardButton.setDisable(false);
             deleteActualMotherboardButton.setVisible(true);
+            actualMotherboardWarningLabel.setVisible(false);
 
             items.add(productTableView.getSelectionModel().getSelectedItem());
 
@@ -568,6 +588,7 @@ public class FXMLSearchPageSceneController implements Initializable {
             actualMemoryTable.setVisible(true);
             deleteActualMemoryButton.setDisable(false);
             deleteActualMemoryButton.setVisible(true);
+            actualMemoryWarningLabel.setVisible(false);
 
             items.add(productTableView.getSelectionModel().getSelectedItem());
 
@@ -587,6 +608,7 @@ public class FXMLSearchPageSceneController implements Initializable {
             actualHardDriveDiskTable.setVisible(true);
             deleteActualHardDriveDiskButton.setDisable(false);
             deleteActualHardDriveDiskButton.setVisible(true);
+            actualHardDriveDiskWarningLabel.setVisible(false);
 
             items.add(productTableView.getSelectionModel().getSelectedItem());
 
@@ -608,6 +630,7 @@ public class FXMLSearchPageSceneController implements Initializable {
         actualProcessorTable.setVisible(false);
         deleteActualProcessorButton.setDisable(true);
         deleteActualProcessorButton.setVisible(false);
+        actualProcessorWarningLabel.setVisible(true);
     }
 
     @FXML
@@ -616,6 +639,7 @@ public class FXMLSearchPageSceneController implements Initializable {
         actualPowerSupplyTable.setVisible(false);
         deleteActualPowerSupplyButton.setDisable(true);
         deleteActualPowerSupplyButton.setVisible(false);
+        actualPowerSupplyWarningLabel.setVisible(true);
     }
 
     @FXML
@@ -624,6 +648,7 @@ public class FXMLSearchPageSceneController implements Initializable {
         actualMotherboardTable.setVisible(false);
         deleteActualMotherboardButton.setDisable(true);
         deleteActualMotherboardButton.setVisible(false);
+        actualMotherboardWarningLabel.setVisible(true);
     }
 
     @FXML
@@ -632,6 +657,7 @@ public class FXMLSearchPageSceneController implements Initializable {
         actualMemoryTable.setVisible(false);
         deleteActualMemoryButton.setDisable(true);
         deleteActualMemoryButton.setVisible(false);
+        actualMemoryWarningLabel.setVisible(true);
     }
 
     @FXML
@@ -640,6 +666,7 @@ public class FXMLSearchPageSceneController implements Initializable {
         actualHardDriveDiskTable.setVisible(false);
         deleteActualHardDriveDiskButton.setDisable(true);
         deleteActualHardDriveDiskButton.setVisible(false);
+        actualHardDriveDiskWarningLabel.setVisible(true);
     }
 
     /* A függvény feltölti elemekkel a kereső táblázatot */

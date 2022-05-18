@@ -135,14 +135,26 @@
                      <content>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Label text="Processzor">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
+                              <HBox>
                                  <VBox.margin>
                                     <Insets left="10.0" top="25.0" />
                                  </VBox.margin>
-                              </Label>
+                                 <children>
+                                    <Label text="Processzor">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="actualProcessorWarningLabel" text="A konfiguráció még nem tartalmaz processzort!" textFill="RED" translateX="-66.0" translateY="40.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
                               <HBox prefHeight="35.0" prefWidth="200.0">
                                  <children>
                                     <TableView fx:id="actualProcessorTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
@@ -171,14 +183,23 @@
                                     </Button>
                                  </children>
                               </HBox>
-                              <Label text="Tápegység">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
+                              <HBox>
                                  <VBox.margin>
                                     <Insets left="10.0" top="25.0" />
                                  </VBox.margin>
-                              </Label>
+                                 <children>
+                                    <Label text="Tápegység">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="actualPowerSupplyWarningLabel" text="A konfiguráció még nem tartalmaz tápegységet!" textFill="RED" translateX="-68.0" translateY="40.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
                               <HBox prefHeight="35.0" prefWidth="200.0">
                                  <children>
                                     <TableView fx:id="actualPowerSupplyTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
@@ -203,14 +224,23 @@
                                     </Button>
                                  </children>
                               </HBox>
-                              <Label text="Alaplap">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
+                              <HBox>
                                  <VBox.margin>
                                     <Insets left="10.0" top="25.0" />
                                  </VBox.margin>
-                              </Label>
+                                 <children>
+                                    <Label text="Alaplap">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="actualMotherboardWarningLabel" text="A konfiguráció még nem tartalmaz alaplapot!" textFill="RED" translateX="-47.0" translateY="40.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
                               <HBox layoutX="10.0" layoutY="132.0" prefHeight="35.0" prefWidth="200.0">
                                  <children>
                                     <TableView fx:id="actualMotherboardTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
@@ -237,14 +267,23 @@
                                     </Button>
                                  </children>
                               </HBox>
-                              <Label text="Memória">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
+                              <HBox>
                                  <VBox.margin>
                                     <Insets left="10.0" top="25.0" />
                                  </VBox.margin>
-                              </Label>
+                                 <children>
+                                    <Label text="Memória">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="actualMemoryWarningLabel" text="A konfiguráció még nem tartalmaz memóriát!" textFill="RED" translateX="-55.0" translateY="40.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
                               <HBox layoutX="10.0" layoutY="192.0" prefHeight="35.0" prefWidth="200.0">
                                  <children>
                                     <TableView fx:id="actualMemoryTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
@@ -271,17 +310,26 @@
                                     </Button>
                                  </children>
                               </HBox>
-                              <Label text="Merevlemez">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets top="10.0" />
-                                 </padding>
+                              <HBox>
                                  <VBox.margin>
                                     <Insets left="10.0" top="25.0" />
                                  </VBox.margin>
-                              </Label>
+                                 <children>
+                                    <Label text="Merevlemez">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label fx:id="actualHardDriveDiskWarningLabel" text="A konfiguráció még nem tartalmaz merevlemezt!" textFill="RED" translateX="-75.0" translateY="50.4">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
                               <HBox layoutX="10.0" layoutY="175.0" prefHeight="35.0" prefWidth="200.0">
                                  <children>
                                     <TableView fx:id="actualHardDriveDiskTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
