@@ -104,14 +104,14 @@ public class Processor {
 
     @Override
     public String toString() {
-        return "brand='" + brand + '\'' +
-                ", series='" + series + '\'' +
-                ", model='" + model + '\'' +
-                ", frequency=" + frequency +
-                ", socketType='" + socketType + '\'' +
-                ", numOfCores=" + numOfCores +
-                ", integratedGPU='" + integratedGPU + '\'' +
-                ", power=" + power +
-                ", price=" + price;
+        return "Gyártó: " + brand + '\n' +
+                "Sorozat: " + series + '\n' +
+                "Modell: " + model + '\n' +
+                "Maximális frekvencia: " + frequency + '\n' +
+                "Foglalat típusa: " + socketType + '\n' +
+                "Magok száma: " + numOfCores + '\n' +
+                "Integrált GPU: " + integratedGPU + '\n' +
+                "Fogyasztás: " + power + '\n' +
+                "Ár: " + price;
     }
 }

@@ -76,10 +76,10 @@ public class PowerSupply {
 
     @Override
     public String toString() {
-        return "brand='" + brand + '\'' +
-                ", series='" + series + '\'' +
-                ", model='" + model + '\'' +
-                ", energyEfficiency='" + energyEfficiency + '\'' +
-                ", price=" + price;
+        return "Gyártó: " + brand + '\n' +
+                "Sorozat: " + series + '\n' +
+                "Modell: " + model + '\n' +
+                "Effektivitás: " + energyEfficiency + '\n' +
+                "Ár: " + price;
     }
 }
