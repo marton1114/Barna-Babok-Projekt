@@ -493,6 +493,21 @@ public class FXMLSearchPageSceneController implements Initializable {
     @FXML
     private TableColumn<PCComponentWrapper, Integer> hardDriveDiskSpeedTableColumn;
 
+    // Aktuális konfig alkatrészeinek a törlésére szolgáló gombok
+    @FXML
+    private Button deleteActualHardDriveDiskButton;
+
+    @FXML
+    private Button deleteActualMemoryButton;
+
+    @FXML
+    private Button deleteActualMotherboardButton;
+
+    @FXML
+    private Button deleteActualPowerSupplyButton;
+
+    @FXML
+    private Button deleteActualProcessorButton;
 
     @FXML
     void handleAddComponentButtonClicked(MouseEvent event) {
@@ -501,6 +516,10 @@ public class FXMLSearchPageSceneController implements Initializable {
         ObservableList<PCComponentWrapper> items = FXCollections.observableArrayList();
 
         if (selectedComponent.equals(components[0])) {
+            actualProcessorTable.setVisible(true);
+            deleteActualProcessorButton.setDisable(false);
+            deleteActualProcessorButton.setVisible(true);
+
             items.add(productTableView.getSelectionModel().getSelectedItem());
 
             actualProcessorTable.setItems(items);
@@ -515,6 +534,10 @@ public class FXMLSearchPageSceneController implements Initializable {
             processorSeriesTableColumn.setCellValueFactory(e -> e.getValue().getProcessorSeries());
             processorSocketTypeTableColumn.setCellValueFactory(e -> e.getValue().getProcessorSocketType());
         } else if (selectedComponent.equals(components[1])) {
+            actualPowerSupplyTable.setVisible(true);
+            deleteActualPowerSupplyButton.setDisable(false);
+            deleteActualPowerSupplyButton.setVisible(true);
+
             items.add(productTableView.getSelectionModel().getSelectedItem());
 
             actualPowerSupplyTable.setItems(items);
@@ -525,6 +548,10 @@ public class FXMLSearchPageSceneController implements Initializable {
             powerSupplyPriceTableColumn.setCellValueFactory(e -> e.getValue().getPowerSupplyPrice());
             powerSupplySeriesTableColumn.setCellValueFactory(e -> e.getValue().getPowerSupplySeries());
         } else if (selectedComponent.equals(components[2])) {
+            actualMotherboardTable.setVisible(true);
+            deleteActualMotherboardButton.setDisable(false);
+            deleteActualMotherboardButton.setVisible(true);
+
             items.add(productTableView.getSelectionModel().getSelectedItem());
 
             actualMotherboardTable.setItems(items);
@@ -538,6 +565,10 @@ public class FXMLSearchPageSceneController implements Initializable {
             motherboardSocketTypeTableColumn.setCellValueFactory(e -> e.getValue().getMotherboardSocketType());
 
         } else if (selectedComponent.equals(components[3])) {
+            actualMemoryTable.setVisible(true);
+            deleteActualMemoryButton.setDisable(false);
+            deleteActualMemoryButton.setVisible(true);
+
             items.add(productTableView.getSelectionModel().getSelectedItem());
 
             actualMemoryTable.setItems(items);
@@ -553,6 +584,10 @@ public class FXMLSearchPageSceneController implements Initializable {
             memorySeriesTableColumn.setCellValueFactory(e -> e.getValue().getMemorySeries());
 
         } else if (selectedComponent.equals(components[4])) {
+            actualHardDriveDiskTable.setVisible(true);
+            deleteActualHardDriveDiskButton.setDisable(false);
+            deleteActualHardDriveDiskButton.setVisible(true);
+
             items.add(productTableView.getSelectionModel().getSelectedItem());
 
             actualHardDriveDiskTable.setItems(items);
@@ -570,26 +605,41 @@ public class FXMLSearchPageSceneController implements Initializable {
     @FXML
     void handleDeleteActualProcessorButtonClicked(MouseEvent event) {
         actualProcessorTable.getItems().remove(actualProcessorTable.getItems().get(0));
+        actualProcessorTable.setVisible(false);
+        deleteActualProcessorButton.setDisable(true);
+        deleteActualProcessorButton.setVisible(false);
     }
 
     @FXML
     void handleDeleteActualPowerSupplyButtonClicked(MouseEvent event) {
         actualPowerSupplyTable.getItems().remove(actualPowerSupplyTable.getItems().get(0));
+        actualPowerSupplyTable.setVisible(false);
+        deleteActualPowerSupplyButton.setDisable(true);
+        deleteActualPowerSupplyButton.setVisible(false);
     }
 
     @FXML
     void handleDeleteActualMotherboardButtonClicked(MouseEvent event) {
         actualMotherboardTable.getItems().remove(actualMotherboardTable.getItems().get(0));
+        actualMotherboardTable.setVisible(false);
+        deleteActualMotherboardButton.setDisable(true);
+        deleteActualMotherboardButton.setVisible(false);
     }
 
     @FXML
     void handleDeleteActualMemoryButtonClicked(MouseEvent event) {
         actualMemoryTable.getItems().remove(actualMemoryTable.getItems().get(0));
+        actualMemoryTable.setVisible(false);
+        deleteActualMemoryButton.setDisable(true);
+        deleteActualMemoryButton.setVisible(false);
     }
 
     @FXML
     void handleDeleteActualHardDriveDiskButtonClicked(MouseEvent event) {
         actualHardDriveDiskTable.getItems().remove(actualHardDriveDiskTable.getItems().get(0));
+        actualHardDriveDiskTable.setVisible(false);
+        deleteActualHardDriveDiskButton.setDisable(true);
+        deleteActualHardDriveDiskButton.setVisible(false);
     }
 
     /* A függvény feltölti elemekkel a kereső táblázatot */

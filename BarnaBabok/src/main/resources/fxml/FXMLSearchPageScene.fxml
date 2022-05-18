@@ -145,7 +145,7 @@
                               </Label>
                               <HBox prefHeight="35.0" prefWidth="200.0">
                                  <children>
-                                    <TableView fx:id="actualProcessorTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0">
+                                    <TableView fx:id="actualProcessorTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
                                        <columns>
                                           <TableColumn fx:id="processorBrandTableColumn" prefWidth="60.266661047935486" text="Brand" />
                                           <TableColumn fx:id="processorSeriesTableColumn" prefWidth="73.0666275024414" text="Series" />
@@ -161,7 +161,7 @@
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                     </TableView>
-                                    <Button mnemonicParsing="false" onMouseClicked="#handleDeleteActualProcessorButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE">
+                                    <Button fx:id="deleteActualProcessorButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualProcessorButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE" visible="false">
                                        <HBox.margin>
                                           <Insets left="25.0" top="10.0" />
                                        </HBox.margin>
@@ -181,7 +181,7 @@
                               </Label>
                               <HBox prefHeight="35.0" prefWidth="200.0">
                                  <children>
-                                    <TableView fx:id="actualPowerSupplyTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0">
+                                    <TableView fx:id="actualPowerSupplyTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
                                        <columns>
                                           <TableColumn fx:id="powerSupplyBrandTableColumn" prefWidth="157.33334958553314" text="Brand" />
                                           <TableColumn fx:id="powerSupplySeriesTableColumn" prefWidth="123.46661376953125" text="Series" />
@@ -193,7 +193,7 @@
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                     </TableView>
-                                    <Button mnemonicParsing="false" onMouseClicked="#handleDeleteActualPowerSupplyButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE">
+                                    <Button fx:id="deleteActualPowerSupplyButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualPowerSupplyButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE" visible="false">
                                        <HBox.margin>
                                           <Insets left="25.0" top="10.0" />
                                        </HBox.margin>
@@ -213,7 +213,7 @@
                               </Label>
                               <HBox layoutX="10.0" layoutY="132.0" prefHeight="35.0" prefWidth="200.0">
                                  <children>
-                                    <TableView fx:id="actualMotherboardTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0">
+                                    <TableView fx:id="actualMotherboardTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
                                        <columns>
                                           <TableColumn fx:id="motherboardBrandTableColumn" prefWidth="132.79999387264252" text="Brand" />
                                           <TableColumn fx:id="motherboardSeriesTableColumn" prefWidth="105.60003662109375" text="Series" />
@@ -227,7 +227,7 @@
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                     </TableView>
-                                    <Button mnemonicParsing="false" onMouseClicked="#handleDeleteActualMotherboardButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE">
+                                    <Button fx:id="deleteActualMotherboardButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualMotherboardButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE" visible="false">
                                        <HBox.margin>
                                           <Insets left="25.0" top="10.0" />
                                        </HBox.margin>
@@ -247,7 +247,7 @@
                               </Label>
                               <HBox layoutX="10.0" layoutY="192.0" prefHeight="35.0" prefWidth="200.0">
                                  <children>
-                                    <TableView fx:id="actualMemoryTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0">
+                                    <TableView fx:id="actualMemoryTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
                                        <columns>
                                           <TableColumn fx:id="memoryBrandTableColumn" prefWidth="145.59992063045502" text="Brand" />
                                           <TableColumn fx:id="memorySeriesTableColumn" prefWidth="92.26669311523438" text="Series" />
@@ -261,7 +261,7 @@
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                     </TableView>
-                                    <Button mnemonicParsing="false" onMouseClicked="#handleDeleteActualMemoryButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE">
+                                    <Button fx:id="deleteActualMemoryButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualMemoryButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE" visible="false">
                                        <HBox.margin>
                                           <Insets left="25.0" top="10.0" />
                                        </HBox.margin>
@@ -284,7 +284,7 @@
                               </Label>
                               <HBox layoutX="10.0" layoutY="175.0" prefHeight="35.0" prefWidth="200.0">
                                  <children>
-                                    <TableView fx:id="actualHardDriveDiskTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0">
+                                    <TableView fx:id="actualHardDriveDiskTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
                                        <columns>
                                           <TableColumn fx:id="hardDriveDiskBrandTableColumn" prefWidth="127.46671140193939" text="Brand" />
                                           <TableColumn fx:id="hardDriveDiskSeriesTableColumn" prefWidth="104.53326416015625" text="Series" />
@@ -297,7 +297,7 @@
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                     </TableView>
-                                    <Button mnemonicParsing="false" onMouseClicked="#handleDeleteActualHardDriveDiskButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE">
+                                    <Button fx:id="deleteActualHardDriveDiskButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualHardDriveDiskButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE" visible="false">
                                        <HBox.margin>
                                           <Insets left="25.0" top="10.0" />
                                        </HBox.margin>
