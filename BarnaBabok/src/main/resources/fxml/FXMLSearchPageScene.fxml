@@ -97,7 +97,7 @@
                   <Insets left="25.0" />
                </padding>
             </VBox>
-            <TabPane prefHeight="200.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="30.0" tabMinWidth="100.0">
+            <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="30.0" tabMinWidth="100.0">
               <tabs>
                 <Tab text="Összeállítás">
                      <content>
