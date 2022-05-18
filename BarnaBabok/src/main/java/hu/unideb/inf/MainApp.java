@@ -11,7 +11,7 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLSearchPageScene.fxml"));
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/FXMLMainMenuScene.fxml"));
         Scene scene = new Scene(loader.load());
         stage.setTitle("Göter");
         stage.setScene(scene);
