@@ -3,6 +3,8 @@ package hu.unideb.inf.control;
 import hu.unideb.inf.control.FilterTools.FilterConditionStringGenerator;
 import hu.unideb.inf.control.FilterTools.Search;
 import hu.unideb.inf.model.components.*;
+import hu.unideb.inf.model.configs.Config;
+import hu.unideb.inf.model.configs.JPAConfigDAO;
 import javafx.beans.property.*;
 import javafx.beans.value.ObservableValue;
 import javafx.beans.value.ObservableValueBase;
@@ -530,11 +532,7 @@ public class FXMLSearchPageSceneController implements Initializable {
         final String message1 = "Kérlek adj hozzá a konfigurációhoz minden alkatrészből egyet!\n";
         final String message2 = "Adj nevet a konfigurációnak!";
 
-        boolean isThereAnEmptyTable = actualProcessorTable.getItems().isEmpty() &&
-                actualPowerSupplyTable.getItems().isEmpty() &&
-                actualMotherboardTable.getItems().isEmpty() &&
-                actualMemoryTable.getItems().isEmpty() &&
-                actualHardDriveDiskTable.getItems().isEmpty();
+        boolean isThereAnEmptyTable = actualProcessorTable.getItems().isEmpty() || actualPowerSupplyTable.getItems().isEmpty() || actualMotherboardTable.getItems().isEmpty()  || actualMemoryTable.getItems().isEmpty() || actualHardDriveDiskTable.getItems().isEmpty();
 
         if (configNameTextField.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -551,7 +549,21 @@ public class FXMLSearchPageSceneController implements Initializable {
 
             alert.showAndWait();
         } else {
-            // to do
+            try (JPAConfigDAO cDAO = new JPAConfigDAO()) {
+                Config config = new Config();
+
+                config.setProcessor(actualProcessorTable.getItems().get(0).getProcessor());
+                config.setPowerSupply(actualPowerSupplyTable.getItems().get(0).getPowerSupply());
+                config.setMotherboard(actualMotherboardTable.getItems().get(0).getMotherboard());
+                config.setMemory(actualMemoryTable.getItems().get(0).getMemory());
+                config.setHardDriveDisk(actualHardDriveDiskTable.getItems().get(0).getHardDriveDisk());
+                config.setName(configNameTextField.getText());
+
+                cDAO.saveConfig(config);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
     }
