@@ -140,12 +140,12 @@
                                     <Font size="14.0" />
                                  </font>
                                  <VBox.margin>
-                                    <Insets left="10.0" top="10.0" />
+                                    <Insets left="10.0" top="25.0" />
                                  </VBox.margin>
                               </Label>
                               <HBox prefHeight="35.0" prefWidth="200.0">
                                  <children>
-                                    <TableView fx:id="actualProcessorTable" focusTraversable="false" prefHeight="35.0" prefWidth="640.0">
+                                    <TableView fx:id="actualProcessorTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0">
                                        <columns>
                                           <TableColumn fx:id="processorBrandTableColumn" prefWidth="60.266661047935486" text="Brand" />
                                           <TableColumn fx:id="processorSeriesTableColumn" prefWidth="73.0666275024414" text="Series" />
@@ -154,17 +154,20 @@
                                           <TableColumn fx:id="processorNumOfCoresTableColumn" prefWidth="50.66668701171875" text="Num. of cores" />
                                           <TableColumn fx:id="processorPowerTableColumn" prefWidth="71.20001220703125" text="Power" />
                                           <TableColumn fx:id="processorSocketTypeTableColumn" prefWidth="85.5999755859375" text="Socket type" />
-                                          <TableColumn fx:id="processorIntegratedGPUTableColumn" prefWidth="116.53335571289062" text="Integrated GPU" />
+                                          <TableColumn fx:id="processorIntegratedGPUTableColumn" prefWidth="115.19989013671875" text="Integrated GPU" />
                                           <TableColumn fx:id="processorPriceTableColumn" prefWidth="48.0" text="Price" />
                                        </columns>
                                        <HBox.margin>
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                     </TableView>
-                                    <Button mnemonicParsing="false" onMouseClicked="#handleDeleteActualProcessorButtonClicked" text="Törlés">
+                                    <Button mnemonicParsing="false" onMouseClicked="#handleDeleteActualProcessorButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE">
                                        <HBox.margin>
                                           <Insets left="25.0" top="10.0" />
                                        </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
                                     </Button>
                                  </children>
                               </HBox>
@@ -178,7 +181,7 @@
                               </Label>
                               <HBox prefHeight="35.0" prefWidth="200.0">
                                  <children>
-                                    <TableView fx:id="actualPowerSupplyTable" focusTraversable="false" prefHeight="35.0" prefWidth="640.0">
+                                    <TableView fx:id="actualPowerSupplyTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0">
                                        <columns>
                                           <TableColumn fx:id="powerSupplyBrandTableColumn" prefWidth="157.33334958553314" text="Brand" />
                                           <TableColumn fx:id="powerSupplySeriesTableColumn" prefWidth="123.46661376953125" text="Series" />
@@ -190,10 +193,13 @@
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                     </TableView>
-                                    <Button mnemonicParsing="false" onMouseClicked="#handleDeleteActualPowerSupplyButtonClicked" text="Törlés">
+                                    <Button mnemonicParsing="false" onMouseClicked="#handleDeleteActualPowerSupplyButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE">
                                        <HBox.margin>
                                           <Insets left="25.0" top="10.0" />
                                        </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
                                     </Button>
                                  </children>
                               </HBox>
@@ -207,7 +213,7 @@
                               </Label>
                               <HBox layoutX="10.0" layoutY="132.0" prefHeight="35.0" prefWidth="200.0">
                                  <children>
-                                    <TableView fx:id="actualMotherboardTable" editable="true" focusTraversable="false" prefHeight="35.0" prefWidth="640.0">
+                                    <TableView fx:id="actualMotherboardTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0">
                                        <columns>
                                           <TableColumn fx:id="motherboardBrandTableColumn" prefWidth="132.79999387264252" text="Brand" />
                                           <TableColumn fx:id="motherboardSeriesTableColumn" prefWidth="105.60003662109375" text="Series" />
@@ -221,10 +227,13 @@
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                     </TableView>
-                                    <Button mnemonicParsing="false" onMouseClicked="#handleDeleteActualMotherboardButtonClicked" text="Törlés">
+                                    <Button mnemonicParsing="false" onMouseClicked="#handleDeleteActualMotherboardButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE">
                                        <HBox.margin>
                                           <Insets left="25.0" top="10.0" />
                                        </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
                                     </Button>
                                  </children>
                               </HBox>
@@ -238,7 +247,7 @@
                               </Label>
                               <HBox layoutX="10.0" layoutY="192.0" prefHeight="35.0" prefWidth="200.0">
                                  <children>
-                                    <TableView fx:id="actualMemoryTable" cacheShape="false" prefHeight="35.0" prefWidth="640.0">
+                                    <TableView fx:id="actualMemoryTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0">
                                        <columns>
                                           <TableColumn fx:id="memoryBrandTableColumn" prefWidth="145.59992063045502" text="Brand" />
                                           <TableColumn fx:id="memorySeriesTableColumn" prefWidth="92.26669311523438" text="Series" />
@@ -252,10 +261,13 @@
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                     </TableView>
-                                    <Button mnemonicParsing="false" onMouseClicked="#handleDeleteActualMemoryButtonClicked" text="Törlés">
+                                    <Button mnemonicParsing="false" onMouseClicked="#handleDeleteActualMemoryButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE">
                                        <HBox.margin>
                                           <Insets left="25.0" top="10.0" />
                                        </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
                                     </Button>
                                  </children>
                               </HBox>
@@ -272,7 +284,7 @@
                               </Label>
                               <HBox layoutX="10.0" layoutY="175.0" prefHeight="35.0" prefWidth="200.0">
                                  <children>
-                                    <TableView fx:id="actualHardDriveDiskTable" focusTraversable="false" prefHeight="35.0" prefWidth="640.0">
+                                    <TableView fx:id="actualHardDriveDiskTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0">
                                        <columns>
                                           <TableColumn fx:id="hardDriveDiskBrandTableColumn" prefWidth="127.46671140193939" text="Brand" />
                                           <TableColumn fx:id="hardDriveDiskSeriesTableColumn" prefWidth="104.53326416015625" text="Series" />
@@ -285,18 +297,21 @@
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                     </TableView>
-                                    <Button mnemonicParsing="false" onMouseClicked="#handleDeleteActualHardDriveDiskButtonClicked" text="Törlés">
+                                    <Button mnemonicParsing="false" onMouseClicked="#handleDeleteActualHardDriveDiskButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE">
                                        <HBox.margin>
                                           <Insets left="25.0" top="10.0" />
                                        </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
                                     </Button>
                                  </children>
                               </HBox>
-                              <HBox alignment="TOP_RIGHT" prefHeight="25.0" prefWidth="200.0">
+                              <HBox alignment="CENTER" prefHeight="55.6" prefWidth="200.0">
                                  <children>
                                     <Label prefHeight="18.0" prefWidth="110.0" text="Konfiguráció neve">
                                        <HBox.margin>
-                                          <Insets top="5.0" />
+                                          <Insets />
                                        </HBox.margin>
                                     </Label>
                                     <TextField>
@@ -311,10 +326,10 @@
                                     </Button>
                                  </children>
                                  <VBox.margin>
-                                    <Insets top="66.8" />
+                                    <Insets top="58.0" />
                                  </VBox.margin>
                                  <padding>
-                                    <Insets right="20.0" top="10.0" />
+                                    <Insets right="20.0" />
                                  </padding>
                               </HBox>
                            </children>
