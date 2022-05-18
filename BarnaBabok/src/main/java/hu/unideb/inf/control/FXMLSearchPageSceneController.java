@@ -581,20 +581,21 @@ public class FXMLSearchPageSceneController implements Initializable {
 
         if (selectedComponent.equals(components[0])) {
             try (ProcessorDAO pDAO = new JpaProcessorDAO();) {
-                String conditions = FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
+                String conditions;
+
+                if (actualMotherboardTable.getItems().isEmpty()) {
+                    conditions = FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
+                } else {
+                    conditions = FilterConditionStringGenerator.generateConditions(MaxPriceSlider, actualMotherboardTable.getItems().get(0).getMotherboardSocketType().get());
+                }
+
                 List<Processor> compList = pDAO.getProcessors(conditions);
 
                 for (var elem : compList) {
                     String bsm = elem.getBrand() + elem.getSeries() + elem.getModel();
 
                     if (Search.contains(bsm, keywordTextField.getText())) {
-                        if (actualMotherboardTable.getItems().isEmpty()) {
-                            items.add(new PCComponentWrapper(elem));
-                        } else {
-                            if (actualMotherboardTable.getItems().get(0).getMotherboardSocketType().get().equals(elem.getSocketType())) {
-                                items.add(new PCComponentWrapper(elem));
-                            }
-                        }
+                        items.add(new PCComponentWrapper(elem));
                     }
                 }
 
