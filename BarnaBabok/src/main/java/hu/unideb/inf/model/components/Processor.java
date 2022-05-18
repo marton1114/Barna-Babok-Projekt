@@ -104,9 +104,7 @@ public class Processor {
 
     @Override
     public String toString() {
-        return "Processor{" +
-                "id=" + id +
-                ", brand='" + brand + '\'' +
+        return "brand='" + brand + '\'' +
                 ", series='" + series + '\'' +
                 ", model='" + model + '\'' +
                 ", frequency=" + frequency +
@@ -114,7 +112,6 @@ public class Processor {
                 ", numOfCores=" + numOfCores +
                 ", integratedGPU='" + integratedGPU + '\'' +
                 ", power=" + power +
-                ", price=" + price +
-                '}';
+                ", price=" + price;
     }
 }

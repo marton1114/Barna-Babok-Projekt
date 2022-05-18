@@ -14,9 +14,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
+import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -526,6 +528,32 @@ public class FXMLSearchPageSceneController implements Initializable {
     @FXML
     private TextField configNameTextField;
 
+    // Konfig táblázat
+    @FXML
+    private TableColumn<Config, String> configNameTableColumn;
+
+    @FXML
+    private TableColumn<Config, Processor> configProcessorTableColumn;
+
+    @FXML
+    private TableColumn<Config, PowerSupply> configPowerSupplyTableColumn;
+
+    @FXML
+    private TableColumn<Config, Motherboard> configMotherboardTableColumn;
+
+    @FXML
+    private TableColumn<Config, Memory> configMemoryTableColumn;
+
+    @FXML
+    private TableColumn<Config, HardDriveDisk> configHardDriveDiskTableColumn;
+
+    @FXML
+    private TableColumn<Config, Double> configPriceTableColumn;
+
+    // konfig TableView
+    @FXML
+    private TableView<Config> configTableView;
+
 
     @FXML
     void handleSaveActualConfigButtonClicked(MouseEvent event) {
@@ -558,14 +586,42 @@ public class FXMLSearchPageSceneController implements Initializable {
                 config.setMemory(actualMemoryTable.getItems().get(0).getMemory());
                 config.setHardDriveDisk(actualHardDriveDiskTable.getItems().get(0).getHardDriveDisk());
                 config.setName(configNameTextField.getText());
+                config.setPrice(config.getProcessor().getPrice() +
+                        config.getPowerSupply().getPrice() +
+                        config.getMotherboard().getPrice() +
+                        config.getMemory().getPrice() +
+                        config.getHardDriveDisk().getPrice());
 
                 cDAO.saveConfig(config);
 
+                updateConfigTable();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
 
+    }
+
+    private void updateConfigTable() {
+        try (JPAConfigDAO cDAO = new JPAConfigDAO()) {
+            ObservableList<Config> items = FXCollections.observableArrayList();
+            List<Config> configs = cDAO.getConfigs();
+
+            for (var elem : configs) {
+                items.add(elem);
+            }
+
+            configTableView.setItems(items);
+            configNameTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+            configProcessorTableColumn.setCellValueFactory(new PropertyValueFactory<>("processor"));
+            configPowerSupplyTableColumn.setCellValueFactory(new PropertyValueFactory<>("powerSupply"));
+            configMotherboardTableColumn.setCellValueFactory(new PropertyValueFactory<>("motherboard"));
+            configMemoryTableColumn.setCellValueFactory(new PropertyValueFactory<>("memory"));
+            configHardDriveDiskTableColumn.setCellValueFactory(new PropertyValueFactory<>("hardDriveDisk"));
+            configPriceTableColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -875,6 +931,8 @@ public class FXMLSearchPageSceneController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ComponentChoiceBox.getItems().addAll(components);
         ComponentChoiceBox.setOnAction(this::updateColumns);
+
+        updateConfigTable();
     }
 
 

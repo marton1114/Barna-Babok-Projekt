@@ -76,13 +76,10 @@ public class PowerSupply {
 
     @Override
     public String toString() {
-        return "PowerSupply{" +
-                "id=" + id +
-                ", brand='" + brand + '\'' +
+        return "brand='" + brand + '\'' +
                 ", series='" + series + '\'' +
                 ", model='" + model + '\'' +
                 ", energyEfficiency='" + energyEfficiency + '\'' +
-                ", price=" + price +
-                '}';
+                ", price=" + price;
     }
 }
