@@ -399,7 +399,7 @@
                                     <TableColumn fx:id="configPriceTableColumn" prefWidth="65.066650390625" text="Ár" />
                                  </columns>
                               </TableView>
-                              <Button mnemonicParsing="false" text="Konfiguráció törlése">
+                              <Button mnemonicParsing="false" onMouseClicked="#handleDeleteConfigButtonClicked" text="Konfiguráció törlése">
                                  <VBox.margin>
                                     <Insets right="20.0" top="10.0" />
                                  </VBox.margin>

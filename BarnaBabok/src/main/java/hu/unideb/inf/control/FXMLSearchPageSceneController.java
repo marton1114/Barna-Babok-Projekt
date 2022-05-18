@@ -556,6 +556,26 @@ public class FXMLSearchPageSceneController implements Initializable {
 
 
     @FXML
+    void handleDeleteConfigButtonClicked(MouseEvent event) {
+        if (configTableView.getSelectionModel().getSelectedItems().isEmpty()) {
+            return;
+        }
+
+        try (JPAConfigDAO cDAO = new JPAConfigDAO()) {
+            List<Config> configs = cDAO.getConfigs();
+            Integer id = configTableView.getSelectionModel().getSelectedItem().getId();
+            for (var config : configs) {
+                if (config.getId().equals(id))
+                    cDAO.deleteConfig(config);
+            }
+            //cDAO.deleteConfig(configTableView.getSelectionModel().getSelectedItem());
+            configTableView.getItems().remove(configTableView.getSelectionModel().getSelectedItem());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     void handleSaveActualConfigButtonClicked(MouseEvent event) {
         final String message1 = "Kérlek adj hozzá a konfigurációhoz minden alkatrészből egyet!\n";
         final String message2 = "Adj nevet a konfigurációnak!";
