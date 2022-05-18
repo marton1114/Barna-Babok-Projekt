@@ -86,15 +86,12 @@ public class Memory {
 
     @Override
     public String toString() {
-        return "Memory{" +
-                "id=" + id +
-                ", brand='" + brand + '\'' +
+        return "brand='" + brand + '\'' +
                 ", series='" + series + '\'' +
                 ", model='" + model + '\'' +
                 ", capacity=" + capacity +
                 ", numOfModules=" + numOfModules +
                 ", frequency=" + frequency +
-                ", price=" + price +
-                '}';
+                ", price=" + price;
     }
 }

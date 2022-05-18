@@ -14,8 +14,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -61,12 +61,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/BarnaBabok/src/main/java/hu/unideb/inf/control/FXMLMainMenuSceneController.java" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Marci\Downloads\Barna-Babok-Projekt\BarnaBabok\src\main\resources\fxml\assets" />
-      <recent name="C:\Users\Marci\Downloads\Barna-Babok-Projekt\BarnaBabok\src\main\resources\fxml" />
       <recent name="C:\Users\Marci\Documents\Tanulmanyok\4_felev\SFM sandbox\Barna-Babok-Projekt\BarnaBabok\src\main\java\hu\unideb\inf\model" />
       <recent name="C:\Users\Marci\Documents\Tanulmanyok\4_felev\SFM sandbox\Barna-Babok-Projekt\BarnaBabok\src" />
       <recent name="C:\Users\Marci\Documents\Tanulmanyok\4_felev\SFM sandbox\Barna-Babok-Projekt\BarnaBabok\src\main\resources\fxml" />
@@ -127,5 +126,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -86,15 +86,12 @@ public class Motherboard {
 
     @Override
     public String toString() {
-        return "Motherboard{" +
-                "id=" + id +
-                ", brand='" + brand + '\'' +
+        return "brand='" + brand + '\'' +
                 ", series='" + series + '\'' +
                 ", model='" + model + '\'' +
                 ", socketType='" + socketType + '\'' +
                 ", FormFactor='" + FormFactor + '\'' +
                 ", numOfRamSockets=" + numOfRamSockets +
-                ", price=" + price +
-                '}';
+                ", price=" + price;
     }
 }

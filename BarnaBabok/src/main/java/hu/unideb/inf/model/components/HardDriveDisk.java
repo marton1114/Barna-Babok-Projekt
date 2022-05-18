@@ -77,14 +77,11 @@ public class HardDriveDisk {
 
     @Override
     public String toString() {
-        return "HardDriveDisk{" +
-                "id=" + id +
-                ", brand='" + brand + '\'' +
+        return "brand='" + brand + '\'' +
                 ", series='" + series + '\'' +
                 ", model='" + model + '\'' +
                 ", capacity=" + capacity +
                 ", speed=" + speed +
-                ", price=" + price +
-                '}';
+                ", price=" + price;
     }
 }
