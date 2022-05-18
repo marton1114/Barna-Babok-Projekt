@@ -583,10 +583,10 @@ public class FXMLSearchPageSceneController implements Initializable {
             try (ProcessorDAO pDAO = new JpaProcessorDAO();) {
                 String conditions = " where ";
 
-                conditions += FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
+                conditions += FilterConditionStringGenerator.generateConditionsMaxSlider(MaxPriceSlider);
                 if (! actualMotherboardTable.getItems().isEmpty()) {
                     conditions += " and ";
-                    conditions += FilterConditionStringGenerator.generateConditions(actualMotherboardTable.getItems().get(0).getMotherboardSocketType().get());
+                    conditions += FilterConditionStringGenerator.generateConditionsSocketType(actualMotherboardTable.getItems().get(0).getMotherboardSocketType().get());
                 }
 
                 List<Processor> compList = pDAO.getProcessors(conditions);
@@ -617,7 +617,7 @@ public class FXMLSearchPageSceneController implements Initializable {
         } else if (selectedComponent.equals(components[1])) {
             try (PowerSupplyDAO pDAO = new JpaPowerSupplyDAO();) {
                 String conditions = " where ";
-                conditions += FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
+                conditions += FilterConditionStringGenerator.generateConditionsMaxSlider(MaxPriceSlider);
 
                 List<PowerSupply> compList = pDAO.getPowerSupplies(conditions);
 
@@ -642,14 +642,14 @@ public class FXMLSearchPageSceneController implements Initializable {
             try (MotherboardDAO pDAO = new JpaMotherboardDAO();) {
                 String conditions = " where ";
 
-                conditions += FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
-                if (! actualMotherboardTable.getItems().isEmpty()) {
+                conditions += FilterConditionStringGenerator.generateConditionsMaxSlider(MaxPriceSlider);
+                if (! actualProcessorTable.getItems().isEmpty()) {
                     conditions += " and ";
-                    conditions += FilterConditionStringGenerator.generateConditions(actualMotherboardTable.getItems().get(0).getMotherboardSocketType().get());
+                    conditions += FilterConditionStringGenerator.generateConditionsSocketType(actualMotherboardTable.getItems().get(0).getMotherboardSocketType().get());
                 }
                 if (! actualMemoryTable.getItems().isEmpty()) {
                     conditions += " and ";
-                    conditions += FilterConditionStringGenerator.generateConditions(actualMemoryTable.getItems().get(0).getMemoryNumOfModules().getValue());
+                    conditions += FilterConditionStringGenerator.generateConditionsNumOfRAMSockets(actualMemoryTable.getItems().get(0).getMemoryNumOfModules().getValue());
                 }
 
                 List<Motherboard> compList = pDAO.getMotherboards(conditions);
@@ -676,7 +676,11 @@ public class FXMLSearchPageSceneController implements Initializable {
         } else if (selectedComponent.equals(components[3])) {
             try (MemoryDAO pDAO = new JpaMemoryDAO();) {
                 String conditions = " where ";
-                conditions += FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
+                conditions += FilterConditionStringGenerator.generateConditionsMaxSlider(MaxPriceSlider);
+                if (! actualMotherboardTable.getItems().isEmpty()) {
+                    conditions += " and ";
+                    conditions += FilterConditionStringGenerator.generateConditionsNumOfModules(actualMotherboardTable.getItems().get(0).getMotherboardNumOfRAMSockets().getValue());
+                }
 
                 List<Memory> compList = pDAO.getMemories(conditions);
 
@@ -702,7 +706,7 @@ public class FXMLSearchPageSceneController implements Initializable {
         } else if (selectedComponent.equals(components[4])) {
             try (HardDriveDiskDAO pDAO = new JpaHardDriveDiskDAO();) {
                 String conditions = " where ";
-                conditions += FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
+                conditions += FilterConditionStringGenerator.generateConditionsMaxSlider(MaxPriceSlider);
 
                 List<HardDriveDisk> compList = pDAO.getHardDriveDisks(conditions);
 
