@@ -586,8 +586,16 @@ public class FXMLSearchPageSceneController implements Initializable {
 
                 for (var elem : compList) {
                     String bsm = elem.getBrand() + elem.getSeries() + elem.getModel();
-                    if (Search.contains(bsm, keywordTextField.getText()))
-                        items.add(new PCComponentWrapper(elem));
+
+                    if (Search.contains(bsm, keywordTextField.getText())) {
+                        if (actualMotherboardTable.getItems().isEmpty()) {
+                            items.add(new PCComponentWrapper(elem));
+                        } else {
+                            if (actualMotherboardTable.getItems().get(0).getMotherboardSocketType().get().equals(elem.getSocketType())) {
+                                items.add(new PCComponentWrapper(elem));
+                            }
+                        }
+                    }
                 }
 
                 productTableView.setItems(items);
@@ -651,8 +659,6 @@ public class FXMLSearchPageSceneController implements Initializable {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-
         } else if (selectedComponent.equals(components[3])) {
             try (MemoryDAO pDAO = new JpaMemoryDAO();) {
                 String conditions = FilterConditionStringGenerator.generateConditions(MaxPriceSlider);
