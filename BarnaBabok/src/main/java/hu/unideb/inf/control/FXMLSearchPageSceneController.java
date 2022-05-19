@@ -591,14 +591,14 @@ public class FXMLSearchPageSceneController implements Initializable {
 
         if (configNameTextField.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText(message2);
+            alert.setContentText(message1);
             alert.setTitle("Hiba!");
             alert.setHeaderText(null);
 
             alert.showAndWait();
         } else if (isThereAnEmptyTable) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText(message1);
+            alert.setContentText(message2);
             alert.setTitle("Hiba!");
             alert.setHeaderText(null);
 
