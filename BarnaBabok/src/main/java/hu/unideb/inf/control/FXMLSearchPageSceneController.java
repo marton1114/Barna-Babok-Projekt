@@ -591,14 +591,14 @@ public class FXMLSearchPageSceneController implements Initializable {
 
         if (configNameTextField.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText(message2);
+            alert.setContentText(message1);
             alert.setTitle("Hiba!");
             alert.setHeaderText(null);
 
             alert.showAndWait();
         } else if (isThereAnEmptyTable) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText(message1);
+            alert.setContentText(message2);
             alert.setTitle("Hiba!");
             alert.setHeaderText(null);
 
@@ -653,6 +653,34 @@ public class FXMLSearchPageSceneController implements Initializable {
 
     @FXML
     void handleAddComponentButtonClicked(MouseEvent event) {
+        // Hibakezelések
+        if (ComponentChoiceBox.getSelectionModel().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Kérlek válassz ki egy kilistázandó elemet!");
+            alert.setTitle("Hiba!");
+            alert.setHeaderText(null);
+
+            alert.showAndWait();
+            return;
+        } else if (productTableView.getItems().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Kérlek listázz ki elemeket a hozzáadás előtt!");
+            alert.setTitle("Hiba!");
+            alert.setHeaderText(null);
+
+            alert.showAndWait();
+            return;
+        } else if (productTableView.getSelectionModel().getSelectedItems().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Kérlek jelölj ki egy elemet a hozzáadáshoz!");
+            alert.setTitle("Hiba!");
+            alert.setHeaderText(null);
+
+            alert.showAndWait();
+            return;
+        }
+
+        // egyéb
         String selectedComponent = ComponentChoiceBox.getValue();   // checkbox-ban kiválasztott komponenst jelöli
 
         ObservableList<PCComponentWrapper> items = FXCollections.observableArrayList();
@@ -797,6 +825,16 @@ public class FXMLSearchPageSceneController implements Initializable {
     /* A függvény feltölti elemekkel a kereső táblázatot */
     @FXML
     void handleRefreshButtonClicked(MouseEvent event) {
+        if (ComponentChoiceBox.getSelectionModel().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Kérlek válassz ki egy kilistázandó elemet!");
+            alert.setTitle("Hiba!");
+            alert.setHeaderText(null);
+
+            alert.showAndWait();
+            return;
+        }
+
         String selectedComponent = ComponentChoiceBox.getValue();
 
         ObservableList<PCComponentWrapper> items = FXCollections.observableArrayList();

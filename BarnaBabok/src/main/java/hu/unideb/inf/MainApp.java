@@ -18,6 +18,7 @@ public class MainApp extends Application {
         Scene scene = new Scene(loader.load());
         stage.setTitle("Göter");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
 
         stage.setOnCloseRequest(event -> {
@@ -30,6 +31,7 @@ public class MainApp extends Application {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Kilépés");
         alert.setContentText("Biztos ki szeretnél lépni az alkalmazásból?");
+        alert.setHeaderText(null);
 
         if (alert.showAndWait().get() == ButtonType.OK) {
             stage.close();
