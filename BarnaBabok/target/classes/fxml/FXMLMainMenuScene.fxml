@@ -36,13 +36,10 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Button>
-                  <Button layoutX="432.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#handleCreditsButtonClicked" prefHeight="58.0" prefWidth="237.0" text="Készítők" textOverrun="CLIP">
+                  <Button layoutX="432.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#handleCreditsButtonClicked" prefHeight="58.0" prefWidth="237.0" text="Credits" textOverrun="CLIP">
                      <padding>
                         <Insets bottom="15.0" left="90.0" right="90.0" top="15.0" />
                      </padding>
-                     <font>
-                        <Font size="18.0" />
-                     </font>
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
@@ -79,7 +76,7 @@
             </VBox>
          </children>
       </HBox>
-      <Pane fx:id="creditsPane" layoutX="50.0" layoutY="90.0" prefHeight="410.0" prefWidth="380.0">
+      <Pane fx:id="creditsPane" layoutX="50.0" layoutY="90.0" prefHeight="410.0" prefWidth="380.0" visible="false">
          <children>
             <VBox alignment="BOTTOM_LEFT" prefHeight="410.0" prefWidth="380.0" styleClass="creditsClass">
                <children>

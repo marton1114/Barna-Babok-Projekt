@@ -80,7 +80,7 @@ public class Memory {
         return frequency;
     }
 
-    public void setFrequency(int frequency) {
+    public void setFrequency(double frequency) {
         this.frequency = frequency;
     }
 

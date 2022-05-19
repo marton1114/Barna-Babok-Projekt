@@ -4,7 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8fdd3bca-c912-4780-838a-d92724bcfec3" name="Changes" comment="" />
+    <list default="true" id="8fdd3bca-c912-4780-838a-d92724bcfec3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/BarnaBabok.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/BarnaBabok.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/hu/unideb/inf/control/FXMLSearchPageSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/src/main/java/hu/unideb/inf/control/FXMLSearchPageSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/java/hu/unideb/inf/model/components/Memory.java" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/src/main/java/hu/unideb/inf/model/components/Memory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/resources/fxml/FXMLMainMenuScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/src/main/resources/fxml/FXMLMainMenuScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/resources/fxml/FXMLSearchPageScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/src/main/resources/fxml/FXMLSearchPageScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/resources/styles/mainMenuStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/src/main/resources/styles/mainMenuStyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/main/resources/styles/searchPageStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/src/main/resources/styles/searchPageStyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/test/java/mockito_test/ConfigTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/test/java/mockito_test/FXMLSearchPageSceneControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/test/java/mockito_test/HardDriveDiskTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/test/java/mockito_test/MemoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/test/java/mockito_test/MotherBoardTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/test/java/mockito_test/PowerSupplyTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/test/java/mockito_test/ProcessorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/src/test/java/mockito_test/SearchTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/fxml/FXMLMainMenuScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/fxml/FXMLMainMenuScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/fxml/FXMLSearchPageScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/fxml/FXMLSearchPageScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/styles/mainMenuStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/styles/mainMenuStyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BarnaBabok/target/classes/styles/searchPageStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/BarnaBabok/target/classes/styles/searchPageStyles.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,19 +102,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Application" />
-      <module name="BarnaBabok" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="false" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hu.unideb.inf.Main" />
       <module name="BarnaBabok" />
@@ -105,10 +115,74 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FilterConditionStringGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BarnaBabok" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mockito_test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mockito_test" />
+      <option name="MAIN_CLASS_NAME" value="mockito_test.FilterConditionStringGeneratorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MotherBoardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BarnaBabok" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mockito_test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mockito_test" />
+      <option name="MAIN_CLASS_NAME" value="mockito_test.MotherBoardTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MotherBoardTest.getBrandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BarnaBabok" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mockito_test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mockito_test" />
+      <option name="MAIN_CLASS_NAME" value="mockito_test.MotherBoardTest" />
+      <option name="METHOD_NAME" value="getBrandTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProcessorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BarnaBabok" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mockito_test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mockito_test" />
+      <option name="MAIN_CLASS_NAME" value="mockito_test.ProcessorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Application" />
+        <item itemvalue="JUnit.FilterConditionStringGeneratorTest" />
+        <item itemvalue="JUnit.ProcessorTest" />
+        <item itemvalue="JUnit.MotherBoardTest" />
+        <item itemvalue="JUnit.MotherBoardTest.getBrandTest" />
       </list>
     </recent_temporary>
   </component>
@@ -133,7 +207,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
