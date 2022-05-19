@@ -98,3 +98,33 @@
 .tab:selected .tab-label {
 	-fx-text-fill: white;
 }
+
+.table-view, .table-view .filler {
+	-fx-background-color: #F8FAFF;
+	-fx-background-radius: 5 5 5 5;
+	-fx-focus-color: transparent;
+}
+
+.column-resize-line, .column-overlay {
+	-fx-background-color: #F18805;
+
+}
+
+.column-header {
+	-fx-background-color: #F18805;
+	-fx-background-radius: 5 5 5 5;
+	-fx-border-color: #001439;
+}
+
+.column-header .label {
+	-fx-text-fill: white;
+}
+
+.leftWindow, .rightWindow {
+	-fx-background-radius: 10 10 10 10;
+
+}
+
+.table-view .table-cell {
+    -fx-border-color: transparent;
+}
