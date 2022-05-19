@@ -74,3 +74,27 @@
 .choice-box:hover {
 	-fx-background-color: #EAEDF8;
 }
+
+.tab-header-background {
+	-fx-background-color: #001439;
+}
+
+.tab {
+	-fx-background-radius: 10 10 10 10;
+	-fx-background-color: #F8FAFF;
+}
+
+.tab:hover {
+	-fx-background-color: #EAEDF8;
+}
+
+.tab:selected {
+	-fx-background-radius: 10 10 0 0;
+	-fx-background-color: #F18805;
+	-fx-text-fill: white;
+	-fx-focus-color: transparent;
+}
+
+.tab:selected .tab-label {
+	-fx-text-fill: white;
+}
