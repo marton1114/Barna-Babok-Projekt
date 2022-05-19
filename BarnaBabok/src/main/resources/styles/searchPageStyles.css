@@ -56,3 +56,21 @@
 .deleteButton:pressed {
 	-fx-background-color: #c20000;
 }
+
+.choice-box {
+	-fx-border-color: #001439;
+	-fx-border-radius: 5 5 5 5;
+	-fx-background-color: white;
+}
+
+.choice-box .menu-item {
+	-fx-padding: 5 95 5 95;
+}
+
+.choice-box .menu-item:focused {
+	-fx-background-color: #F18805;
+	}
+
+.choice-box:hover {
+	-fx-background-color: #EAEDF8;
+}
