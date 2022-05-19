@@ -16,11 +16,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1080.0" scaleShape="false" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.control.FXMLSearchPageSceneController">
+<Pane id="0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1080.0" scaleShape="false" stylesheets="@../styles/searchPageStyles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.control.FXMLSearchPageSceneController">
    <children>
       <HBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="1080.0">
          <children>
-            <VBox prefHeight="600.0" prefWidth="330.0">
+            <VBox id="1" prefHeight="600.0" prefWidth="330.0" styleClass="leftWindow">
                <children>
                   <Label text="Keresés név alapján">
                      <font>
@@ -30,9 +30,9 @@
                         <Insets top="40.0" />
                      </VBox.margin>
                   </Label>
-                  <TextField fx:id="keywordTextField" prefHeight="26.0" prefWidth="100.0" promptText="Type a product name">
+                  <TextField fx:id="keywordTextField" prefHeight="26.0" promptText="\@Alkatrész">
                      <VBox.margin>
-                        <Insets right="25.0" />
+                        <Insets />
                      </VBox.margin>
                   </TextField>
                   <Label layoutX="136.0" layoutY="87.0" text="Keresendő komponens">
@@ -70,12 +70,12 @@
                         </Label>
                      </children>
                   </HBox>
-                  <Slider fx:id="MaxPriceSlider" majorTickUnit="50.0" max="1000.0" minorTickCount="10" onMouseMoved="#updateSlider" prefHeight="14.0" prefWidth="100.0" showTickLabels="true" snapToTicks="true" value="900.0">
+                  <Slider fx:id="MaxPriceSlider" majorTickUnit="50.0" max="1000.0" minorTickCount="10" onMouseMoved="#updateSlider" prefHeight="14.0" showTickLabels="true" snapToTicks="true" value="900.0">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
                      <VBox.margin>
-                        <Insets right="25.0" />
+                        <Insets />
                      </VBox.margin>
                   </Slider>
                 <Button mnemonicParsing="false" onMouseClicked="#handleRefreshButtonClicked" text="Keresés">
@@ -83,7 +83,7 @@
                         <Font size="14.0" />
                      </font>
                      <VBox.margin>
-                        <Insets left="210.0" top="350.0" />
+                        <Insets left="210.0" top="340.0" />
                      </VBox.margin>
                   </Button>
                </children>
@@ -91,17 +91,17 @@
                   <Insets />
                </opaqueInsets>
                <HBox.margin>
-                  <Insets />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
                <padding>
-                  <Insets left="25.0" />
+                  <Insets left="25.0" right="25.0" />
                </padding>
             </VBox>
             <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="30.0" tabMinWidth="100.0">
               <tabs>
                 <Tab text="Összeállítás">
                      <content>
-                        <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0">
+                        <VBox id="1" alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" styleClass="rightWindow">
                            <children>
                               <TableView fx:id="productTableView" prefHeight="515.0" prefWidth="750.0">
                                 <columns>
@@ -122,10 +122,13 @@
                                     <TableColumn fx:id="pSpowerTableColumn" text="Teljesítmény" visible="false" />
                                     <TableColumn fx:id="priceTableColumn" prefWidth="64.00006103515625" text="Ár" visible="false" />
                                 </columns>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
                               </TableView>
                               <Button mnemonicParsing="false" onMouseClicked="#handleAddComponentButtonClicked" text="Komponens hozzáadása">
                                  <VBox.margin>
-                                    <Insets right="20.0" top="10.0" />
+                                    <Insets right="20.0" />
                                  </VBox.margin>
                               </Button>
                            </children>
@@ -134,7 +137,7 @@
                   </Tab>
                   <Tab text="Aktuális konfiguráció">
                      <content>
-                        <VBox prefHeight="200.0" prefWidth="100.0">
+                        <VBox id="1" prefHeight="200.0" prefWidth="100.0" styleClass="rightWindow">
                            <children>
                               <HBox>
                                  <VBox.margin>
@@ -174,9 +177,9 @@
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                     </TableView>
-                                    <Button fx:id="deleteActualProcessorButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualProcessorButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE" visible="false">
+                                    <Button fx:id="deleteActualProcessorButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualProcessorButtonClicked" styleClass="deleteButton" text="Törlés" textFill="WHITE" visible="false">
                                        <HBox.margin>
-                                          <Insets left="25.0" top="10.0" />
+                                          <Insets left="5.0" top="10.0" />
                                        </HBox.margin>
                                        <font>
                                           <Font name="System Bold" size="12.0" />
@@ -216,9 +219,9 @@
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                     </TableView>
-                                    <Button fx:id="deleteActualPowerSupplyButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualPowerSupplyButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE" visible="false">
+                                    <Button fx:id="deleteActualPowerSupplyButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualPowerSupplyButtonClicked" styleClass="deleteButton" text="Törlés" textFill="WHITE" visible="false">
                                        <HBox.margin>
-                                          <Insets left="25.0" top="10.0" />
+                                          <Insets left="5.0" top="10.0" />
                                        </HBox.margin>
                                        <font>
                                           <Font name="System Bold" size="12.0" />
@@ -259,9 +262,9 @@
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                     </TableView>
-                                    <Button fx:id="deleteActualMotherboardButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualMotherboardButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE" visible="false">
+                                    <Button fx:id="deleteActualMotherboardButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualMotherboardButtonClicked" styleClass="deleteButton" text="Törlés" textFill="WHITE" visible="false">
                                        <HBox.margin>
-                                          <Insets left="25.0" top="10.0" />
+                                          <Insets left="5.0" top="10.0" />
                                        </HBox.margin>
                                        <font>
                                           <Font name="System Bold" size="12.0" />
@@ -302,9 +305,9 @@
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                     </TableView>
-                                    <Button fx:id="deleteActualMemoryButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualMemoryButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE" visible="false">
+                                    <Button fx:id="deleteActualMemoryButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualMemoryButtonClicked" styleClass="deleteButton" text="Törlés" textFill="WHITE" visible="false">
                                        <HBox.margin>
-                                          <Insets left="25.0" top="10.0" />
+                                          <Insets left="5.0" top="10.0" />
                                        </HBox.margin>
                                        <font>
                                           <Font name="System Bold" size="12.0" />
@@ -347,9 +350,9 @@
                                           <Insets left="10.0" />
                                        </HBox.margin>
                                     </TableView>
-                                    <Button fx:id="deleteActualHardDriveDiskButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualHardDriveDiskButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE" visible="false">
+                                    <Button fx:id="deleteActualHardDriveDiskButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualHardDriveDiskButtonClicked" styleClass="deleteButton" text="Törlés" textFill="WHITE" visible="false">
                                        <HBox.margin>
-                                          <Insets left="25.0" top="10.0" />
+                                          <Insets left="5.0" top="10.0" />
                                        </HBox.margin>
                                        <font>
                                           <Font name="System Bold" size="12.0" />
@@ -357,11 +360,11 @@
                                     </Button>
                                  </children>
                               </HBox>
-                              <HBox alignment="CENTER" prefHeight="55.6" prefWidth="200.0">
+                              <HBox alignment="CENTER_RIGHT" prefHeight="55.6" prefWidth="200.0">
                                  <children>
                                     <Label prefHeight="18.0" prefWidth="110.0" text="Konfiguráció neve">
                                        <HBox.margin>
-                                          <Insets />
+                                          <Insets left="10.0" />
                                        </HBox.margin>
                                     </Label>
                                     <TextField fx:id="configNameTextField">
@@ -371,48 +374,57 @@
                                     </TextField>
                                     <Button mnemonicParsing="false" onMouseClicked="#handleSaveActualConfigButtonClicked" text="Mentés">
                                        <HBox.margin>
-                                          <Insets left="410.0" />
+                                          <Insets left="381.0" />
                                        </HBox.margin>
                                     </Button>
                                  </children>
                                  <VBox.margin>
-                                    <Insets top="58.0" />
+                                    <Insets top="53.0" />
                                  </VBox.margin>
                                  <padding>
                                     <Insets right="20.0" />
                                  </padding>
                               </HBox>
                            </children>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
                         </VBox>
                      </content>
                   </Tab>
                 <Tab text="Lementett konfigurációk">
                      <content>
-                        <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0">
+                        <VBox id="1" alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" styleClass="rightWindow">
                            <children>
                               <TableView fx:id="configTableView" fixedCellSize="200.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="515.0" prefWidth="750.0">
                                  <columns>
                                     <TableColumn fx:id="configNameTableColumn" prefWidth="123.20001068115243" text="Konfiguráció neve" />
                                     <TableColumn fx:id="configProcessorTableColumn" prefWidth="122.4001235961914" text="Processzor" />
                                     <TableColumn fx:id="configMotherboardTableColumn" prefWidth="110.39990234375" text="Alaplap" />
-                                    <TableColumn fx:id="configPowerSupplyTableColumn" prefWidth="125.066650390625" text="Tápegység" />
-                                    <TableColumn fx:id="configMemoryTableColumn" prefWidth="96.00003051757812" text="Memória" />
-                                    <TableColumn fx:id="configHardDriveDiskTableColumn" prefWidth="109.59991455078125" text="HDD" />
-                                    <TableColumn fx:id="configPriceTableColumn" prefWidth="65.066650390625" text="Ár" />
+                                    <TableColumn fx:id="configPowerSupplyTableColumn" prefWidth="120.79998779296875" text="Tápegység" />
+                                    <TableColumn fx:id="configMemoryTableColumn" prefWidth="101.60000610351562" text="Memória" />
+                                    <TableColumn fx:id="configHardDriveDiskTableColumn" prefWidth="78.13336181640625" text="HDD" />
+                                    <TableColumn fx:id="configPriceTableColumn" prefWidth="50.0" text="Ár" />
                                  </columns>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
                               </TableView>
                               <Button mnemonicParsing="false" onMouseClicked="#handleDeleteConfigButtonClicked" text="Konfiguráció törlése">
                                  <VBox.margin>
-                                    <Insets right="20.0" top="10.0" />
+                                    <Insets right="20.0" />
                                  </VBox.margin>
                               </Button>
                            </children>
+                           <padding>
+                              <Insets bottom="5.0" />
+                           </padding>
                         </VBox>
                      </content>
                   </Tab>
               </tabs>
                <HBox.margin>
-                  <Insets />
+                  <Insets bottom="5.0" right="5.0" />
                </HBox.margin>
             </TabPane>
          </children>
