@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1080.0" scaleShape="false" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.control.FXMLSearchPageSceneController">
+   <children>
+      <HBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="1080.0">
+         <children>
+            <VBox prefHeight="600.0" prefWidth="330.0">
+               <children>
+                  <Label text="Keresés név alapján">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="keywordTextField" prefHeight="26.0" prefWidth="100.0" promptText="Type a product name">
+                     <VBox.margin>
+                        <Insets right="25.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label layoutX="136.0" layoutY="87.0" text="Keresendő komponens">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <ChoiceBox fx:id="ComponentChoiceBox" prefWidth="280.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </ChoiceBox>
+                  <Line endX="140.0" startX="-140.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Line>
+                  <HBox prefHeight="20.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Maximum ár">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="MaxPriceLabel" layoutX="10.0" layoutY="10.0" text="900.00$">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="150.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Slider fx:id="MaxPriceSlider" majorTickUnit="50.0" max="1000.0" minorTickCount="10" onMouseMoved="#updateSlider" prefHeight="14.0" prefWidth="100.0" showTickLabels="true" snapToTicks="true" value="900.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets right="25.0" />
+                     </VBox.margin>
+                  </Slider>
+                <Button mnemonicParsing="false" onMouseClicked="#handleRefreshButtonClicked" text="Keresés">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="210.0" top="350.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets left="25.0" />
+               </padding>
+            </VBox>
+            <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE" tabMinHeight="30.0" tabMinWidth="100.0">
+              <tabs>
+                <Tab text="Összeállítás">
+                     <content>
+                        <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <TableView fx:id="productTableView" prefHeight="515.0" prefWidth="750.0">
+                                <columns>
+                                  <TableColumn fx:id="brandTableColumn" prefWidth="145.59992063045502" text="Gyártó" visible="false" />
+                                    <TableColumn fx:id="seriesTableColumn" prefWidth="92.26669311523438" text="Sorozat" visible="false" />
+                                    <TableColumn fx:id="modelTableColumn" prefWidth="77.86663818359375" text="Modell" visible="false" />
+                                    <TableColumn fx:id="priceTableColumn" prefWidth="64.00006103515625" text="Ár" visible="false" />
+                                    <TableColumn fx:id="frequencyTableColumn" prefWidth="35.199951171875" text="Maximális frekvencia" visible="false" />
+                                    <TableColumn fx:id="numOfCoresTableColumn" prefWidth="42.4000244140625" text="Magok száma" visible="false" />
+                                    <TableColumn fx:id="powerTableColumn" prefWidth="50.39996337890625" text="Fogyasztás" visible="false" />
+                                    <TableColumn fx:id="capacityTableColumn" prefWidth="66.13333129882812" text="Kapacitás" visible="false" />
+                                    <TableColumn fx:id="energyEfficiencyTableColumn" prefWidth="81.06658935546875" text="Effektivitás" visible="false" />
+                                    <TableColumn fx:id="socketTypeTableColumn" prefWidth="111.73345947265625" text="Foglalat típusa" visible="false" />
+                                    <TableColumn fx:id="integratedGPUTableColumn" prefWidth="75.0" text="Integrált GPU" visible="false" />
+                                    <TableColumn fx:id="speedTableColumn" prefWidth="75.0" text="Fordulatszám" visible="false" />
+                                    <TableColumn fx:id="formFactorTableColumn" prefWidth="75.0" text="Form factor" visible="false" />
+                                    <TableColumn fx:id="numOfRAMSocketsTableColumn" prefWidth="75.0" text="RAM foglalatok száma" visible="false" />
+                                    <TableColumn fx:id="numOfModulesTableColumn" prefWidth="75.0" text="Modulok száma" visible="false" />
+                                </columns>
+                              </TableView>
+                              <Button mnemonicParsing="false" onMouseClicked="#handleAddComponentButtonClicked" text="Komponens hozzáadása">
+                                 <VBox.margin>
+                                    <Insets right="20.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                  <Tab text="Aktuális konfiguráció">
+                     <content>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <HBox>
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="25.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label text="Processzor">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="actualProcessorWarningLabel" text="A konfiguráció még nem tartalmaz processzort!" textFill="RED" translateX="-66.0" translateY="40.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="35.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="actualProcessorTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
+                                       <columns>
+                                          <TableColumn fx:id="processorBrandTableColumn" prefWidth="60.266661047935486" text="Gyártó" />
+                                          <TableColumn fx:id="processorSeriesTableColumn" prefWidth="73.0666275024414" text="Sorozat" />
+                                          <TableColumn fx:id="processorModelTableColumn" prefWidth="62.9332275390625" text="Modell" />
+                                          <TableColumn fx:id="processorFrequencyTableColumn" prefWidth="47.20001220703125" text="Frekvencia" />
+                                          <TableColumn fx:id="processorNumOfCoresTableColumn" prefWidth="50.66668701171875" text="Magok száma" />
+                                          <TableColumn fx:id="processorPowerTableColumn" prefWidth="71.20001220703125" text="Fogyasztás" />
+                                          <TableColumn fx:id="processorSocketTypeTableColumn" prefWidth="85.5999755859375" text="Foglalat típusa" />
+                                          <TableColumn fx:id="processorIntegratedGPUTableColumn" prefWidth="115.19989013671875" text="Integrált GPU" />
+                                          <TableColumn fx:id="processorPriceTableColumn" prefWidth="48.0" text="Ár" />
+                                       </columns>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </TableView>
+                                    <Button fx:id="deleteActualProcessorButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualProcessorButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE" visible="false">
+                                       <HBox.margin>
+                                          <Insets left="25.0" top="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="25.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label text="Tápegység">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="actualPowerSupplyWarningLabel" text="A konfiguráció még nem tartalmaz tápegységet!" textFill="RED" translateX="-68.0" translateY="40.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="35.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="actualPowerSupplyTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
+                                       <columns>
+                                          <TableColumn fx:id="powerSupplyBrandTableColumn" prefWidth="157.33334958553314" text="Gyártó" />
+                                          <TableColumn fx:id="powerSupplySeriesTableColumn" prefWidth="123.46661376953125" text="Sorozat" />
+                                          <TableColumn fx:id="powerSupplyModelTableColumn" prefWidth="118.4000244140625" text="Modell" />
+                                          <TableColumn fx:id="powerSupplyEnergyEfficiencyTableColumn" prefWidth="169.33328247070312" text="Effektivitás" />
+                                          <TableColumn fx:id="powerSupplyPriceTableColumn" prefWidth="48.0" text="Ár" />
+                                       </columns>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </TableView>
+                                    <Button fx:id="deleteActualPowerSupplyButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualPowerSupplyButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE" visible="false">
+                                       <HBox.margin>
+                                          <Insets left="25.0" top="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="25.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label text="Alaplap">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="actualMotherboardWarningLabel" text="A konfiguráció még nem tartalmaz alaplapot!" textFill="RED" translateX="-47.0" translateY="40.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="132.0" prefHeight="35.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="actualMotherboardTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
+                                       <columns>
+                                          <TableColumn fx:id="motherboardBrandTableColumn" prefWidth="132.79999387264252" text="Gyártó" />
+                                          <TableColumn fx:id="motherboardSeriesTableColumn" prefWidth="105.60003662109375" text="Sorozat" />
+                                          <TableColumn fx:id="motherboardModelTableColumn" prefWidth="80.53338623046875" text="Modell" />
+                                          <TableColumn fx:id="motherboardSocketTypeTableColumn" prefWidth="82.1334228515625" text="Foglalat típusa" />
+                                          <TableColumn fx:id="motherboardFormFactorTableColumn" prefWidth="91.99993896484375" text="Form factor" />
+                                          <TableColumn fx:id="motherboardNumOfRAMSocketsTableColumn" prefWidth="74.93331909179688" text="RAM foglalatok száma" />
+                                          <TableColumn fx:id="motherboardPriceTableColumn" prefWidth="48.0" text="Ár" />
+                                       </columns>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </TableView>
+                                    <Button fx:id="deleteActualMotherboardButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualMotherboardButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE" visible="false">
+                                       <HBox.margin>
+                                          <Insets left="25.0" top="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="25.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label text="Memória">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="actualMemoryWarningLabel" text="A konfiguráció még nem tartalmaz memóriát!" textFill="RED" translateX="-55.0" translateY="40.0">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="192.0" prefHeight="35.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="actualMemoryTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
+                                       <columns>
+                                          <TableColumn fx:id="memoryBrandTableColumn" prefWidth="145.59992063045502" text="Gyártó" />
+                                          <TableColumn fx:id="memorySeriesTableColumn" prefWidth="92.26669311523438" text="Sorozat" />
+                                          <TableColumn fx:id="memoryModelTableColumn" prefWidth="107.199951171875" text="Modell" />
+                                          <TableColumn fx:id="memoryFrequencyTableColumn" prefWidth="70.13323974609375" text="Frekvencia" />
+                                          <TableColumn fx:id="memoryCapacityTableColumn" prefWidth="55.733367919921875" text="Kapacitás" />
+                                          <TableColumn fx:id="memoryNumOfModulesTableColumn" prefWidth="96.80001831054688" text="Modulok száma" />
+                                          <TableColumn fx:id="memoryPriceTableColumn" prefWidth="48.0" text="Ár" />
+                                       </columns>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </TableView>
+                                    <Button fx:id="deleteActualMemoryButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualMemoryButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE" visible="false">
+                                       <HBox.margin>
+                                          <Insets left="25.0" top="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="25.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label text="Merevlemez">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label fx:id="actualHardDriveDiskWarningLabel" text="A konfiguráció még nem tartalmaz merevlemezt!" textFill="RED" translateX="-75.0" translateY="50.4">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="10.0" layoutY="175.0" prefHeight="35.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView fx:id="actualHardDriveDiskTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
+                                       <columns>
+                                          <TableColumn fx:id="hardDriveDiskBrandTableColumn" prefWidth="127.46671140193939" text="Gyártó" />
+                                          <TableColumn fx:id="hardDriveDiskSeriesTableColumn" prefWidth="104.53326416015625" text="Sorozat" />
+                                          <TableColumn fx:id="hardDriveDiskModelTableColumn" prefWidth="137.8665771484375" text="Modell" />
+                                          <TableColumn fx:id="hardDriveDiskCapacityTableColumn" prefWidth="113.066650390625" text="Kapacitás" />
+                                          <TableColumn fx:id="hardDriveDiskSpeedTableColumn" prefWidth="83.9998779296875" text="Fordulatszám" />
+                                          <TableColumn fx:id="hardDriveDiskPriceTableColumn" prefWidth="48.0" text="Ár" />
+                                       </columns>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </TableView>
+                                    <Button fx:id="deleteActualHardDriveDiskButton" disable="true" mnemonicParsing="false" onMouseClicked="#handleDeleteActualHardDriveDiskButtonClicked" style="-fx-background-color: red;" text="Törlés" textFill="WHITE" visible="false">
+                                       <HBox.margin>
+                                          <Insets left="25.0" top="10.0" />
+                                       </HBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="55.6" prefWidth="200.0">
+                                 <children>
+                                    <Label prefHeight="18.0" prefWidth="110.0" text="Konfiguráció neve">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="configNameTextField">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Button mnemonicParsing="false" onMouseClicked="#handleSaveActualConfigButtonClicked" text="Mentés">
+                                       <HBox.margin>
+                                          <Insets left="410.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="58.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets right="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                <Tab text="Lementett konfigurációk">
+                     <content>
+                        <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <TableView fx:id="configTableView" fixedCellSize="200.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="515.0" prefWidth="750.0">
+                                 <columns>
+                                    <TableColumn fx:id="configNameTableColumn" prefWidth="123.20001068115243" text="Konfiguráció neve" />
+                                    <TableColumn fx:id="configProcessorTableColumn" prefWidth="122.4001235961914" text="Processzor" />
+                                    <TableColumn fx:id="configMotherboardTableColumn" prefWidth="110.39990234375" text="Alaplap" />
+                                    <TableColumn fx:id="configPowerSupplyTableColumn" prefWidth="125.066650390625" text="Tápegység" />
+                                    <TableColumn fx:id="configMemoryTableColumn" prefWidth="96.00003051757812" text="Memória" />
+                                    <TableColumn fx:id="configHardDriveDiskTableColumn" prefWidth="109.59991455078125" text="HDD" />
+                                    <TableColumn fx:id="configPriceTableColumn" prefWidth="65.066650390625" text="Ár" />
+                                 </columns>
+                              </TableView>
+                              <Button mnemonicParsing="false" onMouseClicked="#handleDeleteConfigButtonClicked" text="Konfiguráció törlése">
+                                 <VBox.margin>
+                                    <Insets right="20.0" top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+              </tabs>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </TabPane>
+         </children>
+      </HBox>
+   </children>
+</Pane>
