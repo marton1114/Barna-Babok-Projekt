@@ -17,7 +17,7 @@
     </properties>
 
     <dependencies>
-        <!-- JPA/Hibernate -->
+        <!-- JPA/Hibernate --> 
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
