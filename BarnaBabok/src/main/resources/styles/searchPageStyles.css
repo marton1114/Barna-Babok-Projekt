@@ -1,0 +1,58 @@
+#0 {
+	-fx-background-color: #001439;
+}
+
+#1 {
+	-fx-background-color: #F8FAFF;
+}
+
+.text-field {
+	-fx-border-color: #001439;
+	-fx-border-radius: 5 5 5 5;
+	-fx-background-color: white;
+}
+
+.slider .thumb {
+	-fx-background-color: white;
+	-fx-border-radius: 100 100 100 100;
+	-fx-border-color: #001439;
+}
+
+.slider .thumb:hover {
+	-fx-background-color: #EAEDF8;
+}
+
+.slider .thumb:pressed {
+	-fx-background-color: #F18805;
+}
+
+.slider .track {
+	-fx-background-color: white;
+	-fx-border-radius: 5 5 5 5;
+	-fx-border-color: #001439;
+}
+
+.button {
+	-fx-border-color: #001439;
+	-fx-border-radius: 5 5 5 5;
+	-fx-background-radius: 5 5 5 5;
+	-fx-background-color: white;
+}
+.button:hover {
+	-fx-background-color: #EAEDF8;
+}
+
+.button:pressed {
+	-fx-background-color: #F18805;
+}
+
+.deleteButton {
+	-fx-background-color:  red;
+}
+.deleteButton:hover {
+	-fx-background-color: #ec4a4a;
+}
+
+.deleteButton:pressed {
+	-fx-background-color: #c20000;
+}
