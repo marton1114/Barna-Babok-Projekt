@@ -825,6 +825,16 @@ public class FXMLSearchPageSceneController implements Initializable {
     /* A függvény feltölti elemekkel a kereső táblázatot */
     @FXML
     void handleRefreshButtonClicked(MouseEvent event) {
+        if (ComponentChoiceBox.getSelectionModel().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Kérlek válassz ki egy kilistázandó elemet!");
+            alert.setTitle("Hiba!");
+            alert.setHeaderText(null);
+
+            alert.showAndWait();
+            return;
+        }
+
         String selectedComponent = ComponentChoiceBox.getValue();
 
         ObservableList<PCComponentWrapper> items = FXCollections.observableArrayList();
