@@ -388,7 +388,7 @@
                      <content>
                         <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <TableView fx:id="configTableView" nodeOrientation="LEFT_TO_RIGHT" prefHeight="515.0" prefWidth="750.0">
+                              <TableView fx:id="configTableView" fixedCellSize="200.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="515.0" prefWidth="750.0">
                                  <columns>
                                     <TableColumn fx:id="configNameTableColumn" prefWidth="123.20001068115243" text="Konfiguráció neve" />
                                     <TableColumn fx:id="configProcessorTableColumn" prefWidth="122.4001235961914" text="Processzor" />
