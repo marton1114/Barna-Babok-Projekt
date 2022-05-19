@@ -171,6 +171,15 @@ public class FXMLSearchPageSceneController implements Initializable {
             return new SimpleStringProperty(powerSupply.getSeries());
         }
 
+        public ObservableValue<Integer> getPowerSupplyPower() {
+            return new ObservableValueBase<Integer>() {
+                @Override
+                public Integer getValue() {
+                    return powerSupply.getPower();
+                }
+            };
+        }
+
         public StringProperty getMotherboardBrand() {
             return new SimpleStringProperty(motherboard.getBrand());
         }
@@ -359,6 +368,9 @@ public class FXMLSearchPageSceneController implements Initializable {
     private TableColumn<PCComponentWrapper, Integer> powerTableColumn;
 
     @FXML
+    private TableColumn<PCComponentWrapper, Integer> pSpowerTableColumn;
+
+    @FXML
     private TableColumn<PCComponentWrapper, Double> priceTableColumn;
 
     @FXML
@@ -410,6 +422,9 @@ public class FXMLSearchPageSceneController implements Initializable {
 
     @FXML
     private TableColumn<PCComponentWrapper, String> powerSupplyEnergyEfficiencyTableColumn;
+
+    @FXML
+    private TableColumn<PCComponentWrapper, Integer> powerSupplyPowerTableColumn;
 
     @FXML
     private TableColumn<PCComponentWrapper, String> powerSupplyModelTableColumn;
@@ -719,6 +734,8 @@ public class FXMLSearchPageSceneController implements Initializable {
             powerSupplyModelTableColumn.setCellValueFactory(e -> e.getValue().getPowerSupplyModel());
             powerSupplyPriceTableColumn.setCellValueFactory(e -> e.getValue().getPowerSupplyPrice());
             powerSupplySeriesTableColumn.setCellValueFactory(e -> e.getValue().getPowerSupplySeries());
+            powerSupplyPowerTableColumn.setCellValueFactory(e -> e.getValue().getPowerSupplyPower());
+
         } else if (selectedComponent.equals(components[2])) {
             actualMotherboardTable.setVisible(true);
             deleteActualMotherboardButton.setDisable(false);
@@ -892,6 +909,7 @@ public class FXMLSearchPageSceneController implements Initializable {
                 modelTableColumn.setCellValueFactory(e -> e.getValue().getPowerSupplyModel());
                 priceTableColumn.setCellValueFactory(e -> e.getValue().getPowerSupplyPrice());
                 seriesTableColumn.setCellValueFactory(e -> e.getValue().getPowerSupplySeries());
+                pSpowerTableColumn.setCellValueFactory(e -> e.getValue().getPowerSupplyPower());
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -1027,6 +1045,7 @@ public class FXMLSearchPageSceneController implements Initializable {
             seriesTableColumn.setVisible(true);
             socketTypeTableColumn.setVisible(true);
             speedTableColumn.setVisible(false);
+            pSpowerTableColumn.setVisible(false);
         } else if (selectedComponent.equals(components[1])) {
             brandTableColumn.setVisible(true);
             capacityTableColumn.setVisible(false);
@@ -1043,6 +1062,7 @@ public class FXMLSearchPageSceneController implements Initializable {
             seriesTableColumn.setVisible(true);
             socketTypeTableColumn.setVisible(false);
             speedTableColumn.setVisible(false);
+            pSpowerTableColumn.setVisible(true);
         } else if (selectedComponent.equals(components[2])) {
             brandTableColumn.setVisible(true);
             capacityTableColumn.setVisible(false);
@@ -1059,6 +1079,7 @@ public class FXMLSearchPageSceneController implements Initializable {
             seriesTableColumn.setVisible(true);
             socketTypeTableColumn.setVisible(true);
             speedTableColumn.setVisible(false);
+            pSpowerTableColumn.setVisible(false);
         } else if (selectedComponent.equals(components[3])) {
             brandTableColumn.setVisible(true);
             capacityTableColumn.setVisible(true);
@@ -1075,6 +1096,7 @@ public class FXMLSearchPageSceneController implements Initializable {
             seriesTableColumn.setVisible(true);
             socketTypeTableColumn.setVisible(false);
             speedTableColumn.setVisible(false);
+            pSpowerTableColumn.setVisible(false);
         } else if (selectedComponent.equals(components[4])) {
             brandTableColumn.setVisible(true);
             capacityTableColumn.setVisible(true);
@@ -1091,6 +1113,7 @@ public class FXMLSearchPageSceneController implements Initializable {
             seriesTableColumn.setVisible(true);
             socketTypeTableColumn.setVisible(false);
             speedTableColumn.setVisible(true);
+            pSpowerTableColumn.setVisible(false);
         }
     }
 }
