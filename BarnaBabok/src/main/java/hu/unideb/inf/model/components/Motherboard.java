@@ -86,12 +86,12 @@ public class Motherboard {
 
     @Override
     public String toString() {
-        return "brand='" + brand + '\'' +
-                ", series='" + series + '\'' +
-                ", model='" + model + '\'' +
-                ", socketType='" + socketType + '\'' +
-                ", FormFactor='" + FormFactor + '\'' +
-                ", numOfRamSockets=" + numOfRamSockets +
-                ", price=" + price;
+        return "Gyártó: " + brand  + '\n' +
+                "Sorozat: " + series + '\n' +
+                "Modell: " + model + '\n' +
+                "Foglalat típusa: " + socketType + '\n' +
+                "Form factor: " + FormFactor + '\n' +
+                "RAM foglalatok száma:" + numOfRamSockets + '\n' +
+                "Ár: " + price;
     }
 }

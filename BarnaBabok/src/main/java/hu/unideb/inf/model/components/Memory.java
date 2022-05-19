@@ -86,12 +86,12 @@ public class Memory {
 
     @Override
     public String toString() {
-        return "brand='" + brand + '\'' +
-                ", series='" + series + '\'' +
-                ", model='" + model + '\'' +
-                ", capacity=" + capacity +
-                ", numOfModules=" + numOfModules +
-                ", frequency=" + frequency +
-                ", price=" + price;
+        return "Gyártó: " + brand + '\n' +
+                "Sorozat: " + series + '\n' +
+                "Modell: " + model + '\n' +
+                "Kapacitás: " + capacity + '\n' +
+                "Modulok száma: " + numOfModules + '\n' +
+                "Frekcencia: " + frequency + '\n' +
+                "Ár: " + price;
     }
 }

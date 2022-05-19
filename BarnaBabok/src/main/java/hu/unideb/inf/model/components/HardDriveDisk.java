@@ -77,11 +77,11 @@ public class HardDriveDisk {
 
     @Override
     public String toString() {
-        return "brand='" + brand + '\'' +
-                ", series='" + series + '\'' +
-                ", model='" + model + '\'' +
-                ", capacity=" + capacity +
-                ", speed=" + speed +
-                ", price=" + price;
+        return "Gyártó: " + brand + '\n' +
+                "Sorozat: " + series + '\n' +
+                "Modell: " + model + '\n' +
+                "Kapacitás: " + capacity + '\n' +
+                "Fordulatszám: " + speed + '\n' +
+                "Ár: " + price;
     }
 }
