@@ -105,21 +105,22 @@
                            <children>
                               <TableView fx:id="productTableView" prefHeight="515.0" prefWidth="750.0">
                                 <columns>
-                                  <TableColumn fx:id="brandTableColumn" prefWidth="145.59992063045502" text="Gyártó" visible="false" />
-                                    <TableColumn fx:id="seriesTableColumn" prefWidth="92.26669311523438" text="Sorozat" visible="false" />
-                                    <TableColumn fx:id="modelTableColumn" prefWidth="77.86663818359375" text="Modell" visible="false" />
-                                    <TableColumn fx:id="priceTableColumn" prefWidth="64.00006103515625" text="Ár" visible="false" />
-                                    <TableColumn fx:id="frequencyTableColumn" prefWidth="35.199951171875" text="Maximális frekvencia" visible="false" />
-                                    <TableColumn fx:id="numOfCoresTableColumn" prefWidth="42.4000244140625" text="Magok száma" visible="false" />
-                                    <TableColumn fx:id="powerTableColumn" prefWidth="50.39996337890625" text="Fogyasztás" visible="false" />
-                                    <TableColumn fx:id="capacityTableColumn" prefWidth="66.13333129882812" text="Kapacitás" visible="false" />
-                                    <TableColumn fx:id="energyEfficiencyTableColumn" prefWidth="81.06658935546875" text="Effektivitás" visible="false" />
-                                    <TableColumn fx:id="socketTypeTableColumn" prefWidth="111.73345947265625" text="Foglalat típusa" visible="false" />
+                                  <TableColumn fx:id="brandTableColumn" prefWidth="100.0" text="Gyártó" visible="false" />
+                                    <TableColumn fx:id="seriesTableColumn" prefWidth="120.0" text="Sorozat" visible="false" />
+                                    <TableColumn fx:id="modelTableColumn" prefWidth="100.0" text="Modell" visible="false" />
+                                    <TableColumn fx:id="frequencyTableColumn" prefWidth="35.0" text="Maximális frekvencia" visible="false" />
+                                    <TableColumn fx:id="numOfCoresTableColumn" prefWidth="35.0" text="Magok száma" visible="false" />
+                                    <TableColumn fx:id="powerTableColumn" prefWidth="50.0" text="Fogyasztás" visible="false" />
+                                    <TableColumn fx:id="capacityTableColumn" prefWidth="60.0" text="Kapacitás" visible="false" />
+                                    <TableColumn fx:id="energyEfficiencyTableColumn" text="Effektivitás" visible="false" />
+                                    <TableColumn fx:id="socketTypeTableColumn" text="Foglalat típusa" visible="false" />
                                     <TableColumn fx:id="integratedGPUTableColumn" prefWidth="75.0" text="Integrált GPU" visible="false" />
-                                    <TableColumn fx:id="speedTableColumn" prefWidth="75.0" text="Fordulatszám" visible="false" />
-                                    <TableColumn fx:id="formFactorTableColumn" prefWidth="75.0" text="Form factor" visible="false" />
-                                    <TableColumn fx:id="numOfRAMSocketsTableColumn" prefWidth="75.0" text="RAM foglalatok száma" visible="false" />
-                                    <TableColumn fx:id="numOfModulesTableColumn" prefWidth="75.0" text="Modulok száma" visible="false" />
+                                    <TableColumn fx:id="speedTableColumn" prefWidth="70.0" text="Fordulatszám" visible="false" />
+                                    <TableColumn fx:id="formFactorTableColumn" prefWidth="70.0" text="Form factor" visible="false" />
+                                    <TableColumn fx:id="numOfRAMSocketsTableColumn" prefWidth="50.0" text="RAM foglalatok száma" visible="false" />
+                                    <TableColumn fx:id="numOfModulesTableColumn" prefWidth="50.0" text="Modulok száma" visible="false" />
+                                    <TableColumn fx:id="pSpowerTableColumn" text="Teljesítmény" visible="false" />
+                                    <TableColumn fx:id="priceTableColumn" prefWidth="64.00006103515625" text="Ár" visible="false" />
                                 </columns>
                               </TableView>
                               <Button mnemonicParsing="false" onMouseClicked="#handleAddComponentButtonClicked" text="Komponens hozzáadása">
@@ -204,10 +205,11 @@
                                  <children>
                                     <TableView fx:id="actualPowerSupplyTable" focusTraversable="false" mouseTransparent="true" prefHeight="35.0" prefWidth="640.0" visible="false">
                                        <columns>
-                                          <TableColumn fx:id="powerSupplyBrandTableColumn" prefWidth="157.33334958553314" text="Gyártó" />
-                                          <TableColumn fx:id="powerSupplySeriesTableColumn" prefWidth="123.46661376953125" text="Sorozat" />
-                                          <TableColumn fx:id="powerSupplyModelTableColumn" prefWidth="118.4000244140625" text="Modell" />
-                                          <TableColumn fx:id="powerSupplyEnergyEfficiencyTableColumn" prefWidth="169.33328247070312" text="Effektivitás" />
+                                          <TableColumn fx:id="powerSupplyBrandTableColumn" prefWidth="108.80001485347748" text="Gyártó" />
+                                          <TableColumn fx:id="powerSupplySeriesTableColumn" prefWidth="132.00001525878906" text="Sorozat" />
+                                          <TableColumn fx:id="powerSupplyModelTableColumn" prefWidth="115.99993896484375" text="Modell" />
+                                          <TableColumn fx:id="powerSupplyPowerTableColumn" prefWidth="96.0" text="Teljesítmény" />
+                                          <TableColumn fx:id="powerSupplyEnergyEfficiencyTableColumn" prefWidth="115.199951171875" text="Effektivitás" />
                                           <TableColumn fx:id="powerSupplyPriceTableColumn" prefWidth="48.0" text="Ár" />
                                        </columns>
                                        <HBox.margin>
