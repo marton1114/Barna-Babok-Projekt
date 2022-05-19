@@ -314,11 +314,11 @@ public class FXMLSearchPageSceneController implements Initializable {
     private ChoiceBox<String> ComponentChoiceBox;
 
     private String[] components = {
-            "Processor",
-            "PowerSupply",
-            "Motherboard",
-            "Memory",
-            "HardDriveDisk"
+            "Processzor",
+            "Tápegység",
+            "Alaplap",
+            "Memória",
+            "Merevlemez"
     };
 
     // Keresőfelület elemeinek a deklarációi

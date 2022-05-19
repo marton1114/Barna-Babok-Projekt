@@ -80,6 +80,7 @@ public class PowerSupply {
                 "Sorozat: " + series + '\n' +
                 "Modell: " + model + '\n' +
                 "Effektivitás: " + energyEfficiency + '\n' +
+                "Teljesítmény: " + power + '\n' +
                 "Ár: " + price;
     }
 }
